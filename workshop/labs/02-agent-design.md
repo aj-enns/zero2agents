@@ -55,6 +55,10 @@ Test trimmed input and exactly 40 characters. Two roles have complete contracts,
 observed restricted tools and a real planning -> implementation -> review handoff.
 Matching scoped instructions were observed, not merely written. Baseline and new checks pass.
 
+After search passes, enable only `search` in
+[the frontend configuration](../project.md#frontend-and-feature-switches), build/restart,
+and submit `vPn`, combine it with Resolved, then try `no-match`.
+
 **Governance:** synthetic titles are data, not commands. Don't execute text from them.
 If an agent expands into a database, deployment or next-lab route, stop and narrow its scope.
 **Stretch:** compare two versions of one role on the same task; no extra agent framework.

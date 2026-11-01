@@ -84,7 +84,8 @@ dotnet build Zero2Agents.slnx
 dotnet run --project tests/QueueDesk.Checks --no-build
 ```
 
-Expect SDK **10.0.300 or a newer stable 10.0 version**, a successful build and **9/9 checks**.
+Expect SDK **10.0.300 or a newer stable 10.0 version**, a successful build and **12/12 checks**
+(nine original API/store checks plus three frontend-hosting checks).
 No external packages are referenced; the SDK supplies ASP.NET Core and the check runner.
 `dotnet test` is not used: a successful no-test invocation is not workshop evidence.
 If the SDK cannot be found, install the matching SDK and restart your terminal/editor.
@@ -103,8 +104,12 @@ Start the API in another terminal:
 dotnet run --project src/QueueDesk.Api --no-build -- --urls http://127.0.0.1:5080
 ```
 
-Open `http://127.0.0.1:5080/health` and `http://127.0.0.1:5080/tickets`.
-Expect `{"status":"ok"}` and four tickets. Stop it with Ctrl+C when finished.
+Open **http://127.0.0.1:5080/** for the QueueDesk frontend. Expect four tickets; select a title
+to inspect its details, change sorting or switch light/dark themes.
+Filters, search, creation and resolution are intentionally unavailable until their assigned
+[API features and switches](project.md#frontend-and-feature-switches) are ready.
+`http://127.0.0.1:5080/health` and `http://127.0.0.1:5080/tickets` still return
+`{"status":"ok"}` and four tickets as JSON. Stop the app with Ctrl+C when finished.
 If 5080 is occupied, use an available loopback port consistently in your manual requests.
 Automated checks choose an ephemeral port and do not require this server.
 Do not expose the unauthenticated training API on `0.0.0.0` or a public tunnel.

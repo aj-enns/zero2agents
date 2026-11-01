@@ -10,6 +10,7 @@ Each process starts from the same in-memory seed. Restarting loses mutations.
 
 | Request | Result |
 | --- | --- |
+| `GET /` | QueueDesk frontend; live ticket list, presentation sorting, expandable details and light/dark themes |
 | `GET /health` | 200, `{"status":"ok"}` |
 | `GET /tickets` | 200, JSON array ordered by ascending `id` |
 | `GET /tickets/1` | 200, ticket object |
@@ -61,6 +62,30 @@ Use `ApiFixture.StartAsync()` in each HTTP case and `await using` to dispose it.
 Use `Check.Equal` and `Check.True`; failures throw, are printed, and cause exit code 1.
 Use `HttpClient.GetAsync` when asserting errors, so a convenience helper doesn't hide status.
 After each edit **build then run checks**; `--no-build` alone can test stale binaries.
+
+## Frontend and feature switches
+
+The same .NET app serves `src/QueueDesk.Api/wwwroot/`: plain HTML, CSS and JavaScript,
+with no framework, external assets, npm step or additional server. The dashboard calls
+the real API; it does not implement server filters locally or invent successful mutations.
+
+All four flags in `src/QueueDesk.Api/wwwroot/workshop.json` start as `false`.
+After implementing the assigned endpoint, passing its acceptance checks and human review,
+set **only that stage's flag** to `true`, build, restart the app and reload the browser:
+
+| Stage | Flag | Frontend verification |
+| --- | --- | --- |
+| Lab 1 | `statusFilter` | Open/resolved queues request the API with `status`; counts still describe the full workspace. |
+| Lab 2 | `search` | Submit a title query; combine it with a queue and try a no-match query. |
+| Lab 4 | `create` | New ticket sends POST; verify its returned ID, persisted GET and updated queue. |
+| Capstone | `resolve` | Expand an open ticket and resolve it; verify the API response and queue movement. |
+
+Enabling a flag is not implementing a feature. If an endpoint is missing or violates
+the contract, the UI displays an error; do not hide that error with browser-only behavior.
+Keep all twelve baseline checks; the configuration check accepts either boolean so later
+lab flags do not break the baseline. Continue adding server acceptance checks for each lab.
+Assets are copied into build/publish output; a running `--no-build` app serves that snapshot,
+not subsequent source edits. Stop it before rebuilding to avoid Windows output-file locks.
 
 Sample manual requests (VS Code REST Client is optional, not required):
 

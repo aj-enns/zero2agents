@@ -5,6 +5,11 @@ Use .NET 10 and the SDK in `global.json`. No NuGet packages or secrets are requi
 The API is in `src/QueueDesk.Api`; executable checks are in `tests/QueueDesk.Checks`.
 Use the injected `ITicketStore` seam; keep HTTP behavior in `TicketEndpoints`.
 
+The frontend in `src/QueueDesk.Api/wwwroot` is plain HTML/CSS/JavaScript served by
+the same app. Preserve real API calls and safe text rendering; do not simulate server
+filters or successful mutations. Enable only the assigned feature in `workshop.json`
+after its endpoint passes acceptance checks. No Node/npm build step is required.
+
 Build from the root with `dotnet build Zero2Agents.slnx`.
 Run checks with `dotnet run --project tests/QueueDesk.Checks --no-build`.
 `dotnet test` does not execute these checks. Add cases for requested behavior;

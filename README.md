@@ -61,7 +61,8 @@ Times are local workshop time. Breaks and lunch are included in the eight-hour d
 
 ## Starter
 
-**QueueDesk** lists four deterministic tickets, retrieves a ticket, and reports health.
+**QueueDesk** includes a responsive ticket workspace with light/dark themes, priority sorting,
+and expandable details from the live API. It lists four deterministic tickets and reports health.
 Filtering, search, creation, and resolution are intentionally unfinished participant work.
 See the [API contract and sample requests](workshop/project.md).
 
@@ -73,6 +74,11 @@ dotnet build Zero2Agents.slnx
 dotnet run --project tests/QueueDesk.Checks --no-build
 dotnet run --project src/QueueDesk.Api --no-build -- --urls http://127.0.0.1:5080
 ```
+
+Open **http://127.0.0.1:5080/** for the frontend. Raw JSON remains at `/health` and `/tickets`.
+Starter filters, search and mutations are visibly disabled; enable the corresponding
+[workshop feature switch](workshop/project.md#frontend-and-feature-switches) only after
+implementing and checking its API. No Node.js, npm or separate frontend server is needed.
 
 The dependency-free checks start their own API on an ephemeral loopback port, print PASS/FAIL,
 and exit nonzero on failure. **`dotnet test` is not the test runner for this starter.**

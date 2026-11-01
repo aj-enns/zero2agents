@@ -14,7 +14,7 @@ one facilitator per roughly 8-12 participants. Larger groups need a helper for a
 Use [cohort/access preparation](cohort-setup.md). Recheck
 [official references](../../workshop/references.md), actual editor version/harness,
 organization policy and feature rollout. Rehearse the **fallbacks**, not only the happy path.
-Run a clean baseline build and all nine checks using the SDK in `global.json`.
+Run a clean baseline build and all twelve checks using the SDK in `global.json`.
 Refresh the SDK/action pins for security patches before a future delivery, not mid-lab.
 
 Prepare separate private pair repositories or approved shared branches; ensure this
@@ -61,7 +61,10 @@ For E4, a correct refusal is a pass, not a lack of capability to "fix" with broa
 
 ## Delivery and acceptance
 
-Baseline acceptance: nine checks and manual loopback health/list verified.
+Baseline acceptance: twelve checks and manual loopback homepage/health/list verified.
+The original nine API/store checks remain; three checks cover frontend hosting.
+Keep `wwwroot/workshop.json` flags false in the starter. After each completed stage,
+have pairs enable only its flag and demonstrate the real endpoint through the frontend.
 Feature acceptance: the exact [project contract](../../workshop/project.md), with independent
 checks and no deleted baseline checks. Workflow acceptance: committed plan/contracts/handoff,
 actual tools/refusals, measured evaluation and human verdict.

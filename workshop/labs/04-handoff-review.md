@@ -92,6 +92,11 @@ evidence, and proposed verification, not generic praise. It cannot run checks wi
 read-only tools. Confirm at least one substantive acceptance decision independently.
 If everything is correct, document a concrete boundary check rather than inventing a bug.
 
+After creation passes human review, enable `create` in
+[the frontend configuration](../project.md#frontend-and-feature-switches), build/restart,
+and use New ticket. Verify its ID through the raw API as well as the dashboard.
+Include that flag in the reviewed branch, not before endpoint acceptance.
+
 Inspect any workflow changes **before** clicking **Approve and run workflows**.
 Default Copilot PR workflows may await human approval; check actual configuration.
 Required approval from the initiating human may not count under GitHub's Copilot PR rules;

@@ -62,6 +62,8 @@ not a bypass or relaxed protection.
 Prepare and validate status/search/creation checkpoints in your own approved cohort repo.
 Use [solutions.md](solutions.md) only during prep or an explicit unblock; do not inject
 all solution guidance into participants' agent context.
-Keep stages independently reviewable and preserve nine baseline checks.
+Keep stages independently reviewable and preserve all twelve baseline checks.
+Include the stage's `wwwroot/workshop.json` flag only after its API contract passes;
+do not ship future-stage flags enabled in an earlier checkpoint.
 At 16:00 stop hosted execution; retained sandbox snapshots can still meter storage.
 Have the owner apply retention/cleanup policy deliberately, not mass-delete participant work.

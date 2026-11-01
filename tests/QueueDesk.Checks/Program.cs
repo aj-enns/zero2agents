@@ -74,6 +74,42 @@ var cases = new List<(string Name, Func<Task> Run)>
         var left = await first.Client.GetFromJsonAsync<Ticket[]>("/tickets");
         var right = await second.Client.GetFromJsonAsync<Ticket[]>("/tickets");
         Check.True(left!.SequenceEqual(right!), "API instances differ.");
+    }),
+    ("Homepage serves the QueueDesk dashboard", async () =>
+    {
+        await using var api = await ApiFixture.StartAsync();
+        using var response = await api.Client.GetAsync("/");
+        Check.Equal(HttpStatusCode.OK, response.StatusCode);
+        Check.Equal("text/html", response.Content.Headers.ContentType!.MediaType);
+        var html = await response.Content.ReadAsStringAsync();
+        Check.True(html.Contains("QueueDesk") && html.Contains("src=\"/app.js\""),
+            "Homepage or dashboard script is missing.");
+    }),
+    ("Frontend assets and workshop feature configuration are served", async () =>
+    {
+        await using var api = await ApiFixture.StartAsync();
+        foreach (var (path, contentType) in new[]
+        {
+            ("/app.css", "text/css"), ("/app.js", "text/javascript"),
+            ("/favicon.svg", "image/svg+xml"), ("/workshop.json", "application/json")
+        })
+        {
+            using var response = await api.Client.GetAsync(path);
+            Check.Equal(HttpStatusCode.OK, response.StatusCode);
+            Check.Equal(contentType, response.Content.Headers.ContentType!.MediaType);
+        }
+        var features = await api.Client.GetFromJsonAsync<JsonElement>("/workshop.json");
+        foreach (var name in new[] { "statusFilter", "search", "create", "resolve" })
+        {
+            Check.True(features.GetProperty(name).ValueKind is JsonValueKind.True or JsonValueKind.False,
+                $"Workshop feature {name} must be a boolean.");
+        }
+    }),
+    ("Unknown frontend paths remain 404 rather than hiding API mistakes", async () =>
+    {
+        await using var api = await ApiFixture.StartAsync();
+        using var response = await api.Client.GetAsync("/not-a-route");
+        Check.Equal(HttpStatusCode.NotFound, response.StatusCode);
     })
 };
 

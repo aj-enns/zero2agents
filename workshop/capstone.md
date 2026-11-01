@@ -27,6 +27,11 @@ created ticket can be resolved and appears under resolved filters/search. Test c
 resolution of the same ID returns consistent records and does not duplicate tickets.
 Rerun at least the E3/E4 boundary cases against any changed agent role.
 
+After the endpoint passes, enable `resolve` in
+[the frontend configuration](project.md#frontend-and-feature-switches), build/restart,
+then expand and resolve a ticket. Verify the raw response and its movement between queues;
+the UI demonstration supplements, not replaces, the executable acceptance checks.
+
 **50-60 min:** commit the result, complete the criterion-to-check handoff and score the rubric.
 Prepare `demo.md`: feature request, role/tool boundaries, one real evidence item, one rejected
 unsafe action or limitation, and the review decision. A draft PR is optional where permitted;

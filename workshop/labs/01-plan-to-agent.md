@@ -48,6 +48,10 @@ and `status=open&status=resolved` return 400 Problem Details.
 All baseline checks remain and pass. An approved plan and criterion-to-check evidence
 are committed. No next-lab feature has been implemented.
 
+After the API passes, enable only `statusFilter` in
+[the frontend configuration](../project.md#frontend-and-feature-switches), build/restart,
+and verify the Open and Resolved queues against those IDs.
+
 **Governance in practice:** reject broad tool/network grants and unexplained installs.
 Plan approval and tool approval are separate. Review every diff before committing.
 **Stretch:** add tests proving rejected queries never alter stored records; do not add search yet.
