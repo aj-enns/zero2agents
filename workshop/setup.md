@@ -56,25 +56,46 @@ facilitator's specified release commit when making a copy.
 
 ## SDK and baseline
 
-Install the **.NET SDK 10.0.403**, not only the runtime, from
+Use **.NET SDK 10.0.300 or a later stable 10.0 SDK**, not only the runtime. If needed,
+install the latest stable .NET 10 SDK from
 [Microsoft's .NET 10 downloads](https://dotnet.microsoft.com/en-us/download/dotnet/10.0).
-.NET 10 is LTS; `global.json` pins the 10.0.4xx feature band, allowing only later patch
-versions in that band (`latestPatch`), with previews disabled.
-Install current security patches in that band; the facilitator should update the pin and
-revalidate before future cohorts. .NET 8/9 do not satisfy this workshop.
+.NET 10 is LTS; `global.json` sets a minimum SDK of 10.0.300 and uses `latestFeature`
+to select the highest installed compatible 10.0 feature band and patch, with previews
+disabled. Existing 10.0.300 installations work; 10.0.403 and newer stable 10.0 SDKs work
+without changing the file. Keep SDKs security-patched; the facilitator should revalidate
+before future cohorts. .NET 8/9 and .NET 11 alone do not satisfy this workshop.
+
+**Installing a missing SDK:** on the download page, choose your operating system and
+architecture, download the **SDK** installer/package, and follow Microsoft's
+[Windows](https://learn.microsoft.com/en-us/dotnet/core/install/windows),
+[macOS](https://learn.microsoft.com/en-us/dotnet/core/install/macos) or
+[Linux](https://learn.microsoft.com/en-us/dotnet/core/install/linux) instructions.
+Use your organization's approved software-install process; do not bypass managed-device
+restrictions. Restart VS Code and your terminal so they pick up the updated PATH.
+If `dotnet --list-sdks` already includes 10.0.300 or a newer stable 10.0 SDK, no reinstall
+is needed to start this version of the lab.
 
 ```text
+git --version
+dotnet --list-sdks
 dotnet --version
 git status --short
 dotnet build Zero2Agents.slnx
 dotnet run --project tests/QueueDesk.Checks --no-build
 ```
 
-Expect SDK **10.0.403** (or a later 10.0.4xx patch), a successful build and **9/9 checks**.
+Expect SDK **10.0.300 or a newer stable 10.0 version**, a successful build and **9/9 checks**.
 No external packages are referenced; the SDK supplies ASP.NET Core and the check runner.
 `dotnet test` is not used: a successful no-test invocation is not workshop evidence.
 If the SDK cannot be found, install the matching SDK and restart your terminal/editor.
 If loopback is blocked by endpoint policy, involve the facilitator rather than disabling protection.
+
+**Windows file-lock error (`CS2012`, "being used by another process"):** let any build
+or test command finish before starting another in the same checkout. If `dotnet watch`
+or an API session is running, stop it in its own terminal with Ctrl+C, then retry the
+build. Coordinate with any coding agent that is also building this checkout.
+If the lock persists, ask the facilitator to identify the specific locking process;
+do not kill all .NET processes or delete the checkout to work around it.
 
 Start the API in another terminal:
 

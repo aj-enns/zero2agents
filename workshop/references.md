@@ -60,7 +60,8 @@ claim every Copilot surface is technically incapable of merge or broader actions
 | Official source | Use |
 | --- | --- |
 | [.NET support policy](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core) | .NET 10 LTS; stay on security patches. SDK pin should be revalidated for each future cohort. |
-| [.NET 10 SDK downloads](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) | SDK 10.0.403 baseline for this version, later patch in the same feature band allowed. |
+| [.NET 10 SDK downloads](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) | SDK 10.0.300 minimum; use current stable .NET 10 SDK updates. |
+| [SDK selection in global.json](https://learn.microsoft.com/en-us/dotnet/core/tools/global-json) | `latestFeature` selects the highest installed 10.0 feature band/patch at or above 10.0.300. Preview SDKs are disabled; other major versions are not selected. |
 | [Minimal API responses](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/responses?view=aspnetcore-10.0) | JSON results, status codes, `Results`/`TypedResults`, Created/Problem response semantics. |
 | [Minimal API parameter binding](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/parameter-binding?view=aspnetcore-10.0) | Query/body/service binding; framework binding is distinct from application validation. Test rejection behavior. |
 

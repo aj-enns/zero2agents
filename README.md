@@ -14,6 +14,32 @@ By the end, you will have a tested feature, scoped repository instructions, two 
 a reviewed handoff, and a repeatable evaluation with evidence rather than confidence alone.
 Work in pairs: driver and reviewer, swapping after each lab.
 
+## Prerequisites
+
+Complete these before the workshop; allow **20-30 minutes** for setup.
+
+| Requirement | What to install or check |
+| --- | --- |
+| Git | [Install Git](https://git-scm.com/downloads), then confirm `git --version` works. |
+| VS Code | [Install VS Code](https://code.visualstudio.com/download). Add the Microsoft-published **C#** and **GitHub Copilot** extensions; sign in to Copilot. C# Dev Kit is optional where approved/licensed. |
+| .NET SDK | Use **10.0.300 or a newer stable 10.0 SDK**. If missing, [download the .NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0), choose your OS/architecture, and install the **SDK**, not just the runtime. |
+| GitHub access | Use your own Copilot-enabled account with approved access to the private workshop/pair repository. Confirm organization policies allow the editor agent features. |
+| Working knowledge | Be comfortable with basic C#, Git branches/commits, and reviewing a pull request. No agent-design experience is required. |
+
+Restart VS Code and your terminal after installation. From your checkout, verify:
+
+```text
+git --version
+dotnet --list-sdks
+dotnet --version
+```
+
+`dotnet --version` should show **10.0.300 or a newer stable 10.0 SDK**.
+An existing 10.0.300 installation is sufficient; .NET 8/9 alone is not.
+Then follow [setup and preflight](workshop/setup.md) to create your working branch
+and run the baseline checks. MCP and GitHub-hosted agent access are optional paths
+with documented fallbacks; no Azure subscription, Node.js, database or credentials are needed.
+
 ## Agenda
 
 Times are local workshop time. Breaks and lunch are included in the eight-hour day.
@@ -39,7 +65,8 @@ Times are local workshop time. Breaks and lunch are included in the eight-hour d
 Filtering, search, creation, and resolution are intentionally unfinished participant work.
 See the [API contract and sample requests](workshop/project.md).
 
-From the repository root, with the SDK specified in `global.json`:
+From the repository root, with **.NET SDK 10.0.300 or a newer stable 10.0 SDK**
+(`global.json` selects the highest compatible installed feature band):
 
 ```text
 dotnet build Zero2Agents.slnx
