@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/QueueDesk.Api/QueueDesk.Api.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/QueueDesk.Checks/QueueDesk.Checks.csproj" />
+  </Folder>
+</Solution>
