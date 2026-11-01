@@ -1,0 +1,11 @@
+**/bin/
+**/obj/
+.vs/
+.vscode/mcp.json
+.mcp.json
+TestResults/
+*.user
+*.suo
+.env
+.env.*
+!.env.example
