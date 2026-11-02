@@ -9,9 +9,10 @@ but leave out personal or sensitive information.
 | `evidence.md` from the evidence template | Setup, updated throughout |
 | `lab-01-plan.md` | Lab 1 |
 | `agent-contracts.md` from the agent contract template | Lab 2 |
+| `lab-02-plan.md` and `handoff.md` | Lab 2; update the handoff in Lab 4 |
 | `mcp-research.md` with path, citations and tool evidence | Lab 3 |
 | `governance.md` with control owners and decisions | Governance checkpoint |
-| `creation-issue.md` and `handoff.md` | Lab 4 |
+| `creation-issue.md` | Lab 4 |
 | `evaluation.md` from the evaluation template | Evaluation block |
 | `session-management.md` with session names, observed states, and handoff | Optional Bonus Lab 7 |
 | `capstone-plan.md` and `demo.md` | Capstone and wrap-up |
