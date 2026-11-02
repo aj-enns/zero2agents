@@ -61,7 +61,7 @@ dotnet --version
 
 `dotnet --version` should show **10.0.300 or a newer stable 10.0 SDK**.
 An existing 10.0.300 installation is sufficient; .NET 8/9 alone is not.
-Then follow [setup and preflight](workshop/setup.md) to create your working branch
+Then follow [setup and preflight](workshop/setup.md) to create `workshopbranch`
 and run the baseline checks. MCP and GitHub-hosted agent access are optional paths
 with documented fallbacks; no Azure subscription, Node.js, database or credentials are needed.
 

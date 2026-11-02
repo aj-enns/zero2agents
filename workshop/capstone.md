@@ -8,7 +8,8 @@ Work through the checkpoints at your own pace; the estimate is a guide, not a de
 You now own the whole workflow. Ship the **resolution contract in [project.md](project.md)**
 using the roles, instructions, tools, handoffs and evaluation lessons you developed.
 Start from the reviewed Lab 4 creation branch (including morning features), not an unmerged
-default branch missing that work. If you fell behind, use the facilitator's creation
+default branch missing that work. For Lab 4's local path, this is `workshopcreation`;
+for a hosted agent, use its reviewed result branch. If you fell behind, use the facilitator's creation
 checkpoint and explicitly identify which code is not yours.
 
 ## Work and checkpoints

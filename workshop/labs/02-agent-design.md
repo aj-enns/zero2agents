@@ -12,7 +12,7 @@ rules and limited tools. Use them to help add ticket-title search. The built-in
 
 ## Before you start
 
-Finish Lab 1 and keep its reviewed work on your branch. Read
+Finish Lab 1 and keep its reviewed work on `workshopbranch`. Read
 [the search requirements](../project.md) and [editor differences](../references.md).
 Use your pair's [work folder](../work/README.md) for the artifacts.
 
