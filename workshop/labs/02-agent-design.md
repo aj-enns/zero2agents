@@ -327,14 +327,33 @@ dotnet build .\Zero2Agents.slnx
 dotnet run --project .\tests\QueueDesk.Checks --no-build
 ```
 
-Keep the actual output. If either command fails, give the failure to **Agent** for
-repair, then build and run again. Do not enable frontend search while checks fail.
+Keep the terminal output. Each check prints `PASS` or `FAIL`, followed by its name.
+The last line shows how many checks passed. You will use this output in step 5.3.
+If either command fails, give the failure to **Agent** for repair, then repeat
+steps 5.1 and 5.2. Do not enable frontend search while checks fail.
 
 **5.3** Create `workshop/work/handoff.md`. Paste the block below.
 Replace every `FILL IN` with your actual information. Get the changed-file list with
 `git diff --name-only` and the code changes with `git diff`.
 If work is not committed yet, keep `Result commit: not committed`.
 Remove sensitive details from output before saving it.
+
+Fill in the table using the output from step 5.2; no separate HTTP commands are
+needed:
+
+- **Automated check name:** Copy the name after `PASS` or `FAIL` for the check that
+  covers the requirement. Include all matching names if it takes more than one check.
+- **Actual result:** Copy the matching `PASS` or `FAIL` line, including any failure
+  details. Do not fill this column with the expected result.
+
+Check names may differ because Agent wrote them. To see what a check covers, find
+its name in `tests/QueueDesk.Checks/Program.cs`, or ask Agent to identify the matching
+check for each row. If a requirement has no check, ask Agent to add one without
+removing existing checks, then repeat steps 5.1 and 5.2.
+
+For example, if the output says `PASS Search ignores letter case`, enter
+`Search ignores letter case` as the check name and `PASS Search ignores letter case`
+as the actual result. This is an example, not a result to copy without running it.
 
 ```markdown
 # Lab 2: implementation -> review
@@ -347,14 +366,17 @@ Owner: workshop developer
 Next reviewer: QueueReviewer, then the human
 Changed files: FILL IN
 
-| Acceptance criterion | Check name or exact request | Actual result |
+| Acceptance criterion | Automated check name | Actual result |
 | --- | --- | --- |
 | Mixed-case q=vPn returns IDs 1,4 in order | FILL IN | FILL IN |
 | q=vPn and status=resolved returns ID 4 | FILL IN | FILL IN |
 | Surrounding spaces are trimmed | FILL IN | FILL IN |
 | Exactly 40 characters is valid | FILL IN | FILL IN |
 | Valid no-match query returns 200 and [] | FILL IN | FILL IN |
-| Empty, whitespace, >40 characters and repeated q return 400 Problem Details | FILL IN | FILL IN |
+| Empty q returns 400 Problem Details | FILL IN | FILL IN |
+| Whitespace-only q returns 400 Problem Details | FILL IN | FILL IN |
+| q longer than 40 characters returns 400 Problem Details | FILL IN | FILL IN |
+| Repeated q returns 400 Problem Details | FILL IN | FILL IN |
 | Omitted q preserves Lab 1 behavior and all earlier checks | FILL IN | FILL IN |
 
 Build command and actual output: FILL IN
@@ -367,8 +389,10 @@ Human decision: pending
 Frontend search: disabled pending checks and review
 ```
 
-If a check was not run, write **not run** and the reason, not a predicted result.
-Include results for each invalid input, not just one example.
+Paste the commands from steps 5.1 and 5.2 and their terminal output into the two
+command-and-output fields. If a check was not run, write **not run** and the reason,
+not a predicted result. If a missing check is still blocked, write **no check**
+and explain the gap under **Assumptions, blocked work or known gaps**.
 
 **5.4** Start a fresh chat with **QueueReviewer**. Attach `handoff.md`,
 `lab-02-plan.md`, and the changed source/check files. Paste the output of `git diff`
