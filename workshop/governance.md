@@ -8,7 +8,7 @@ Review the plan, role files, tool trace and diff together. Sources were
 [checked 2026-11-01](references.md); administrators must verify their own effective policy.
 
 Use **0-10 minutes** to inventory actions/data, **10-20** to decide controls and owners,
-**20-30** to record a go/no-go for afternoon execution in `workshop/work/<pair-name>/governance.md`.
+**20-30** to record a go/no-go for afternoon execution in `workshop/work/governance.md`.
 
 | Decision | Concrete workshop action | Owner/evidence |
 | --- | --- | --- |

@@ -38,7 +38,7 @@ your pair's [work folder](../work/README.md). This optional lab does not change 
 
 ### Step 1: Write down the agent's job
 
-**1.1** Create `workshop/work/<pair-name>/cli-agent.md` in your pair's folder.
+**1.1** Create `workshop/work/cli-agent.md`.
 
 **1.2** In a terminal at the repository root, run `copilot --version`. Record the
 result in `cli-agent.md`. If the CLI is unavailable, finish Step 1 and use Step 7.
@@ -117,7 +117,7 @@ verify that the restrictions apply, stop and use the design fallback in Step 7.
 
 ### Step 4: Give the agent a realistic task
 
-**4.1** Create `workshop/work/<pair-name>/triage-input.md` in your pair's folder.
+**4.1** Create `workshop/work/triage-input.md`.
 
 **4.2** Copy the snapshot below into that file. It is fictional, not a live API
 response. Tickets 1-4 mirror the starter; ticket 5 is extra exercise data.
@@ -144,11 +144,10 @@ Tickets:
 
 **4.3** In the CLI, select your agent with `/agent` if it is not already selected.
 
-**4.4** Ask the agent to read your input file and recommend an investigation order.
-Replace `<pair-name>` with your folder alias:
+**4.4** Ask the agent to read your input file and recommend an investigation order:
 
 ```text
-Read workshop/work/<pair-name>/triage-input.md and recommend an investigation order.
+Read workshop/work/triage-input.md and recommend an investigation order.
 Use its rules, label missing facts, and do not perform any suggested action.
 ```
 
@@ -192,10 +191,10 @@ was needed.
 CLI settings or full raw logs.
 
 **6.5** In a separate terminal at the repository root, stage only the profile and
-sanitized notes/input. Replace `<pair-name>` and the agent filename if yours differs:
+sanitized notes/input. Replace the agent filename if yours differs:
 
 ```text
-git add .github/agents/queue-triage.agent.md workshop/work/<pair-name>/cli-agent.md workshop/work/<pair-name>/triage-input.md
+git add .github/agents/queue-triage.agent.md workshop/work/cli-agent.md workshop/work/triage-input.md
 ```
 
 **6.6** Review the staged changes with `git diff --cached`. Confirm that no unrelated

@@ -49,7 +49,7 @@ If there is no improvement, keep the safer prior version and explain the tradeof
 ### Step 1: Record the starting version
 
 **1.1** Copy the [evaluation template](../templates/evaluation.md) to
-`workshop/work/<pair-name>/evaluation.md`.
+`workshop/work/evaluation.md`.
 
 **1.2** Copy the case table within `evaluation.md` so there is one table for each
 agent version. Label them **before** and **after**.

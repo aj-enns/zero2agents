@@ -15,7 +15,7 @@ do not add extra features.
 
 Complete [setup and preflight](../setup.md). Open the repository in VS Code, confirm
 the baseline build and checks pass, and create your pair's
-[work folder](../work/README.md).
+[work notes](../work/README.md) in `workshop/work/`.
 Use `workshopbranch`, created during setup; do not create another branch for this lab.
 
 ## Steps
@@ -40,8 +40,17 @@ Invoke-RestMethod "http://127.0.0.1:5080/tickets?status=open" | Format-Table
 
 **1.5** In VS Code, inspect `src/QueueDesk.Api/TicketEndpoints.cs` and `InMemoryTicketStore.cs`.
 
-**1.6** In `workshopbranch/workshop/evidence.md`, record your starting commit
-(`git rev-parse HEAD`), what went wrong and what must stay the same without a filter.
+**1.6** In VS Code, open `workshop/work/evidence.md`, which you created during setup.
+`workshopbranch` is your Git branch, not a folder.
+Save a short note about the app before you change it, so you can compare it with
+the result later. Include:
+
+- **Starting version:** run `git rev-parse HEAD` in the repository's terminal and
+  copy the result. This identifies the code version you started from.
+- **Filter problem:** record which ticket IDs you saw in step 1.3. The open filter
+  should return only IDs 1 and 2.
+- **Behavior to keep:** record which ticket IDs you saw in step 1.4.
+  Without a filter, the API should still return all four tickets in order: 1, 2, 3, 4.
 
 **1.7** Stop the app with Ctrl+C in its terminal before rebuilding.
 
@@ -68,7 +77,7 @@ No edits, packages, external tools, deployments or later-lab features.
 **2.4** Read the plan. Check its proposed files, tests and handling of invalid or repeated
 query values. Reject any plan that silently ignores an invalid status or expands the scope.
 
-**2.5** Save the reviewed plan as `workshop/work/<pair-name>/lab-01-plan.md`.
+**2.5** Save the reviewed plan as `workshop/work/lab-01-plan.md`.
 
 ### Step 3: Have Copilot implement the plan
 

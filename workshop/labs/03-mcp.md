@@ -32,7 +32,7 @@ and 10 minutes. This limits tool use and cost, not your time to complete the lab
 
 ### Step 1: Decide whether the connection is allowed
 
-**1.1** Create `workshop/work/<pair-name>/mcp-research.md` in your pair's folder.
+**1.1** Create `workshop/work/mcp-research.md`.
 
 **1.2** Record Microsoft as the publisher, the server URL, the two allowed tools and
 the generic questions you plan to send.

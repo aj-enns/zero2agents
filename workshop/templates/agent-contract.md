@@ -5,7 +5,7 @@ It is not code, a legal document, or a special Copilot configuration format.
 Use it to decide how the agent should behave before creating its `.agent.md` file.
 
 In Lab 2, copy this template twice into
-`workshop/work/<pair-name>/agent-contracts.md`: one copy for QueuePlanner and one
+`workshop/work/agent-contracts.md`: one copy for QueuePlanner and one
 for QueueReviewer. Replace the prompts below with short answers for each role.
 You do not need formal wording or a JSON schema.
 

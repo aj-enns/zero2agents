@@ -14,14 +14,13 @@ rules and limited tools. Use them to help add ticket-title search. The built-in
 
 Finish Lab 1 and keep its reviewed work on `workshopbranch`. Read
 [the search requirements](../project.md) and [editor differences](../references.md).
-Use your pair's [work folder](../work/README.md) for the artifacts.
+Save your notes in the [work folder](../work/README.md), `workshop/work/`.
 
 ## Steps
 
 ### Step 1: Write a job description for each agent
 
-**1.1** In VS Code, create `workshop/work/<pair-name>/agent-contracts.md`.
-Replace `<pair-name>` with your pair's folder name.
+**1.1** In VS Code, create `workshop/work/agent-contracts.md`.
 
 **1.2** Open the [job-description template](../templates/agent-contract.md) and copy
 its contents into `agent-contracts.md` twice.
@@ -102,7 +101,7 @@ prepares a prompt without sending it. For another harness, pass the plan manuall
 **4.5** Ask Agent to implement only the reviewed plan and its tests.
 
 **4.6** Copy the [handoff template](../templates/handoff.md) to
-`workshop/work/<pair-name>/handoff.md`.
+`workshop/work/handoff.md`.
 
 **4.7** Fill in the plan, changed files and any actual check output. Do not claim a
 check ran if it did not.

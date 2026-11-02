@@ -148,9 +148,9 @@ but **time limits are not monetary caps**. Do not provision cloud resources to p
 ## 08:00-08:30 kickoff checkpoint
 
 Use 10 minutes for outcomes/roles, 15 for baseline and access checks, 5 for your work record.
-Follow [Your workshop evidence](work/README.md) to create
-`workshop/work/<pair-name>/` using a neutral pair alias. Copy
-[the evidence template](templates/evidence.md) to `evidence.md` inside that folder.
+Open [your workshop work folder](work/README.md) at `workshop/work/`. Copy
+[the evidence template](templates/evidence.md) to `workshop/work/evidence.md`.
+No extra folder or pair name is needed.
 The folder guide lists the artifacts you will save in each lab.
 Record version, model, harness, commit,
 enabled capabilities, fallback path and agreed owner/budget. Keep all data synthetic.

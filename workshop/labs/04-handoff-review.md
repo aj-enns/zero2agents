@@ -29,7 +29,7 @@ to extend this limit.
 
 ### Step 1: Write a task the agent can work on
 
-**1.1** Create `workshop/work/<pair-name>/creation-issue.md` in your pair's folder.
+**1.1** Create `workshop/work/creation-issue.md`.
 
 **1.2** Copy the headings and body from the
 [agent-ready issue template](../../.github/ISSUE_TEMPLATE/agent-ready.md) into that file.
@@ -148,7 +148,7 @@ remote execution, hosted credentials/firewall or hosted logs.
 
 ### Step 3: Check the code and results yourself
 
-**3.1** Ask the implementer to update `workshop/work/<pair-name>/handoff.md` using the
+**3.1** Ask the implementer to update `workshop/work/handoff.md` using the
 [handoff template](../templates/handoff.md). Include base/result commits, changed files,
 actual check output and remaining gaps.
 
