@@ -45,7 +45,7 @@ The worked example is inactive and illustrative, not execution evidence.
 ## Optional session-management lab
 
 **Checked: 2026-11-02.** These sources support the
-[optional session practice](labs/07-manage-agent-sessions.md). The two apps have different controls;
+[optional session practice](labs/06-manage-agent-sessions.md). The two apps have different controls;
 the lab does not require session transfer between them.
 
 | Official source | What this lab relies on |

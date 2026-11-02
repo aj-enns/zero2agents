@@ -89,8 +89,8 @@ The check runner starts its own API; you do not need a separate running app for 
 
 ## Optional practice and help
 
-- [Create a ticket-triage agent in Copilot CLI](workshop/labs/06-cli-agent.md).
-- [Manage two read-only agent sessions](workshop/labs/07-manage-agent-sessions.md).
+- [Lab 5: Create a ticket-triage agent in Copilot CLI](workshop/labs/05-cli-agent.md).
+- [Lab 6: Manage two read-only agent sessions](workshop/labs/06-manage-agent-sessions.md).
 - [Short worked examples](workshop/examples/README.md).
 - [Safety reminders](workshop/governance.md).
 - [Editor differences and official sources](workshop/references.md).
