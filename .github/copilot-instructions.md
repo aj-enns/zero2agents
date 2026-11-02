@@ -9,6 +9,7 @@ Practice **verbal economy**: use the fewest words that keep the meaning and guid
 - Cut repetition, filler, and jargon, not steps or context the learner needs.
 - Write labs for the learner. Keep instructor guidance outside the student path.
 - Use this lab order: goal, prerequisites, numbered steps, completion checks, next lab.
+- Break each main step into numbered substeps, such as 1.1, 1.2, and 1.3.
 - Give each step a clear action, where to do it, and the expected result. Include commands or examples when useful.
 - Make completion checks observable. Link to shared setup rather than repeating it.
 

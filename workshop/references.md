@@ -22,6 +22,23 @@ We ship **inactive role templates**, not a finished solution. Participants autho
 in Lab 2 and verify discovery/tools. Repository guidance is a minimal bootstrap they refine.
 We intentionally avoid multiple competing `AGENTS.md`/`CLAUDE.md` instruction hierarchies.
 
+## Copilot CLI bonus lab
+
+**Checked separately: 2026-11-02.** This does not re-date the other sources on this page.
+
+| Official source | What Bonus Lab 6 relies on |
+| --- | --- |
+| [Create CLI custom agents](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/create-custom-agents-for-cli) | Interactive `/agent`, then **N**; Project vs User location; generated profile review; explicit tool selection; restart to load. Personal profiles with the same ID override project profiles. `strict-tools-list: true` prevents default tools being added to the listed groups. Direct selection follows repository instructions; delegated subagents need `include-custom-instructions: true` to opt in. |
+| [CLI command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference) | Consult the installed version's available commands and custom-agent settings rather than assuming editor commands apply to CLI. |
+| [CLI setup](https://docs.github.com/en/copilot/how-tos/copilot-cli/cli-getting-started) | Approved installation and sign-in prerequisites; availability is account/policy dependent. |
+
+The requested `/create-agent` spelling was not established by the creation guide.
+The lab uses it only if the participant's installed CLI lists it, otherwise the
+documented `/agent` creation flow applies. The authoring machine's CLI launcher could
+not start, so interactive creation and tool enforcement were **not locally verified**.
+Participants capture their own version, command, loaded tools and observed responses.
+The worked example is inactive and illustrative, not execution evidence.
+
 ## MCP and trust
 
 | Official source | Relevant behavior |
