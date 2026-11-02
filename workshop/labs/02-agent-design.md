@@ -338,22 +338,31 @@ Replace every `FILL IN` with your actual information. Get the changed-file list 
 If work is not committed yet, keep `Result commit: not committed`.
 Remove sensitive details from output before saving it.
 
-Fill in the table using the output from step 5.2; no separate HTTP commands are
-needed:
+Use **Agent** to map the output from step 5.2 to the table; no separate HTTP commands
+are needed. After saving the block below, attach `handoff.md` and the terminal output
+from step 5.2 to an Agent chat. Send:
 
-- **Automated check name:** Copy the name after `PASS` or `FAIL` for the check that
-  covers the requirement. Include all matching names if it takes more than one check.
-- **Actual result:** Copy the matching `PASS` or `FAIL` line, including any failure
-  details. Do not fill this column with the expected result.
+```text
+Fill only the acceptance table in workshop/work/handoff.md.
+Use my attached terminal output from step 5.2.
 
-Check names may differ because Agent wrote them. To see what a check covers, find
-its name in `tests/QueueDesk.Checks/Program.cs`, or ask Agent to identify the matching
-check for each row. If a requirement has no check, ask Agent to add one without
-removing existing checks, then repeat steps 5.1 and 5.2.
+Keep the existing acceptance-criterion rows and their order.
+For each row:
+- Find the checks that cover it in tests/QueueDesk.Checks/Program.cs.
+- Copy their exact names into Automated check name.
+- Copy their actual PASS or FAIL lines, including failure details, into Actual result.
+- Include all checks needed to support the criterion.
+- If evidence is missing, write "no matching evidence" and explain the gap.
 
-For example, if the output says `PASS Search ignores letter case`, enter
-`Search ignores letter case` as the check name and `PASS Search ignores letter case`
-as the actual result. This is an example, not a result to copy without running it.
+Do not infer results from expected behavior or the overall pass count.
+Do not change code, add checks, run commands or fill unrelated handoff fields.
+```
+
+Verify each row against the terminal output. Check the named checks in
+`tests/QueueDesk.Checks/Program.cs` to confirm they cover the requirement.
+For example, `%20` means a space and `%09` means a tab in a request.
+If a requirement has no check, ask Agent to add one without removing existing checks.
+Then repeat steps 5.1 and 5.2 and update the table with the new output.
 
 ```markdown
 # Lab 2: implementation -> review
