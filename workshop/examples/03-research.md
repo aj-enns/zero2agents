@@ -19,4 +19,4 @@ not automatic behavior of a response helper.
 **1.4** Name a check the application still needs: for example, reject an 81-character
 title without consuming an ID. A proposed check is not a test result.
 
-Return to [Lab 3 Step 3](../labs/03-mcp.md#step-3-check-the-answer).
+Return to [section 3.3](../labs/03-mcp.md#33-check-the-answer).

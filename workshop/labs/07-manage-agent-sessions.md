@@ -22,24 +22,24 @@ No session log or handoff file is required.
 
 ## Steps
 
-### Step 1: Find the session list
+### 7.1: Find the session list
 
-**1.1** Open your chosen app:
+**7.1.1** Open your chosen app:
 
 | App | Where to go |
 | --- | --- |
 | VS Code | Command Palette > **Chat: Open Agents window**. |
 | Copilot app | Open the workshop repository in the sidebar. If needed, use **Sessions + > Open local folder**. |
 
-**1.2** Check the checkout path and session list. In your own terminal,
+**7.1.2** Check the checkout path and session list. In your own terminal,
 run `git status --short` and leave the output visible.
 It is the comparison point for later; do not copy it into a file.
 
 **Expected result:** you know which folder the tasks will read.
 
-### Step 2: Start two small tasks
+### 7.2: Start two small tasks
 
-**2.1** Create the first session:
+**7.2.1** Create the first session:
 
 | App | Settings |
 | --- | --- |
@@ -49,7 +49,7 @@ It is the comparison point for later; do not copy it into a file.
 Do not switch branches or use blanket approval.
 Interactive mode alone does not enforce read-only tools.
 
-**2.2** Paste:
+**7.2.2** Paste:
 
 ```text
 Read workshop/project.md. Summarize the existing ticket fields and response codes
@@ -58,11 +58,11 @@ Do not edit files, run commands, use network tools or start other agents.
 Separate existing behavior from optional feature contracts.
 ```
 
-**2.3** Name it **Ticket contract** using its session menu if available.
+**7.2.3** Name it **Ticket contract** using its session menu if available.
 If renaming is unavailable, keep the displayed name.
 Approve only reads needed for the task.
 
-**2.4** Create a second session with the same checkout and approval settings.
+**7.2.4** Create a second session with the same checkout and approval settings.
 Paste:
 
 ```text
@@ -78,13 +78,13 @@ Name it **Check map** if the rename control is available.
 Worktrees can isolate future edits, but are not security boundaries.
 This optional exercise does not authorize parallel writes.
 
-### Step 3: Check progress and guide one task
+### 7.3: Check progress and guide one task
 
-**3.1** Select each session. Look at its actual messages and approval requests.
+**7.3.1** Select each session. Look at its actual messages and approval requests.
 Is it working, waiting for input, or finished?
 If both finished quickly, that is fine; do not invent a running or blocked state.
 
-**3.2** Open **Ticket contract**. If it is still running, use **Stop**.
+**7.3.2** Open **Ticket contract**. If it is still running, use **Stop**.
 Send this follow-up in the same session:
 
 ```text
@@ -92,22 +92,22 @@ Narrow the answer to GET /tickets and GET /tickets/{id}.
 Keep the read-only limits. Separate current code behavior from proposed features.
 ```
 
-**3.3** Check the revised answer. It should cover only those routes and keep the
+**7.3.3** Check the revised answer. It should cover only those routes and keep the
 earlier context. Stopping a response does not undo actions already taken.
 Do not broaden permissions to get past a blocked tool.
 
 **Expected result:** you can find a task and steer it without starting over.
 
-### Step 4: Verify and finish
+### 7.4: Verify and finish
 
-**4.1** Open each session's changes view. Expect no exercise edits.
+**7.4.1** Open each session's changes view. Expect no exercise edits.
 In your terminal, run `git status --short` again and compare with the earlier output.
 If an agent changed files, stop and inspect the diff. Do not discard unrelated work.
 
-**4.2** Open the cited files and verify one claim from each answer.
+**7.4.2** Open the cited files and verify one claim from each answer.
 A summary of checks does not mean the agent ran them.
 
-**4.3** After both tasks finish, put only these exercise sessions away:
+**7.4.3** After both tasks finish, put only these exercise sessions away:
 
 | App | Finish and find again |
 | --- | --- |
@@ -118,7 +118,7 @@ Preserve any unexpected useful work before archiving.
 Do not delete sessions or change someone else's work.
 If a control is unavailable, leave the session and ask the facilitator.
 
-**4.4** Follow the [checkpoint guide](../work/README.md#check-in-after-each-lab).
+**7.4.4** Follow the [checkpoint guide](../work/README.md#check-in-after-each-lab).
 This read-only exercise normally has no file changes: keep the existing commit.
 Do not create notes or an empty commit to prove you finished.
 

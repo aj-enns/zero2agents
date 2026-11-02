@@ -40,7 +40,7 @@ Ask the facilitator if any of this is unclear; otherwise use the local path.
 
 **1.3** Push only the reviewed branch to the approved workshop repository.
 On GitHub, create an issue using the complete task from
-[Lab 4 Step 2](labs/04-handoff-review.md#step-2-hand-off-a-complete-task).
+[section 4.2](labs/04-handoff-review.md#42-hand-off-a-complete-task).
 In this hosted copy, replace its prohibition on pull requests with:
 
 ```text
