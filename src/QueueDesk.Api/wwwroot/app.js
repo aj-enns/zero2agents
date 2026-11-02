@@ -126,7 +126,7 @@
     }
     byId("search").disabled = !features.search;
     byId("search-submit").disabled = !features.search;
-    byId("search").placeholder = features.search ? "Search ticket titles…" : "Search tickets · available after Lab 2";
+    byId("search").placeholder = features.search ? "Search ticket titles…" : "Search tickets · optional exercise";
     byId("new-ticket").disabled = !features.create;
     byId("new-ticket").title = features.create ? "" : "Ticket creation is participant work in Lab 4";
     byId("new-ticket").querySelector(".button-lab").hidden = features.create;
@@ -222,7 +222,7 @@
         throw new Error("The status filter is enabled, but the API returned tickets outside this queue. Complete Lab 1 or disable statusFilter in workshop.json.");
       }
       if (search && filtered.some((ticket) => !ticket.title.toLowerCase().includes(search.toLowerCase()))) {
-        throw new Error("Search is enabled, but the API returned non-matching titles. Complete Lab 2 or disable search in workshop.json.");
+        throw new Error("Search is enabled, but the API returned non-matching titles. Implement and check title search or disable search in workshop.json.");
       }
       state.allTickets = all;
       state.tickets = filtered;
@@ -286,9 +286,9 @@
         const resolve = element("button", "button secondary", "Resolve ticket");
         resolve.disabled = !state.features.resolve || state.resolving.has(id);
         resolve.textContent = state.resolving.has(id) ? "Resolving…" : "Resolve ticket";
-        resolve.title = !state.features.resolve ? "Available after the capstone resolve endpoint is implemented" : "";
+        resolve.title = !state.features.resolve ? "Available after the optional resolve endpoint is implemented" : "";
         resolve.addEventListener("click", () => resolveTicket(ticket, resolve, actions));
-        actions.append(resolve, element("p", "", state.features.resolve ? "Moves this ticket to the resolved queue." : "Available after the capstone. The starter remains read-only."));
+        actions.append(resolve, element("p", "", state.features.resolve ? "Moves this ticket to the resolved queue." : "Resolution is optional future work. This action stays disabled until its API is ready."));
       }
       detail.append(info, actions);
       byId(`details-${id}`).firstElementChild.replaceChildren(detail);

@@ -1,28 +1,21 @@
-# Worked examples
+# Short worked examples
 
-These are optional reference artifacts for when you want a concrete example or get stuck.
-Try the task first, then open only the example for your current stage.
-Use the structure and reasoning, not a claim that your own work has passed.
+These are optional help, not forms to complete.
+Read an example when useful, then return to the guided lab.
+You do not need to copy it into a work folder.
 
-| Stage | Example |
+| Topic | Help |
 | --- | --- |
-| Lab 1 | [Reviewed status-filter plan](01-status-plan.md) |
-| Lab 2 | [Completed agent job descriptions](02-agent-contracts.md) and [custom agents and scoped instructions](02-agent-files.md) |
-| Lab 3 | [Documentation research handoff, no-MCP path](03-research.md) |
-| Lab 4 | [Agent-ready issue and implementation-to-review handoff](04-creation-handoff.md) |
-| Lab 5 | [Before/after evaluation and management decision](05-evaluation.md) |
-| Capstone | [Resolution plan, handoff and demo](06-capstone.md) |
-| Bonus Lab 6 | [CLI ticket-triage agent and response](bonus-06-cli-agent.md) |
+| Lab 1 | [A small status-filter plan](01-status-plan.md) |
+| Lab 2 | [Role responsibilities](02-agent-contracts.md) and [starter agent files](02-agent-files.md) |
+| Lab 3 | [Source checking without MCP](03-research.md) |
+| Lab 4 | [A complete task and a useful review](04-creation-handoff.md) |
+| Evaluation within Lab 4 | [Compare one instruction change](05-evaluation.md) |
+| Final practice | [Where the former capstone went](06-capstone.md) |
+| Optional CLI | [Advice-only QueueTriage profile and sample answer](bonus-06-cli-agent.md) |
 
-**Evidence labels matter.** Plans and role definitions are usable reference designs.
-Research, handoff, evaluation and demo examples are explicitly illustrative: no live
-MCP/cloud execution, feature implementation, test output or approval is evidenced by them.
-Replace example observations with your own actual results; mark anything unverified.
-
-Nothing here activates an agent, instruction or MCP server. Agent/configuration examples
-are fenced code blocks in ordinary Markdown, outside `.github/agents` and
-`.github/instructions`. Activate only your current stage after reviewing its tools.
-These examples do not complete the missing API endpoints or enable frontend switches.
-
-For working code checkpoints, ask the facilitator for a validated branch at your current
-stage. The repository provides facilitator preparation guidance, not prebuilt solution branches.
+Examples do not prove a tool ran or a check passed.
+Agent templates here are inactive until deliberately copied into `.github/agents`.
+No completed API solution is supplied.
+For broken earlier work, use the shared
+[fresh-start steps](../setup.md#start-fresh-without-losing-work), not a whole-day solution.

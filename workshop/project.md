@@ -1,6 +1,6 @@
 # QueueDesk: the shared project
 
-[Setup](setup.md) | [Lab 1](labs/01-plan-to-agent.md) | [Capstone](capstone.md)
+[Setup](setup.md) | [Four guided labs](../README.md) | [Lab 4](labs/04-handoff-review.md)
 
 QueueDesk is an intentionally small, unauthenticated, **loopback-only training API**.
 It is not a production service. No model runs inside it: Copilot is the development agent.
@@ -29,7 +29,7 @@ Each process starts from the same in-memory seed. Restarting loses mutations.
 query handling is unfinished, **not** accepted feature behavior. Create and resolve routes
 are absent. Do not add passing tests that lock in these missing behaviors.
 
-## Features owned by participants
+## Feature contracts
 
 These are workshop acceptance contracts, not completed starter solutions.
 Use case-sensitive canonical status/priority values unless explicitly stated otherwise.
@@ -40,14 +40,17 @@ Malformed request JSON should be rejected with 400 by ASP.NET Core; it must not 
 | Stage | Contract |
 | --- | --- |
 | Lab 1: status | Optional single `status=open` or `status=resolved` filters the list. Omitted status preserves all tickets. Empty, whitespace-only, unknown, mixed-case or repeated status values return 400. Keep ascending ID order and array response. |
-| Lab 2: title search | Optional single `q` is trimmed, 1-40 characters, ordinal case-insensitive title substring search. Omitted q preserves behavior. Empty/whitespace, >40 characters or repeated q return 400. Combine with status using AND. Valid no-match query returns 200 with `[]`. |
-| Lab 3: research | Recommend validation and Problem Details approach for creation; no production code changes. Cite official docs, separate framework behavior from our contract. |
+| Title search: review practice in Lab 2; optional implementation later | Optional single `q` is trimmed, 1-40 characters, ordinal case-insensitive title substring search. Omitted q preserves behavior. Empty/whitespace, >40 characters or repeated q return 400. If status filtering exists, combine using AND. Valid no-match query returns 200 with `[]`. |
+| Lab 3: tools | Use official docs to explain validation and creation responses. Check a source and distinguish framework behavior from our contract. No production code change or research report. |
 | Lab 4: creation | `POST /tickets` JSON `{"title":" Fix printer ","priority":"normal"}` creates `{"id":5,"title":"Fix printer","status":"open","priority":"normal"}` on a fresh process. 201 plus `Location: /tickets/5`; subsequent GET finds it. Trim title, length 1-80; null/missing/empty/whitespace/>80 title is 400. Priority required, exactly low/normal/high; otherwise 400. IDs server-assigned, unique, monotonic; reject invalid requests without consuming an ID or changing the list. Ignore extra JSON properties; clients cannot set id/status. Thread-safe mutations and snapshot reads. |
-| Capstone: resolution | `POST /tickets/{id:int}/resolve`, no request body required. Open ticket becomes resolved, returns 200 with the ticket; repeating returns the identical resolved ticket (idempotent). Unknown integer ID returns existing 404 Problem Details. Preserve id/title/priority, list filters and creation. Thread-safe lookup/update. |
+| Resolution: optional future work | `POST /tickets/{id:int}/resolve`, no request body required. Open ticket becomes resolved, returns 200 with the ticket; repeating returns the identical resolved ticket (idempotent). Unknown integer ID returns existing 404 Problem Details. Preserve id/title/priority, list filters and creation if present. Thread-safe lookup/update. |
 
 Out of scope: persistence, auth, email, deployment, packages, broad network access,
 bulk actions, background agent runtime, and implementing future labs early.
-Capstone stretch: summary endpoint, described in the capstone; only after required work.
+Search and resolution are not required implementations in the four primary labs.
+Lab 4 creation works on the original starter; it must preserve existing filters/search
+if present, but must not add missing ones.
+There is no required summary endpoint or separate capstone.
 
 ## Architecture and checking
 
@@ -76,14 +79,14 @@ set **only that stage's flag** to `true`, build, restart the app and reload the 
 | Stage | Flag | Frontend verification |
 | --- | --- | --- |
 | Lab 1 | `statusFilter` | Open/resolved queues request the API with `status`; counts still describe the full workspace. |
-| Lab 2 | `search` | Submit a title query; combine it with a queue and try a no-match query. |
+| Optional search implementation | `search` | Submit a title query; combine it with a queue if implemented and try a no-match query. |
 | Lab 4 | `create` | New ticket sends POST; verify its returned ID, persisted GET and updated queue. |
-| Capstone | `resolve` | Expand an open ticket and resolve it; verify the API response and queue movement. |
+| Optional resolution implementation | `resolve` | Expand an open ticket and resolve it; verify the API response and queue movement. |
 
 Enabling a flag is not implementing a feature. If an endpoint is missing or violates
 the contract, the UI displays an error; do not hide that error with browser-only behavior.
 Keep all twelve baseline checks; the configuration check accepts either boolean so later
-lab flags do not break the baseline. Continue adding server acceptance checks for each lab.
+lab flags do not break the baseline. Add server acceptance checks for each implemented feature.
 Assets are copied into build/publish output; a running `--no-build` app serves that snapshot,
 not subsequent source edits. Stop it before rebuilding to avoid Windows output-file locks.
 

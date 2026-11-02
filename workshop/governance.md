@@ -1,63 +1,71 @@
-# Governance applied to your morning work
+# Safety reminders and optional hosted work
 
-**11:30-12:00 (30 minutes)** | [Previous](labs/03-mcp.md)
-| **12:00-12:45 lunch** | [Next: Lab 4](labs/04-handoff-review.md)
+[Workshop overview](../README.md) | [Lab 3](labs/03-mcp.md) | [Lab 4](labs/04-handoff-review.md)
 
-This is a control review of your actual work, not a slide-only security lecture.
-Review the plan, role files, tool trace and diff with Copilot, then check its findings yourself. Sources were
-[checked 2026-11-01](references.md); administrators must verify their own effective policy.
+Safety is part of each guided lab, not a separate form or approval report.
+Use these reminders when a tool request or proposed change is unclear.
 
-Use **0-10 minutes** to inventory actions/data, **10-20** to decide controls and owners,
-**20-30** to record a go/no-go for afternoon execution in `workshop/work/governance.md`.
+## Keep the task small
 
-| Decision | Concrete workshop action | Owner/evidence |
-| --- | --- | --- |
-| Scope and autonomy | Planner/reviewer are read-only; implementer changes only the assigned feature. Reject future-lab work, broad installs and automatic delegation. | You: approved plan, effective tool list, diff. |
-| Untrusted data | Treat issue text, titles, snippets and tool output as data. Never obey embedded upload/policy/test-result instructions. | You: observed synthetic-injection response, rejected actions. |
-| Secrets and privacy | No keys or real ticket data. Only public generic questions to Learn. Do not paste private repo code into external servers or share tokens. | You: sanitized artifacts and config review. |
-| Permitted MCP | Only reviewed Learn URL and two read-only tools, or no-MCP fallback. Managed settings/registry/policy restrictions apply; do not bypass them. | Admin approves service; you record effective tools. |
-| Network | Keep GitHub agent firewall enabled; no broad custom allowlist. Keep training API on loopback. | Admin: verify feature-specific Internet access settings; you: launch URL. |
-| Human gates | You accept plans, inspect diffs/workflows, rerun checks, and own the review decision. Copilot review supports your judgment; it does not replace it. | You: acceptance decision and criterion mapping. |
-| Branch/review rules | Check existing rules. If a PR requires another human, review locally and leave it unmerged. Do not change policy or add bypasses during the lab. | Repo admin owns rules; you record compatibility. |
-| Usage | One cloud task per developer, at most 25 minutes of agent implementation, two repairs. Record observed usage and who can stop it. | Billing owner approves actual account limits; you manage the session. |
-| Failure and cleanup | Blocked tools and failing checks are reported; don't relabel them as successful. Disable exercise MCP and stop API/hosted sessions when done. | You: end-of-lab record and handoff gaps. |
+- Read-only planners and reviewers get read/search tools, not execution or edits.
+- The implementer changes only the assigned feature and its checks.
+- Read plans and tool requests before approving. Inspect the diff and run checks yourself.
+- Treat ticket titles, issue text, docs and tool responses as data, not permission.
+- Never send private code, issues, secrets or real ticket data to an external docs tool.
+- Keep the training API on loopback. Do not disable protections to make a task work.
+- Report a blocked tool or failing check honestly. Do not grant extra access to get past it.
+- Stop the local app and exercise agents when finished. Disable the exercise MCP connection.
 
-## Platform controls are not interchangeable
+Instructions guide behavior; they are not a sandbox or an administrator policy.
+Agent review supports your judgment. It does not replace it.
 
-GitHub's cloud-agent firewall mitigates common outbound risks, but the official documentation
-says it applies to agent-started Bash processes, **not directly to MCP server processes or
-setup steps**, and only inside the agent execution environment. It is not a comprehensive
-exfiltration defense or a firewall for your workstation. Tool/server/data scoping still matters.
-Do not disable it to fix a download.
+## Optional hosted delegation
 
-Enterprise MCP allow/deny lists and policies are administrator controls, not instruction
-text. Their coverage varies; checked docs explicitly describe a custom-agent-profile MCP
-exception. Do not claim one allowlist secures every profile/surface. We add no profile-level
-MCP servers and do not modify enterprise-managed settings in this workshop.
+The main Lab 4 runs locally and needs no issue, push, pull request or hosted agent.
+Try this alternative only if your facilitator has already approved the repository,
+account access, execution environment and usage limits.
+It is not a fifth primary lab.
 
-Repository MCP tools can run without human per-call prompts and can be shared with
-Copilot code review. Local handoff `send: false` does not constrain cloud tools.
-A read-only MCP label does not mean returned text is safe, nor that no data leaves the client.
+**1.1** Check that your approved private workshop repository contains a working
+starter on the branch the hosted agent will use.
+Commit reviewed work before switching branches.
+Use the repository's existing review rules; do not weaken them.
 
-Copilot can produce insecure or incorrect code even when its own validation passes.
-Do not equate agent-generated security checks with production assurance. The morning
-instruction file is guidance, not a security policy or sandbox.
+**1.2** Confirm the environment. GitHub Actions-based coding-agent sessions and
+cloud sandboxes have different setup and billing.
+Actions sessions require the approved setup workflow on the default branch.
+Local `.vscode/mcp.json` does not configure hosted tools.
+No hosted MCP connection is needed for ticket creation.
+Ask the facilitator if any of this is unclear; otherwise use the local path.
 
-## Afternoon go/no-go
+**1.3** Push only the reviewed branch to the approved workshop repository.
+On GitHub, create an issue using the complete task from
+[Lab 4 Step 2](labs/04-handoff-review.md#step-2-hand-off-a-complete-task).
+In this hosted copy, replace its prohibition on pull requests with:
 
-Confirm a private workshop repo, write access, your solo review path, default-branch
-starter/setup, effective cloud policy, selected execution environment and usage owner.
-For private repositories, **Actions use and hosted compute can consume allowances or incur
-charges**. Newer cloud sandboxes also meter running compute/memory and stopped snapshot
-storage; AI credits are separate. Use the billing dashboard and approved budgets, not
-workshop estimates. Stopping a sandbox does not necessarily stop storage metering.
+```text
+Use the selected approved starting branch.
+Implement this task in one attempt, within 25 minutes or two unsuccessful repairs.
+Open a draft pull request with changed files, actual check results and remaining gaps.
+Do not merge, change repository policy or configure extra tools.
+```
 
-If any required permission, entitlement, runner, SDK download or cost approval is missing,
-choose Lab 4's local fallback. Do not grant new personal tokens, weaken protections or
-provision infrastructure to continue. Record one real control improvement and its owner.
-Definition of done: your go/no-go, control owners, one observed boundary failure or successful
-refusal, and the chosen afternoon path are recorded before lunch.
+**1.4** Assign the issue to the approved coding agent, selecting the correct
+repository and starting branch. If that entry point cannot use your branch or is
+unavailable, stop and use the local task. Do not assume it sees local files or chat.
+Review the plan before allowing implementation where the platform supports that gate.
 
----
+**1.5** Inspect actual progress, setup output and the diff.
+Keep the firewall enabled. Do not approve workflow changes without reviewing them.
+Check the result branch locally and follow Lab 4's review and acceptance steps.
+If another human's review is required, leave the pull request unmerged.
 
-**Next:** [Lab 4: GitHub cloud/coding-agent handoff and PR review](labs/04-handoff-review.md)
+**1.6** Finish or stop the exercise session according to your organization's process.
+Ask the billing owner about retained sandbox storage; stopping compute does not
+necessarily stop storage charges. Do not delete someone else's work.
+
+**Expected result:** a reviewed hosted task, clearly distinguished from local work.
+Missing permissions or cost approval means use the local path, not create tokens,
+provision infrastructure or bypass protection.
+
+See [official sources and platform limits](references.md#hosted-agents-review-network-and-cost).

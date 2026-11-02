@@ -1,158 +1,176 @@
-# Lab 1: Plan before you build
+# Lab 1: Plan and build with an agent
 
-**Expected completion time: 60 minutes** | [Setup](../setup.md) | [Next: Lab 2](02-agent-design.md)
-
-Work through the checkpoints at your own pace; the estimate is a guide, not a deadline.
+**Allow 75 minutes.** [Setup](../setup.md) | [Next: Lab 2](02-agent-design.md)
 
 ## Goal
 
-Ask Copilot to plan a change, review its plan, then let it write code and tests.
-The change lets you show only open or resolved tickets. You decide what is allowed
-and whether the result is correct. Follow [the API requirements](../project.md);
-do not add extra features.
+Use Copilot to plan and build status filtering.
+You review the plan, approve the change, and check the result yourself.
+You do not need to save a plan document or keep a log.
 
-## Before you start
+## Prerequisites
 
-Complete [setup and preflight](../setup.md). Open the repository in VS Code, confirm
-the baseline build and checks pass, and create your
-[work notes](../work/README.md) in `workshop/work/`.
-Use `workshopbranch`, created during setup; do not create another branch for this lab.
+Complete [setup](../setup.md). Use VS Code and your workshop working branch.
+The starter build and checks must pass. If they do not, use the
+[fresh-start steps](../setup.md#start-fresh-without-losing-work).
+No other lab is required.
+
+Paths below start at the repository root. Paste only code-block contents,
+not the backticks. Use **Ctrl+S** to save edited files.
 
 ## Steps
 
-### Step 1: See what needs fixing
+### Step 1: See the missing behavior
 
-**1.1** In a terminal at the repository root, run the build and checks from
-[setup](../setup.md#sdk-and-baseline). Confirm they pass.
+**1.1** Start the app using [setup Step 3](../setup.md#3-see-the-app).
 
-**1.2** Start the app with the command in setup. Leave that terminal running.
+**1.2** In a browser, open **http://127.0.0.1:5080/tickets?status=open**.
+The unchanged starter returns all four tickets. We want only tickets **1 and 2**.
+`status=open` is a query parameter: an option sent to the server after `?`.
 
-**1.3** Open **http://127.0.0.1:5080/tickets?status=open** in a browser.
-This sends a GET request with the query parameter `status=open`. Before the change,
-you should see all four tickets, not just IDs 1 and 2. Use your app's port if different.
-Alternatively, make the same request from a second PowerShell terminal:
+**1.3** Open **http://127.0.0.1:5080/tickets**.
+Without a filter, all four tickets must still be returned in ID order.
+The full rules are in [the status contract](../project.md#feature-contracts).
 
-```powershell
-Invoke-RestMethod "http://127.0.0.1:5080/tickets?status=open" | Format-Table
-```
+**1.4** Stop the app with **Ctrl+C** in its terminal.
+In Explorer, open `src/QueueDesk.Api/TicketEndpoints.cs`.
+Find the route that lists tickets. You will let the agent change this behavior.
 
-**1.4** Open **http://127.0.0.1:5080/tickets** without a query. It should return all four tickets.
-
-**1.5** In VS Code, inspect `src/QueueDesk.Api/TicketEndpoints.cs` and `InMemoryTicketStore.cs`.
-
-**1.6** In VS Code, open `workshop/work/evidence.md`, which you created during setup.
-`workshopbranch` is your Git branch, not a folder.
-Save a short note about the app before you change it, so you can compare it with
-the result later. Include:
-
-- **Starting version:** run `git rev-parse HEAD` in the repository's terminal and
-  copy the result. This identifies the code version you started from.
-- **Filter problem:** record which ticket IDs you saw in step 1.3. The open filter
-  should return only IDs 1 and 2.
-- **Behavior to keep:** record which ticket IDs you saw in step 1.4.
-  Without a filter, the API should still return all four tickets in order: 1, 2, 3, 4.
-
-**1.7** Stop the app with Ctrl+C in its terminal before rebuilding.
+**Expected result:** you can see the problem and the behavior that must stay unchanged.
 
 ### Step 2: Ask for a plan
 
-**2.1** In VS Code, select the **Local** harness and **Plan** (or `/plan`).
-If your editor differs, follow **2.2** before continuing.
+**2.1** Open a new Copilot chat. Choose **Local**, then **Plan**.
+If Plan is unavailable, choose a read-only chat with only read/search tools.
+Saying "plan only" does not disable write tools.
 
-**2.2** If using the **Copilot harness**, use `/plan` and its approval controls instead.
-If Plan mode is unavailable, ask for a written plan with only read/search tools selected,
-then approve implementation yourself. Record the difference. Saying "plan only" does
-not disable tools.
-
-**2.3** Send Copilot this prompt:
+**2.2** Paste into chat. **Problem Details** means a structured JSON error response:
 
 ```text
-Plan only: add GET /tickets status filtering from workshop/project.md.
-Research the existing endpoints and ITicketStore. Preserve the unfiltered array,
-seed data and ID ordering. Include rejected query values and repeated parameters,
-exact check commands, affected files and open decisions.
-No edits, packages, external tools, deployments or later-lab features.
+Plan status filtering for GET /tickets. Do not implement yet.
+Read workshop/project.md, TicketEndpoints.cs, ITicketStore.cs,
+InMemoryTicketStore.cs and tests/QueueDesk.Checks/Program.cs.
+
+Accept one exact status value: open or resolved.
+Without status, return all tickets in ascending ID order.
+Reject empty, whitespace, unknown, mixed-case and repeated status values
+with 400 Problem Details.
+Use the injected ITicketStore. Keep HTTP behavior in TicketEndpoints.
+Preserve the seed tickets and existing checks.
+
+Give a short plan: files to change, checks to add and any open question.
+Do not add search, creation, resolution, packages or external services.
+Do not edit files or run commands. Mark proposed checks as not run.
 ```
 
-**2.4** Read the plan. Check its proposed files, tests and handling of invalid or repeated
-query values. Reject any plan that silently ignores an invalid status or expands the scope.
+**2.3** Read the plan in chat. Check that it rejects invalid values instead of
+silently returning an empty list. It must keep all four tickets when status is omitted.
 
-**2.5** Save the reviewed plan as `workshop/work/lab-01-plan.md`.
+**2.4** If it proposes extra features, paste:
 
-### Step 3: Have Copilot implement the plan
+```text
+Revise the plan to cover only status filtering and its checks.
+Keep the existing seed, API response shape and all baseline checks.
+Do not implement yet.
+```
 
-**3.1** Ask Copilot in a fresh read-only chat to review the saved plan against the
-requirements. Check its findings and approve the plan yourself before implementation.
+**Expected result:** a small plan you understand. You decide whether to approve it.
+Keep it in chat; do not copy it into a file.
 
-**3.2** Select **Agent** and attach the reviewed plan. Local **Start Implementation**
-submits immediately, so use it only after review.
+### Step 3: Let the agent implement it
 
-**3.3** Ask Agent to implement only the status filter and its tests.
+**3.1** After accepting the plan, choose the built-in **Agent** in the same chat.
+Review the tool selection; allow local file edits and build/check commands,
+not network tools or unrestricted execution.
+Do not use **Start Implementation** before you accept the plan; it may send immediately.
 
-**3.4** Inspect each proposed terminal command before approving it. Keep normal approvals on;
-do not approve unrestricted tools, network access or unexplained installs.
+**3.2** Paste:
 
-**3.5** If two attempts to fix a problem fail, stop the agent and record what is still failing.
+```text
+I approve the status-filter plan above.
+Implement only that plan and add executable acceptance checks.
+Follow the repository instructions. Keep all existing checks.
+Leave wwwroot/workshop.json unchanged for now.
+Build with dotnet build Zero2Agents.slnx.
+Only after a successful build, run
+dotnet run --project tests/QueueDesk.Checks --no-build.
+Tell me what changed and whether those commands actually passed.
+No packages, external services, commits, pushes or later features.
+Stop after two unsuccessful repairs and explain the remaining problem.
+```
+
+**3.3** Read each tool request before approving it.
+Reject unexplained installs, network access and unrelated edits.
+If it fails twice, stop. Keep the work and use the recovery path below.
+
+**Expected result:** only status filtering and its checks are changed.
+An agent's claim of success is not enough; check it next.
 
 ### Step 4: Check the result
 
-**4.1** Inspect the changed code with `git diff`. Give the diff and requirements to
-Copilot in a fresh read-only chat for review, then check its findings yourself.
+**4.1** Open **Source Control**. Select every changed and new source/check file.
+Look for changes outside the plan. Do not accept deleted baseline checks.
 
-**4.2** From the repository root, build the solution:
+**4.2** With the app stopped, run in your own terminal:
 
 ```powershell
 dotnet build .\Zero2Agents.slnx
 ```
 
-**4.3** Run the checks:
+If the build passes, run:
 
 ```powershell
 dotnet run --project .\tests\QueueDesk.Checks --no-build
 ```
 
-**4.4** In `evidence.md`, record the check and actual result for each requirement.
-An agent saying "it works" is not proof.
+Expect all baseline and new checks to pass. If not, give Agent the specific failure
+within the two-repair limit. Do not run checks on a failed build.
 
-**4.5** After the API passes the checks and human review, enable only `statusFilter` in
-[the frontend configuration](../project.md#frontend-and-feature-switches).
+**4.3** Open a fresh chat with only read/search tools. Paste:
 
-**4.6** Build again and restart the app. Stop any running app before rebuilding.
+```text
+Review my current status-filter change against workshop/project.md.
+Read the changed source and checks. Do not edit files or run commands.
+Look for invalid or repeated query values, changed seed data,
+ordering changes and missing acceptance cases.
+Give concrete findings with file locations, or explain what you could not verify.
+Do not claim that you ran checks.
+```
 
-**4.7** In the frontend, select the Open and Resolved queues. Confirm they show IDs 1,2
-and 3,4 respectively.
+**4.4** Check at least one reviewer conclusion yourself in the named file.
+If a defect is real, return it to Agent and rerun the build/checks after repair.
+You, not the reviewer, decide when the feature is ready.
 
-### Step 5: Save your checkpoint
+**4.5** Only after the checks pass and you accept the code, open
+`src/QueueDesk.Api/wwwroot/workshop.json`. Change only `"statusFilter": false`
+to `"statusFilter": true`. Save, build again, then start the app as in setup.
 
-**5.1** Review the changes and recorded results before committing.
+**4.6** Reload **http://127.0.0.1:5080/**. Choose **Open**, then **Resolved**.
+Expect IDs **1,2** and **3,4**. Open `/tickets` directly and expect **1,2,3,4**.
+Open `/tickets?status=closed` and expect a 400 error, not a successful empty list.
 
-**5.2** [Check in your reviewed files](../work/README.md#check-in-after-each-lab):
-commit the code, checks, frontend setting, plan and evidence on `workshopbranch`.
-Use the message `Complete Lab 1 status filtering`.
+**4.7** Stop the app. Follow the
+[check-in steps](../work/README.md#check-in-after-each-lab).
+Use `Add reviewed status filtering` as the commit message. No push is needed.
 
-**5.3** Confirm your new commit appears in `git log -1 --oneline` and no intended
-Lab 1 files remain uncommitted. The saved plan and evidence are now ready for Lab 2.
+### If you get stuck
+
+Keep the unfinished files. [Take a fresh start](../setup.md#start-fresh-without-losing-work)
+if needed, or go straight to Lab 2: it uses a supplied plan, not this feature.
+Do not enable the filter or call the feature complete if checks still fail.
+Missing Copilot access means you can practice the plan and code review manually,
+but have not demonstrated agent execution.
 
 ## Completion checks
 
-`status=open` returns IDs 1,2; `status=resolved` returns 3,4.
-No status returns 1,2,3,4. Empty, whitespace, mixed-case `Open`, unknown `closed`
-and `status=open&status=resolved` return 400 Problem Details.
-All original checks and your new checks pass. The frontend queues show the expected IDs.
-Your commit includes the reviewed plan, implementation and actual check results.
-No later-lab feature has been implemented.
-Problem Details is the API's structured JSON error response; use the exact fields
-required in [the API requirements](../project.md).
+- You can explain the plan and point to the changed route and new checks.
+- Open returns IDs 1,2; resolved returns 3,4; no status returns 1,2,3,4.
+- Checks reject empty, whitespace, mixed-case, unknown and repeated status values
+  with 400 Problem Details: `application/problem+json`, status 400 and a nonempty title.
+- All checks pass, and the enabled frontend calls the real filter.
+- Your reviewed files are in a local commit. No log or copied output is needed.
 
-**Keep it safe:** do not approve unrestricted tools, network access or unexplained installs.
-Approving a plan does not approve every tool call. Review the changes before committing.
-**Stretch:** add tests proving rejected queries never alter stored records; do not add search yet.
-**If you get stuck:** save the plan and failing checks. Ask the facilitator for a
-reviewed working version of the status-filter feature, not the whole day's solution.
-Record which work you inherited.
+## Next lab
 
----
-
-**Stuck?** [See a worked status-filter plan](../examples/01-status-plan.md).
-
-**Next:** [Lab 2: Give agents clear jobs and rules](02-agent-design.md)
+[Lab 2: Give agents instructions and roles](02-agent-design.md).
+It does not depend on completing this feature.

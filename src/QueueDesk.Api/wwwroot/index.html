@@ -124,9 +124,10 @@ FORM: Grounded structure 4, expandable ledger; fixed columns become stacked reco
         <button id="new-ticket" class="button primary" disabled title="Ticket creation is participant work in Lab 4"><svg class="icon"><use href="#i-plus"/></svg>New ticket<span class="button-lab">Lab 4</span></button>
       </div>
       <section id="workshop-guide" class="guide" aria-labelledby="guide-title" hidden>
-        <div class="guide-heading"><h2 id="guide-title">A workspace that grows with your lab</h2><button id="guide-close" class="icon-button" aria-label="Close workshop guide"><svg class="icon"><use href="#i-close"/></svg></button></div>
+        <div class="guide-heading"><h2 id="guide-title">Four labs, one practice app</h2><button id="guide-close" class="icon-button" aria-label="Close workshop guide"><svg class="icon"><use href="#i-close"/></svg></button></div>
         <p>These are real API results. Features stay unavailable until you implement their endpoints and enable them in <code>wwwroot/workshop.json</code>.</p>
-        <ol class="guide-steps"><li><strong>Lab 1</strong><span>Status filters</span></li><li><strong>Lab 2</strong><span>Title search</span></li><li><strong>Lab 4</strong><span>Create tickets</span></li><li><strong>Capstone</strong><span>Resolve tickets</span></li></ol>
+        <ol class="guide-steps"><li><strong>Lab 1</strong><span>Plan and build status filters</span></li><li><strong>Lab 2</strong><span>Instructions and agent roles</span></li><li><strong>Lab 3</strong><span>Tools and safety</span></li><li><strong>Lab 4</strong><span>Delegate, review and improve creation</span></li></ol>
+        <p>Each lab can start without earlier feature work. Search and resolution are optional future exercises, not required steps.</p>
         <p class="guide-footnote">Build and restart after enabling a feature. No account, secret, or external service is needed.</p>
       </section>
       <section id="create-panel" class="create-panel" aria-labelledby="create-title" hidden>
@@ -138,7 +139,7 @@ FORM: Grounded structure 4, expandable ledger; fixed columns become stacked reco
         </form>
       </section>
       <div class="queue-toolbar">
-        <form id="search-form" class="search-field" role="search"><svg class="icon"><use href="#i-search"/></svg><label class="sr-only" for="search">Search ticket titles</label><input id="search" name="q" maxlength="40" placeholder="Search tickets · available after Lab 2" disabled aria-describedby="starter-note"><button id="search-submit" class="search-submit" type="submit" disabled aria-label="Search"><svg class="icon small"><use href="#i-arrow"/></svg></button></form>
+        <form id="search-form" class="search-field" role="search"><svg class="icon"><use href="#i-search"/></svg><label class="sr-only" for="search">Search ticket titles</label><input id="search" name="q" maxlength="40" placeholder="Search tickets · optional exercise" disabled aria-describedby="starter-note"><button id="search-submit" class="search-submit" type="submit" disabled aria-label="Search"><svg class="icon small"><use href="#i-arrow"/></svg></button></form>
         <div class="toolbar-actions"><label class="sr-only" for="mobile-queue">Ticket queue</label><select id="mobile-queue" class="mobile-queue"><option value="">All tickets</option><option value="open" disabled>Open · Lab 1</option><option value="resolved" disabled>Resolved · Lab 1</option></select><label class="sr-only" for="sort">Sort tickets</label><select id="sort" aria-label="Sort tickets"><option value="id">Ticket number</option><option value="priority">Priority: high first</option><option value="title">Title: A–Z</option></select><button id="refresh" class="icon-button" aria-label="Refresh tickets" title="Refresh tickets"><svg class="icon"><use href="#i-refresh"/></svg></button></div>
       </div>
       <div id="notice" class="notice" role="status" hidden></div>
@@ -153,7 +154,7 @@ FORM: Grounded structure 4, expandable ledger; fixed columns become stacked reco
         <div id="empty" class="empty-state" hidden><svg class="icon"><use href="#i-search"/></svg><h2>No tickets match this view</h2><p>Try a different title or return to the full queue.</p><button id="reset" class="button secondary">Show all tickets</button></div>
         <footer class="ledger-footer"><span id="result-count" aria-live="polite">Connecting to your API…</span><span class="ledger-source"><svg class="icon small"><use href="#i-code"/></svg>Live from your local API</span></footer>
       </section>
-      <div class="starter-note" id="starter-note"><svg class="icon small"><use href="#i-info"/></svg><p id="starter-copy">Viewing is ready. Filters, search, and ticket actions unlock as you build their API features.</p><button id="feature-guide" class="text-button" aria-controls="workshop-guide" aria-expanded="false">See the lab sequence <span aria-hidden="true">→</span></button></div>
+      <div class="starter-note" id="starter-note"><svg class="icon small"><use href="#i-info"/></svg><p id="starter-copy">Viewing is ready. Filters, search, and ticket actions unlock as you build their API features.</p><button id="feature-guide" class="text-button" aria-controls="workshop-guide" aria-expanded="false">See the four labs <span aria-hidden="true">→</span></button></div>
       <footer class="page-footer"><span>QueueDesk · zero2agents</span><span>In-memory workspace. Restarting the API restores the sample tickets.</span></footer>
       <noscript><p class="error-state">QueueDesk needs JavaScript to load ticket data. The <a href="/tickets">raw ticket API</a> remains available.</p></noscript>
     </main>
