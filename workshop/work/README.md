@@ -1,7 +1,8 @@
 # Your workshop evidence
 
-Create `workshop/work/<pair-name>/` on your working branch. Use your pair's neutral alias,
-not personal information. Commit useful, sanitized artifacts with your checkpoints.
+Save your workshop notes in `workshop/work/` on your working branch.
+No pair-name folder is needed. Commit useful notes and results with your checkpoints,
+but leave out personal or sensitive information.
 
 | Artifact | Created in |
 | --- | --- |
