@@ -3,7 +3,7 @@
 ## Goal
 
 Install GitHub Copilot CLI, sign in, and check that it can read the workshop project.
-This is only for the [optional CLI lab](labs/06-cli-agent.md).
+This is only for the [optional CLI lab](labs/05-cli-agent.md).
 The four primary labs use VS Code and do not need the CLI.
 
 ## Prerequisites
@@ -12,7 +12,7 @@ Complete the shared [setup and preflight](setup.md).
 Use your organization's approved installation process and Copilot account.
 CLI access depends on your account and organization policy.
 If installation or access is blocked, ask the facilitator. Do not bypass restrictions.
-You can use the lab's [design example](examples/bonus-06-cli-agent.md) instead;
+You can use the lab's [design example](examples/bonus-05-cli-agent.md) instead;
 that is design review, not CLI execution.
 
 ## 1. Install the CLI
@@ -101,4 +101,4 @@ If access is denied, stop and ask the facilitator.
 
 No files need to change, and no new Git commit is needed. Keep your existing checkpoint.
 
-**Next:** [Create a ticket-triage agent in Copilot CLI](labs/06-cli-agent.md).
+**Next:** [Create a ticket-triage agent in Copilot CLI](labs/05-cli-agent.md).

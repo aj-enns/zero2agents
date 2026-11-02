@@ -12,7 +12,7 @@ You do not need to copy it into a work folder.
 | Lab 4 | [A complete task and a useful review](04-creation-handoff.md) |
 | Evaluation within Lab 4 | [Compare one instruction change](05-evaluation.md) |
 | Final practice | [Where the former capstone went](06-capstone.md) |
-| Optional CLI | [Advice-only QueueTriage profile and sample answer](bonus-06-cli-agent.md) |
+| Optional Lab 5 | [Advice-only QueueTriage profile and sample answer](bonus-05-cli-agent.md) |
 
 Examples do not prove a tool ran or a check passed.
 Agent templates here are inactive until deliberately copied into `.github/agents`.

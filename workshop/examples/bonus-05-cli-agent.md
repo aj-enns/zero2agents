@@ -1,6 +1,6 @@
 # Optional CLI example: QueueTriage
 
-[All examples](README.md) | [Optional CLI practice](../labs/06-cli-agent.md)
+[All examples](README.md) | [Optional CLI practice](../labs/05-cli-agent.md)
 
 This is an **inactive reference profile and illustrative response**, not a record of CLI
 creation, tool verification or agent execution. Create and review your own profile through

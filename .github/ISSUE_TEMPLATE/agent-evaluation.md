@@ -16,7 +16,8 @@ tool trace. No credentials or private external data.
 
 ## Score and impact
 
-Use workshop/labs/05-evaluation.md. Separate behavior from test coverage.
+Use [Lab 4's comparison steps](../../workshop/labs/04-handoff-review.md#46-compare-and-improve-one-instruction).
+Separate behavior from test coverage.
 
 ## Bounded improvement
 

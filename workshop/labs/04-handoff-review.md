@@ -298,6 +298,6 @@ assuming a longer instruction is better.
 The four primary labs are complete. Show one real result and explain one review
 decision aloud. There is no separate capstone.
 
-Optional: [try Copilot CLI](06-cli-agent.md),
-[manage two read-only sessions](07-manage-agent-sessions.md), or read
+Optional: [Lab 5: try Copilot CLI](05-cli-agent.md),
+[Lab 6: manage two read-only sessions](06-manage-agent-sessions.md), or read
 [the hosted delegation option](../governance.md#optional-hosted-delegation).
