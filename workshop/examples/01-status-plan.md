@@ -17,4 +17,4 @@ You do not need to save a copy.
 7. Let the human inspect the diff and actual results before enabling `statusFilter`.
 
 No search, creation, resolution, package, deployment or new storage is needed.
-Return to [Lab 1 Step 2](../labs/01-plan-to-agent.md#step-2-ask-for-a-plan).
+Return to [section 1.2](../labs/01-plan-to-agent.md#12-ask-for-a-plan).

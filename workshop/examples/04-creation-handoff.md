@@ -3,7 +3,7 @@
 [Lab 4](../labs/04-handoff-review.md) | [All examples](README.md)
 
 Use the complete paste-ready task in
-[Lab 4 Step 2](../labs/04-handoff-review.md#step-2-hand-off-a-complete-task).
+[section 4.2](../labs/04-handoff-review.md#42-hand-off-a-complete-task).
 It supplies the outcome, files, contract, tool limits and next action.
 A fresh agent does not need your earlier conversation.
 

@@ -1,6 +1,6 @@
 # Example: compare one instruction change
 
-[Lab 4 comparison](../labs/04-handoff-review.md#step-6-compare-and-improve-one-instruction)
+[Lab 4 comparison](../labs/04-handoff-review.md#46-compare-and-improve-one-instruction)
 | [All examples](README.md)
 
 Suppose a reviewer finds missing checks, but does not make clear that it did not
