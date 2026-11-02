@@ -1,6 +1,8 @@
 # Lab 2: Repository instructions and custom-agent design
 
-**09:45-10:45 (60 minutes)** | [Previous](01-plan-to-agent.md) | [Next](03-mcp.md)
+**Expected completion time: 60 minutes** | [Previous](01-plan-to-agent.md) | [Next](03-mcp.md)
+
+Work through the checkpoints at your own pace; the estimate is a guide, not a deadline.
 
 **Outcome:** design a planner/reviewer collaboration and use it for bounded title search.
 The built-in Agent remains the implementer; two custom roles are enough.
@@ -8,32 +10,32 @@ Read [the search contract](../project.md) and [surface reference](../references.
 
 ## Work and checkpoints
 
-1. **0-10 min: define responsibilities.** Fill [agent contracts](../templates/agent-contract.md)
+1. **Define responsibilities.** Fill [agent contracts](../templates/agent-contract.md)
    for QueuePlanner and QueueReviewer: purpose, inputs, outputs, tools, file/data boundaries,
    escalation, human owner, time/retry budget, and handoff acceptance.
    Write what a role must refuse, not just what it should do.
-2. **10-20 min: refine instructions.** Improve `.github/copilot-instructions.md` using
+2. **Refine instructions.** Improve `.github/copilot-instructions.md` using
    concrete repository evidence: compatibility, validation, deterministic data and scope.
    Create `.github/instructions/tests.instructions.md` using the
    [scoped template](../templates/tests.instructions.template.md).
    `applyTo: "tests/**/*.cs"` targets test files; it is not repository-wide.
    Repository and matching scoped guidance combine. These are not inline-completion rules.
-3. **20-30 min: author and validate roles.** Use **Chat: New Custom Agent** or create
+3. **Author and validate roles.** Use **Chat: New Custom Agent** or create
    `.github/agents/planner.agent.md` and `.github/agents/reviewer.agent.md`.
    Use the [planner](../templates/planner.agent.template.md) and
    [reviewer](../templates/reviewer.agent.template.md) templates, replacing their unfinished
    bodies with your contracts. Select **Local** and retain `target: vscode`.
    Verify they appear in the picker, and inspect tool inventory/diagnostics.
-4. **30-45 min: exercise collaboration.** QueuePlanner plans `q` title search with AND
+4. **Exercise collaboration.** QueuePlanner plans `q` title search with AND
    status composition. Review its plan, then use the `send: false` handoff to built-in
    `agent`, inspect the pre-filled prompt, and submit only the approved scope.
    Implement checks and search. Make a packet using [handoff.md](../templates/handoff.md).
    Manually select QueueReviewer and supply the packet plus diff/changed files.
-5. **45-55 min: validate boundaries and results.** Ask QueueReviewer to edit a file and
+5. **Validate boundaries and results.** Ask QueueReviewer to edit a file and
    run checks: it should refuse or explain tool unavailability, not claim execution.
    The **human** runs build/checks and confirms search evidence. Verify the scoped
    instruction was attached/loaded when editing a test (References/diagnostics where offered).
-6. **55-60 min: commit.** Save contracts, active roles, instructions, implementation and
+6. **Save your checkpoint.** Commit contracts, active roles, instructions, implementation and
    evidence. Record one change you would make to the role based on actual behavior.
 
 Use documented aliases `read` and `search` for read-only roles, and the editor's completions
@@ -64,3 +66,7 @@ If an agent expands into a database, deployment or next-lab route, stop and narr
 **Stretch:** compare two versions of one role on the same task; no extra agent framework.
 If behind, prioritize working role contracts and tool verification; record unfinished search
 and obtain the facilitator's search checkpoint before the afternoon.
+
+---
+
+**Next:** [Lab 3: Bounded MCP integration](03-mcp.md)
