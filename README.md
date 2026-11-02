@@ -10,9 +10,29 @@ Copilot usage and optional GitHub-hosted execution remain subject to your accoun
 -> [Governance checkpoint](workshop/governance.md) -> [Lab 4](workshop/labs/04-handoff-review.md)
 -> [Evaluation](workshop/labs/05-evaluation.md) -> [Capstone](workshop/capstone.md).
 
-By the end, you will have a tested feature, scoped repository instructions, two custom-agent roles,
-a reviewed handoff, and a repeatable evaluation with evidence rather than confidence alone.
+## What you will learn
+
+1. **[Plan before you build](workshop/labs/01-plan-to-agent.md).** Ask Copilot for a plan,
+   review it, then let it write code and check the results.
+2. **[Give agents clear jobs and rules](workshop/labs/02-agent-design.md).** Create planning
+   and reviewing agents, and teach them your project's standards and limits.
+3. **[Connect agents to outside tools safely](workshop/labs/03-mcp.md).** Use MCP to let
+   an agent read official documentation while controlling what it can access and share.
+4. **[Delegate work and review what comes back](workshop/labs/04-handoff-review.md).**
+   Give an agent a clear GitHub issue, then review its code, tests and pull request.
+
+You will also compare agent results, improve their instructions and put the whole workflow
+into practice in a final challenge. By the end, you will have a tested feature, project
+instructions, two custom-agent roles and a reviewed handoff.
 Work in pairs: driver and reviewer, swapping after each lab.
+
+## Optional bonus labs
+
+**[Bonus Lab 6: Create a ticket-triage agent in Copilot CLI](workshop/labs/06-cli-agent.md)**
+uses the CLI's agent-creation flow to build an agent that recommends ticket priorities
+and next steps without changing tickets. Check whether your CLI offers `/create-agent`;
+the documented alternative is `/agent`, then **N**. Allow about 30 minutes after the
+core workshop. Lab 5 remains evaluation; the 08:00-16:00 agenda below is unchanged.
 
 ## Prerequisites
 
@@ -46,17 +66,17 @@ Times are local workshop time. Breaks and lunch are included in the eight-hour d
 
 | Time | Session |
 | --- | --- |
-| 08:00-08:30 | Kickoff, outcomes and preflight |
-| 08:30-09:30 | Lab 1: Plan-to-Agent workflow |
+| 08:00-08:30 | Welcome, goals and setup checks |
+| 08:30-09:30 | Lab 1: Plan before you build |
 | 09:30-09:45 | Break |
-| 09:45-10:45 | Lab 2: Repository instructions and custom-agent design |
-| 10:45-11:30 | Lab 3: Bounded MCP integration |
-| 11:30-12:00 | Governance applied to the morning work |
+| 09:45-10:45 | Lab 2: Give agents clear jobs and rules |
+| 10:45-11:30 | Lab 3: Connect agents to outside tools safely |
+| 11:30-12:00 | Check permissions, safety rules and usage limits |
 | 12:00-12:45 | Lunch |
-| 12:45-14:00 | Lab 4: GitHub cloud/coding-agent handoff and evidence-based PR review |
+| 12:45-14:00 | Lab 4: Delegate work and review what comes back |
 | 14:00-14:15 | Break |
-| 14:15-14:45 | Agent evaluation, iteration and management |
-| 14:45-15:45 | End-to-end capstone |
+| 14:15-14:45 | Compare agent results and improve their instructions |
+| 14:45-15:45 | Final challenge: use the whole workflow |
 | 15:45-16:00 | Demos, wrap-up and next steps |
 
 ## Starter
@@ -84,4 +104,5 @@ The dependency-free checks start their own API on an ephemeral loopback port, pr
 and exit nonzero on failure. **`dotnet test` is not the test runner for this starter.**
 Keep evidence in [your workshop work folder](workshop/work/README.md).
 The primary editor path is **VS Code, Local harness, GitHub Copilot**; alternatives and access
-fallbacks are in setup. [Official references](workshop/references.md) were checked **2026-11-01**.
+fallbacks are in setup. [Official references](workshop/references.md) were checked **2026-11-01**;
+CLI bonus-lab guidance was checked separately **2026-11-02**.

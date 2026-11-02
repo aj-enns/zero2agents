@@ -12,6 +12,7 @@ Use the structure and reasoning, not a claim that your own work has passed.
 | Lab 4 | [Agent-ready issue and implementation-to-review handoff](04-creation-handoff.md) |
 | Lab 5 | [Before/after evaluation and management decision](05-evaluation.md) |
 | Capstone | [Resolution plan, handoff and demo](06-capstone.md) |
+| Bonus Lab 6 | [CLI ticket-triage agent and response](bonus-06-cli-agent.md) |
 
 **Evidence labels matter.** Plans and role definitions are usable reference designs.
 Research, handoff, evaluation and demo examples are explicitly illustrative: no live

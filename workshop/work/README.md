@@ -13,6 +13,7 @@ not personal information. Commit useful, sanitized artifacts with your checkpoin
 | `creation-issue.md` and `handoff.md` | Lab 4 |
 | `evaluation.md` from the evaluation template | Evaluation block |
 | `capstone-plan.md` and `demo.md` | Capstone and wrap-up |
+| `cli-agent.md` and `triage-input.md` | Optional Bonus Lab 6 |
 
 Templates are in [../templates](../templates/evidence.md).
 For optional completed reference artifacts, see [worked examples](../examples/README.md).
