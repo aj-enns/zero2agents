@@ -40,7 +40,7 @@ Invoke-RestMethod "http://127.0.0.1:5080/tickets?status=open" | Format-Table
 
 **1.5** In VS Code, inspect `src/QueueDesk.Api/TicketEndpoints.cs` and `InMemoryTicketStore.cs`.
 
-**1.6** In `workshopbranch/evidence.md`, record your starting commit
+**1.6** In `workshopbranch/workshop/evidence.md`, record your starting commit
 (`git rev-parse HEAD`), what went wrong and what must stay the same without a filter.
 
 **1.7** Stop the app with Ctrl+C in its terminal before rebuilding.
