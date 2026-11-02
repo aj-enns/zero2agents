@@ -256,6 +256,10 @@ record that limitation instead. Save the file.
 In Source Control, stage only this evidence file and commit with the message
 `Record session-management exercise`.
 
+**6.5** Follow the [check-in confirmation](../work/README.md#check-in-after-each-lab).
+Confirm the commit contains `session-management.md` and no intended exercise changes
+remain uncommitted. No push is needed.
+
 **Expected result:** the sessions leave the active list, but their history remains available.
 Do not delete sessions, clean up other people's work, or change automatic cleanup settings.
 
@@ -265,6 +269,7 @@ Do not delete sessions, clean up other people's work, or change automatic cleanu
 - You checked actual progress and handled a follow-up or input request.
 - You verified one claim per result and confirmed no agent edits.
 - Your saved handoff names the app, limits, and anything not demonstrated.
+- Your checkpoint commit contains the reviewed evidence and session-cleanup record.
 - You can find the completed or archived sessions without deleting them.
 
 ## Next lab

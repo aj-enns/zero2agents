@@ -12,6 +12,8 @@ Practice **verbal economy**: use the fewest words that keep the meaning and guid
 - Break each main step into numbered substeps, such as 1.1, 1.2, and 1.3.
 - Give each step a clear action, where to do it, and the expected result. Include commands or examples when useful.
 - Make completion checks observable. Link to shared setup rather than repeating it.
+- End each lab with a reviewed Git commit checkpoint and an observable completion check.
+  Link to `workshop/work/README.md#check-in-after-each-lab`; distinguish committing from pushing.
 
 ## Code and feature scope
 

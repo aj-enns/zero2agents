@@ -331,6 +331,8 @@ files or sensitive content are staged.
 git commit -m "Add QueueTriage agent and exercise evidence"
 ```
 
+Follow the [check-in confirmation](../work/README.md#check-in-after-each-lab).
+Confirm no intended Bonus Lab 6 files remain uncommitted.
 Do not merge or publish changes as part of this exercise.
 
 ### Step 7: Use the fallback if CLI is blocked
@@ -354,6 +356,10 @@ or claim the CLI created or executed it.
 
 **7.3** Record **CLI CREATION AND EXECUTION NOT DEMONSTRATED** in `cli-agent.md`.
 Save your design notes. This fallback does not complete the CLI outcomes.
+
+**7.4** [Check in only your reviewed fallback notes](../work/README.md#check-in-after-each-lab).
+Use the message `Record CLI agent design-only fallback`.
+Confirm the commit exists; do not claim an agent was created or run.
 
 ## Completion checks
 

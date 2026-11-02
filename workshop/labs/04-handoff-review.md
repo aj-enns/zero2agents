@@ -437,7 +437,9 @@ gap and ask the facilitator for a reviewed checkpoint instead of starting anothe
 **4.2** Record the actual results, human decision and remaining gaps in the handoff.
 Mark unfinished work as incomplete.
 
-**4.3** Commit the handoff and any accepted frontend setting on the reviewed branch.
+**4.3** [Check in your reviewed files](../work/README.md#check-in-after-each-lab):
+commit the handoff, any accepted repairs and frontend setting on the reviewed branch.
+Confirm the commit exists and no intended Lab 4 files remain uncommitted.
 If you have a PR, push the update where permitted; if you cannot update it, record
 the limitation and ask the facilitator how to continue. A local review needs no push.
 
@@ -453,6 +455,7 @@ path and starting/result commits. Only the requested feature was added.
 Tests cover ticket creation, invalid input, concurrency and the earlier features.
 You ran the build/checks yourself and recorded actual results and the human review decision.
 The handoff record contains enough context for a fresh agent session to continue.
+The reviewed branch includes commits for the implementation and final review evidence.
 If the feature is unfinished, mark it incomplete and record which reviewed working
 version or fallback you will use for the capstone; do not report unfinished work as passed.
 **Stretch:** compare hosted and local handoff context gaps; do not launch a second hosted task.

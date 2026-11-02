@@ -246,6 +246,13 @@ stop here and ask the facilitator; do not record successful cleanup.
 the task packet so a fresh agent can use them without this chat.
 Keep `.vscode/mcp.json` local; do not force-add it to Git or paste it into GitHub settings.
 
+**5.5** [Check in your reviewed files](../work/README.md#check-in-after-each-lab)
+on `workshopbranch`. Stage `workshop/work/mcp-research.md`,
+`workshop/work/mcp-untrusted-input.md` and any updated evidence.
+Use the message `Complete Lab 3 documentation research`.
+Confirm the commit exists and no intended Lab 3 files remain uncommitted.
+Do not include local MCP configuration; no push is needed.
+
 ## Important: trust and settings depend on where the agent runs
 
 Current VS Code docs say workspace MCP configurations inherit **Workspace Trust**.
@@ -282,6 +289,7 @@ MCP did not run. Record how the agent handled the unsafe text, or state that the
 test was not run if you reviewed it manually. Do not report unsafe actions, extra tool
 access or invented test results as a pass.
 The notes contain a recommendation for Lab 4. No API code changed.
+Your Lab 3 commit contains the research, synthetic unsafe-input file and actual results.
 **Stretch:** identify one recommendation the docs do not prove and design a check for it.
 
 ---

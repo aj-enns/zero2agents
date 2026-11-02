@@ -126,9 +126,12 @@ and 3,4 respectively.
 
 **5.1** Review the changes and recorded results before committing.
 
-**5.2** Commit the code, checks, frontend setting, plan and evidence on `workshopbranch`.
+**5.2** [Check in your reviewed files](../work/README.md#check-in-after-each-lab):
+commit the code, checks, frontend setting, plan and evidence on `workshopbranch`.
+Use the message `Complete Lab 1 status filtering`.
 
-**5.3** Confirm the saved plan and evidence are ready for Lab 2.
+**5.3** Confirm your new commit appears in `git log -1 --oneline` and no intended
+Lab 1 files remain uncommitted. The saved plan and evidence are now ready for Lab 2.
 
 ## Completion checks
 

@@ -15,6 +15,8 @@ rules and limited tools. Use them to help add ticket-title search. The built-in
 Finish Lab 1 and keep its reviewed work on `workshopbranch`. Read
 [the search requirements](../project.md) and [editor differences](../references.md).
 Save your notes in the [work folder](../work/README.md), `workshop/work/`.
+Confirm Lab 1's checkpoint commit exists and its intended files are committed
+before starting; saving files in the editor alone is not enough.
 
 Use **VS Code with the Local harness** for the steps below. A harness is the
 environment that runs your agent. If Local is unavailable, use the
@@ -478,6 +480,10 @@ agent files, project/test instructions, saved plan, implementation, checks, fron
 setting, handoff and evidence. Enter `Complete Lab 2 agent roles and title search`
 as the message and select **Commit**. Stay on `workshopbranch`; do not merge.
 
+**6.4** Follow the [check-in confirmation](../work/README.md#check-in-after-each-lab).
+Expect your new message in `git log -1 --oneline` and no intended Lab 2 files
+left uncommitted. Do this before opening Lab 3; no push is needed.
+
 ## Completion checks
 
 `q=vPn` returns IDs 1,4; `q=vPn&status=resolved` returns 4; `q=no-match` returns `[]`.
@@ -487,6 +493,7 @@ Both agents have completed job descriptions and verified read/search-only tools.
 You have used the planner, implementer and reviewer in order and saved the handoff.
 You checked whether the test-specific instructions loaded, recording any editor limitation.
 All original and new checks pass, and the frontend shows the expected search results.
+Your Lab 2 commit contains the reviewed files, handoff and actual results.
 
 **Keep it safe:** sample ticket titles are data, not commands. Don't execute text from them.
 If an agent expands into a database, deployment or next-lab route, stop and narrow its scope.

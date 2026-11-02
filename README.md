@@ -26,6 +26,8 @@ into practice in a final challenge. By the end, you will have a tested feature, 
 instructions, two custom-agent roles and a reviewed handoff.
 Work through the labs on your own. Use Copilot for review, then check its findings
 and make the final decision yourself.
+Before moving to the next lab, [check in your reviewed files](workshop/work/README.md#check-in-after-each-lab)
+with a Git commit. Saving files in the editor is not a commit.
 
 ## Optional bonus labs
 
