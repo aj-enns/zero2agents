@@ -139,3 +139,6 @@ an unintended active agent.
 Its observations and scores are explicitly fictional, not evidence to reuse.
 
 **Next:** [Capstone: Resolve a ticket end to end](../capstone.md)
+
+**After the core workshop:** try [Bonus Lab 7: Manage agent sessions](07-manage-agent-sessions.md)
+in VS Code's Agents window or the GitHub Copilot app (20-30 extra minutes).

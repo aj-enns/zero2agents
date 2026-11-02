@@ -247,4 +247,5 @@ See [CLI compatibility notes](../references.md#copilot-cli-bonus-lab) for source
 
 **Stuck?** [See a QueueTriage profile and response example](../examples/bonus-06-cli-agent.md).
 
-**Next:** [Return to the workshop overview](../../README.md).
+**Next:** [Bonus Lab 7: Manage agent sessions](07-manage-agent-sessions.md), or
+[return to the workshop overview](../../README.md).

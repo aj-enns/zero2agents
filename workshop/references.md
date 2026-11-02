@@ -39,6 +39,24 @@ not start, so interactive creation and tool enforcement were **not locally verif
 Participants capture their own version, command, loaded tools and observed responses.
 The worked example is inactive and illustrative, not execution evidence.
 
+## Optional session-management lab
+
+**Checked: 2026-11-02.** These sources support the
+[Bonus Lab 7](labs/07-manage-agent-sessions.md). The two apps have different controls;
+the lab does not require session transfer between them.
+
+| Official source | What this lab relies on |
+| --- | --- |
+| [VS Code Agents window](https://code.visualstudio.com/docs/agents/run/agents-window) | Command Palette entry, new sessions, folder selection, session list, and changes view. Worktree sessions use Allow all; the lab instead uses read-only tasks in a shared folder with approvals. |
+| [Manage VS Code sessions](https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions) | Resume and monitor sessions; Mark as Done, Done filter, and Restore. Separate conversations do not isolate file changes. Local harness sessions are editor-only. |
+| [GitHub Copilot app sessions](https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions) | Sessions +, This computer, Current checkout, Interactive, Ask every time, and Settings > Sessions > Manage sessions. Session mode and tool permissions are separate. |
+| [GitHub Copilot app overview](https://docs.github.com/en/copilot/concepts/copilot-surfaces/github-copilot-app) | Repository-based session lists and parallel workspaces. Availability depends on account and organization policy. |
+| [VS Code agent controls](https://code.visualstudio.com/docs/agents/overview#stay-in-control) | Steer or stop requests; stopping does not undo completed actions. Worktrees are not security boundaries. |
+
+Image placeholders in the lab include capture notes in HTML comments. Add screenshots
+from the approved versions used for the cohort. Show real states, keep labels readable,
+and crop account details, unrelated repositories, and private conversations.
+
 ## MCP and trust
 
 | Official source | Relevant behavior |

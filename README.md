@@ -34,6 +34,11 @@ and next steps without changing tickets. Check whether your CLI offers `/create-
 the documented alternative is `/agent`, then **N**. Allow about 30 minutes after the
 core workshop. Lab 5 remains evaluation; the 08:00-16:00 agenda below is unchanged.
 
+**[Bonus Lab 7: Manage agent sessions](workshop/labs/07-manage-agent-sessions.md)**
+uses VS Code's Agents window or the GitHub Copilot app to track two read-only tasks,
+guide their work, and review the results. Allow 20-30 minutes after the core workshop.
+You can take either bonus lab on its own.
+
 ## Prerequisites
 
 Complete these before the workshop; allow **20-30 minutes** for setup.
