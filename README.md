@@ -1,6 +1,6 @@
 # zero2agents
 
-A one-day, **08:00-16:00** workshop for teams already using GitHub Copilot.
+A one-day, **08:00-16:00** workshop for developers already using GitHub Copilot.
 Design, build, evaluate, and manage **development agents** against a small C# service-desk API.
 No Azure subscription, database, API keys, or paid infrastructure is required for the local path.
 Copilot usage and optional GitHub-hosted execution remain subject to your account's allowances.
@@ -24,7 +24,8 @@ Copilot usage and optional GitHub-hosted execution remain subject to your accoun
 You will also compare agent results, improve their instructions and put the whole workflow
 into practice in a final challenge. By the end, you will have a tested feature, project
 instructions, two custom-agent roles and a reviewed handoff.
-Work in pairs: driver and reviewer, swapping after each lab.
+Work through the labs on your own. Use Copilot for review, then check its findings
+and make the final decision yourself.
 
 ## Optional bonus labs
 
@@ -48,7 +49,7 @@ Complete these before the workshop; allow **20-30 minutes** for setup.
 | Git | [Install Git](https://git-scm.com/downloads), then confirm `git --version` works. |
 | VS Code | [Install VS Code](https://code.visualstudio.com/download). Add the Microsoft-published **C#** and **GitHub Copilot** extensions; sign in to Copilot. C# Dev Kit is optional where approved/licensed. |
 | .NET SDK | Use **10.0.300 or a newer stable 10.0 SDK**. If missing, [download the .NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0), choose your OS/architecture, and install the **SDK**, not just the runtime. |
-| GitHub access | Use your own Copilot-enabled account with approved access to the private workshop/pair repository. Confirm organization policies allow the editor agent features. |
+| GitHub access | Use your own Copilot-enabled account with approved access to the private workshop repository. Confirm organization policies allow the editor agent features. |
 | Working knowledge | Be comfortable with basic C#, Git branches/commits, and reviewing a pull request. No agent-design experience is required. |
 
 Restart VS Code and your terminal after installation. From your checkout, verify:

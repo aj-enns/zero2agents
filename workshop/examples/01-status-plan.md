@@ -4,7 +4,7 @@
 
 **Reference plan, not an implemented solution or approval record.**
 Use this as the shape of `lab-01-plan.md`; record your own starting commit with
-`git rev-parse HEAD` and obtain your partner's actual approval before implementation.
+`git rev-parse HEAD`, review the plan with Copilot, and approve it yourself before implementation.
 
 ## Problem and scope
 

@@ -10,7 +10,7 @@ commit, including earlier features, and record its hash.
 
 Scope: `POST /tickets/{id:int}/resolve`, preserving creation, search, filters and seed reset.
 Non-goals: persistence, auth, summary stretch work, packages, external services and policy edits.
-Owner: Pair Cedar driver; human approval/review: Pair Cedar reviewer.
+Owner and final approval/review: workshop developer, supported by QueueReviewer.
 Use QueuePlanner for planning, built-in Agent for implementation, QueueReviewer for inspection.
 Stop after two failed implementation repairs and hand back the actual gaps.
 

@@ -20,7 +20,7 @@ experience is the intended path; confirm Plan and custom-agent support before pr
 | VS Code Local (primary) | Plan -> Agent; `.agent.md` with `target: vscode`; Local handoff buttons; `.vscode/mcp.json` with `servers`. |
 | VS Code Copilot harness on your machine | `/plan`, then review/approve; use runtime-compatible tools. Local `handoffs` are not supported; transfer the written handoff manually. MCP uses a different destination/format. |
 | Visual Studio, JetBrains, CLI, or Copilot app | Optional, only if already configured. Have the facilitator verify instructions, agents and tools in that surface. Use written plans/handoffs where UI parity is absent. These are not click-for-click substitutes. |
-| No usable Copilot access | Pair with an entitled participant, or implement/review manually. Record that agent execution/evaluation was not demonstrated. Never share accounts or tokens. |
+| No usable Copilot access | Implement and review manually. Record that agent execution/evaluation was not demonstrated. Never share accounts or tokens. |
 
 Changing the model does not change the harness or permissions. In this workshop, use normal
 per-action approvals; do not enable blanket approval, Autopilot, or unattended delegation.
@@ -35,15 +35,15 @@ The source, **aj-enns/zero2agents**, is private. A URL alone does not grant acce
 The facilitator must grant approved access or supply a permitted private team copy.
 Do not make it public to work around access controls.
 
-Prefer a **separate private repository per pair** with this starter on its default branch.
+Prefer a **separate private repository per developer** with this starter on its default branch.
 Use **Use this template** only if the owner has marked the repository as a template and the
 destination visibility/owner are approved. Private forks require repository/organization
 forking permission, remain subject to private-network visibility rules, and are not a
 guaranteed fallback. If neither is offered, ask the facilitator for a private copy, or use
-the approved shared cohort repository with a distinct pair branch.
+the approved shared cohort repository with your own branch.
 An offline approved checkout still supports local handoff and review.
 
-Clone the **assigned pair/cohort URL**, not an invented public fork:
+Clone the **assigned private repository URL**, not an invented public fork:
 
 ```text
 git clone <your-assigned-private-repository-url>
@@ -51,14 +51,14 @@ cd <your-checkout-folder>
 git switch -c workshopbranch
 ```
 
-Use `workshopbranch` as written in your pair's repository. In a shared cohort repository,
+Use `workshopbranch` as written in your own repository. In a shared cohort repository,
 ask the facilitator for a unique branch name instead.
 
 Run commands from the repository root. Keep work on this branch through the morning.
 Labs use `workshopbranch` for morning work and `workshopcreation` for Lab 4's local
 implementation. If you were assigned unique names, use those wherever these names appear.
 Commit checkpoints so you can return to a known state without discarding work.
-Do not change the source repository's default branch or overwrite another pair's branch.
+Do not change the source repository's default branch or overwrite another developer's branch.
 The private source's workshop release may be on a published feature branch; use the
 facilitator's specified release commit when making a copy.
 
@@ -128,10 +128,10 @@ Check these **before** waiting for a tool in a lab:
 
 | Capability | Evidence to collect | If unavailable |
 | --- | --- | --- |
-| Copilot | Entitlement/assigned seat, permitted model and agent features, SSO if required; a repo question answered in your editor | Pair or manual path; do not assume Free includes the day's hosted features. |
+| Copilot | Entitlement/assigned seat, permitted model and agent features, SSO if required; a repo question answered in your editor | Manual path; do not assume Free includes the day's hosted features. |
 | Plan and custom agents | Local Plan visible; workspace instructions discoverable; custom-agent authoring command available | Written plan plus explicitly selected Agent; record missing configuration support. |
-| GitHub-hosted agent | Write access to the pair repo, policy permits Copilot in the cloud, Actions-based execution available, Actions/setup downloads permitted, billing owner and limits known | Lab 4's local handoff is a full review exercise, **not equivalent cloud execution**. |
-| Human PR review | A second reviewer with appropriate repo permissions, branch/ruleset compatibility, ability to inspect workflows before approval | Review the committed local diff; keep the human gate. |
+| GitHub-hosted agent | Write access to your workshop repo, policy permits Copilot in the cloud, Actions-based execution available, Actions/setup downloads permitted, billing owner and limits known | Lab 4's local handoff is a full review exercise, **not equivalent cloud execution**. |
+| Solo review | You can inspect diffs/workflows and run checks; Copilot review is available where permitted | Review manually if Copilot is unavailable. If PR rules require another human, review locally and leave the PR unmerged; do not bypass the rules. |
 | MCP | Admin permits Microsoft Learn endpoint and read-only documentation tools; review terms and configuration before trusting/starting | Lab 3's no-MCP research path. No tokens, local runtimes or other MCP servers needed. |
 
 Since **2026-10-28**, GitHub's newer paid-plan cloud experience can offer cloud sandboxes
@@ -141,16 +141,16 @@ machine, cloud sandbox, and Actions runner.
 
 No universal entitlement or fixed workshop price is promised. Have the billing owner
 approve usage limits. Copilot AI usage, private-repo Actions/hosted compute, and sandbox
-compute/memory/snapshot storage can have distinct meters. One task per pair, normal model
+compute/memory/snapshot storage can have distinct meters. One task per developer, normal model
 selection, 25-minute execution limit and at most two repairs keep experimentation bounded,
 but **time limits are not monetary caps**. Do not provision cloud resources to participate.
 
 ## 08:00-08:30 kickoff checkpoint
 
-Use 10 minutes for outcomes/roles, 15 for baseline and access checks, 5 for your work record.
+Use 10 minutes for outcomes and agent roles, 15 for baseline and access checks, 5 for your work record.
 Open [your workshop work folder](work/README.md) at `workshop/work/`. Copy
 [the evidence template](templates/evidence.md) to `workshop/work/evidence.md`.
-No extra folder or pair name is needed.
+No extra folder or personal name is needed.
 The folder guide lists the artifacts you will save in each lab.
 Record version, model, harness, commit,
 enabled capabilities, fallback path and agreed owner/budget. Keep all data synthetic.

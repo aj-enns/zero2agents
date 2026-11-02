@@ -11,8 +11,8 @@ You do not need formal wording or a JSON schema.
 
 ## Name and owner
 
-What is the agent called? Which version is this? Who in your pair reviews its work
-and decides whether to accept it? Use your pair alias or driver/reviewer role,
+What is the agent called? Which version is this? You review its work and decide
+whether to accept it, with Copilot's help. Use "workshop developer" as the owner,
 not personal or account information.
 
 ## Where it runs
@@ -57,11 +57,11 @@ Choose a maximum agent runtime and retry count to bound autonomous work.
 These are agent safety limits, not deadlines for you to finish the lab.
 Which decisions need human approval before work continues?
 
-## Passing work to the next person or agent
+## Passing work between you and agents
 
 Who provides this agent's task, and who uses its output?
-What context and evidence must travel with the output so the next person does not
-need the original chat? What would make that person accept it or send it back?
+What context and evidence must travel with the output so a fresh agent session does not
+need the original chat? What would make you accept it or send it back?
 
 ## How you will check it
 

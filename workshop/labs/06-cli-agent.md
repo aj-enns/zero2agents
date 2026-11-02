@@ -21,7 +21,7 @@ No new API endpoint, frontend switch or external service is needed.
 ## Before you start
 
 Complete [setup and preflight](../setup.md), open the repository at its root, and use
-your pair's [work folder](../work/README.md). This optional lab does not change the
+your [work folder](../work/README.md). This optional lab does not change the
 08:00-16:00 schedule.
 
 - Have the project checkout and your earlier work saved on your own workshop branch.
@@ -43,15 +43,15 @@ your pair's [work folder](../work/README.md). This optional lab does not change 
 **1.2** In a terminal at the repository root, run `copilot --version`. Record the
 result in `cli-agent.md`. If the CLI is unavailable, finish Step 1 and use Step 7.
 
-**1.3** Run `git rev-parse HEAD` in the terminal. Record the commit and your pair's
-reviewer in `cli-agent.md`.
+**1.3** Run `git rev-parse HEAD` in the terminal. Record the commit and yourself as
+the decision-maker in `cli-agent.md`; no personal details are needed.
 
 **1.4** Write the agent's job in `cli-agent.md`: "Recommend what to investigate first
 from a supplied ticket list. Explain uncertainty. Never change tickets or perform
 the suggested actions."
 
-**1.5** Agree on read/search-only tools and an agent runtime and retry limit with your
-partner. Record these limits; they control agent work, not your pace.
+**1.5** Choose read/search-only tools and an agent runtime and retry limit.
+Record these limits; they control agent work, not your pace.
 
 ### Step 2: Ask the CLI to create the agent
 
@@ -215,8 +215,8 @@ Skip this step if you completed Steps 2-6.
 **7.1** Open the [worked example](../examples/bonus-06-cli-agent.md). It is an inactive
 reference, not proof that the CLI ran.
 
-**7.2** Review the example profile with your partner and discuss its job, tools and
-safety boundaries.
+**7.2** Review the example profile's job, tools and safety boundaries yourself.
+If Copilot is available in your editor, ask it for a read-only review and check its findings.
 
 **7.3** Record **CLI CREATION AND EXECUTION NOT DEMONSTRATED** in `cli-agent.md`.
 Save your design notes. This fallback does not complete the CLI outcomes.

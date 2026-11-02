@@ -109,7 +109,7 @@ not claims that the framework enforces them automatically.
 [Create from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)
 requires access to the template and offers default-branch or all-branch contents. Template
 branches have unrelated histories; do not copy all branches and expect to merge workshop
-checkpoints across them. Prefer the selected release on each pair repository's default branch.
+checkpoints across them. Prefer the selected release on each developer's repository default branch.
 [Fork permissions and visibility](https://docs.github.com/en/pull-requests/reference/forks)
 depend on upstream visibility and private-fork policies. Private forks remain private and
 cannot be created in a GitHub Free organization. They are not independent visibility copies.

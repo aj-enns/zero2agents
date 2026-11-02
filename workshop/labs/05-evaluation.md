@@ -15,7 +15,7 @@ change or retire it. You are testing a development agent, not the QueueDesk API.
 Finish Labs 1-4 and use QueuePlanner from Lab 2. Keep the same application code, model,
 harness and task context for both versions. Keep the tools the same unless they are
 the one thing you change. Use a fresh chat for every run so earlier answers do not affect
-later ones. Save your results in your pair's [work folder](../work/README.md).
+later ones. Save your results in your [work folder](../work/README.md).
 
 ## Fixed evaluation inputs
 
@@ -123,7 +123,8 @@ an unintended active agent.
 
 **7.3** Review the commit to confirm it contains only the intended material.
 
-**Stretch:** have another pair rerun E3/E4 blindly; don't change the scoring after seeing output.
+**Stretch:** rerun E3/E4 in fresh Copilot chats without showing earlier results.
+Keep the inputs, model, tools and scoring unchanged; record whether the behavior repeats.
 
 ## Completion checks
 

@@ -1,6 +1,6 @@
-# Pair evidence
+# Workshop evidence
 
-Pair alias / reviewer / starting commit:
+Human owner (use "workshop developer") / Copilot review role / starting commit:
 Date / editor version / harness / model:
 SDK / permitted tools / cloud environment or fallback:
 Usage owner / agreed task and time limits (no financial or personal details):

@@ -9,7 +9,7 @@ to write; the provenance gaps show what you must replace with actual evidence.
 ## Path and provenance
 
 - Path: **NO MCP EXECUTION - browser-source reference example**.
-- Research owner: Pair Cedar's driver; next owner: creation implementer.
+- Research owner: workshop developer; next owner: creation implementer.
 - Tools invoked: none for this illustrative packet.
 - Generic question: "How do ASP.NET Core Minimal APIs bind a JSON body and return
   201 with Location or application validation errors as Problem Details?"
