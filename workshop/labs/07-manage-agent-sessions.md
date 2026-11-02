@@ -24,6 +24,11 @@ and record that session management was not demonstrated. Do not install software
 change policy to continue.
 See the [session-management references](../references.md#optional-session-management-lab).
 
+All file paths start at the repository root. Edit your evidence in VS Code;
+send task prompts only in the chosen app's session input.
+Paste only the contents of code blocks, not the backticks, and replace `FILL IN`
+with your own observations. Do not copy expected results as evidence.
+
 ## Steps
 
 ### Step 1: Open your session list
@@ -40,6 +45,11 @@ chosen app's instructions below.
 
 **1.3** Find the workshop repository and its sessions in the left sidebar.
 Check the folder path; another session may use a different checkout.
+
+**1.4** In your own terminal at the repository root, run `git status --short`.
+Copy the output into a temporary editor tab without saving a new file yet.
+If there is no output, write **clean** in that tab.
+Keep it for the comparison in Step 5; do not ask an agent to run the command.
 
 **Expected result:** you know which repository and checkout your tasks will use.
 
@@ -71,7 +81,9 @@ in at most six bullets, with file references. Do not change files, run commands,
 use network tools, or start other agents. Report anything you cannot verify.
 ```
 
-**2.5** Use the session's rename action to name it **Ticket contract**.
+**2.5** In the sidebar, open the new session's context menu and use its rename
+action. Enter **Ticket contract** and confirm. If that action is unavailable,
+record the actual displayed session name rather than inventing a renamed state.
 
 **2.6** Review any tool requests. Approve only reads needed for this task.
 
@@ -130,6 +142,10 @@ read-only limits. Separate behavior you found in code from proposed lab features
 and separates existing behavior from proposed features. Do not grant extra permissions
 to get past a blocked tool.
 
+**4.6** In your temporary editor tab, note the actual state of each session and
+whether you used Stop. If an agent asked a question, record its question and your
+answer. Do not create a question or retry a task just to demonstrate a waiting state.
+
 **Expected result:** the revised answer stays within scope and retains the session history.
 Stopping a request does not undo actions already taken. If Stop was not needed, record
 that it was not demonstrated.
@@ -162,14 +178,58 @@ the source. A summary is not proof that checks ran.
 answer in each app. Keep source references legible. Capture before creating the
 evidence file so that the empty view is accurate. Exclude unrelated chat history. -->
 
-**5.4** Create `session-management.md` in
-[your workshop work folder](../work/README.md). Record the app/version, two session
-names, observed states, your correction, one verified claim per session, and any
-missing controls.
+**5.4** Create `workshop/work/session-management.md` in VS Code.
+Paste this record and replace each `FILL IN` with your actual observations:
 
-**5.5** Add a short handoff: result, limits, and next owner. Note whether you used
-Stop or did not demonstrate it. Save the file; it should be your only new file
-from this exercise.
+```markdown
+# Session-management exercise
+
+App and version shown in its About screen: FILL IN
+Workshop checkout path: FILL IN
+Mode/model: FILL IN
+Permission setting: FILL IN
+Shared checkout; no parallel edits permitted
+Starting git status: FILL IN - paste saved output, or clean
+Git status before creating this evidence file: FILL IN
+
+| Session name actually shown | Task | State observed | Tool requests/actions | One verified claim and source location |
+| --- | --- | --- | --- | --- |
+| FILL IN - Ticket contract if renamed | Summarize ticket contract | FILL IN | FILL IN | FILL IN |
+| FILL IN - Check map if renamed | Explain three baseline checks | FILL IN | FILL IN | FILL IN |
+
+## Guidance and limits
+
+Follow-up sent: narrow to GET /tickets and GET /tickets/{id}
+Actual change in the answer: FILL IN
+Stop used, or not demonstrated: FILL IN
+Actual input request and answer, or none observed: FILL IN
+Unsupported controls or blocked actions: FILL IN
+Unexpected edits and human response, or no agent edits: FILL IN
+
+## Handoff
+
+Results ready for the next person: FILL IN
+Not demonstrated: FILL IN - for example, no checks executed or no running state observed
+Next owner: workshop developer
+Next action: review the cited sources; no code changes authorized by this exercise
+
+## Session cleanup
+
+Ticket contract: not marked done/archived yet
+Check map: not marked done/archived yet
+Where the finished sessions were found again: not checked yet
+```
+
+Copy your starting-state notes from the temporary tab into the matching fields.
+Use the app's **About** screen for its displayed version. If you cannot find a
+version or control, write **not available**; do not guess.
+For each claim, name a concrete source location, such as a `Program.cs` case name
+or the `workshop/project.md` response table, and explain what you checked.
+
+**5.5** Complete **Handoff**, including what was not demonstrated. Save with
+**Ctrl+S**. Run `git status --short` yourself again: this evidence file should be
+the only new exercise change compared with the starting state.
+Keep unrelated pre-existing changes; do not reset them to make the output look clean.
 
 **Expected result:** a fresh agent session can tell what each agent did, what you checked,
 and what remains unverified.
@@ -189,6 +249,12 @@ Preserve any useful files before archiving; archiving can remove session worktre
 **6.3** Find the sessions again. In VS Code, select the **Done** filter; use
 **Restore** if you need to continue. In the Copilot app, use the filters in
 **Manage sessions** to find the archived sessions.
+
+**6.4** In `session-management.md`, replace the three cleanup placeholders with
+the actual action and where you found each session again. If a control was missing,
+record that limitation instead. Save the file.
+In Source Control, stage only this evidence file and commit with the message
+`Record session-management exercise`.
 
 **Expected result:** the sessions leave the active list, but their history remains available.
 Do not delete sessions, clean up other people's work, or change automatic cleanup settings.
