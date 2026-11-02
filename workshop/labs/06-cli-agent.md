@@ -12,7 +12,9 @@ This is a different use for an agent, not another required API feature.
 ## Prerequisites
 
 Complete [setup](../setup.md). No earlier lab feature or role is required.
-Use an already approved GitHub Copilot CLI installation and account.
+Use an approved GitHub Copilot CLI installation and account.
+If needed, follow the separate [CLI installation and sign-in guide](../cli-setup.md)
+before starting this lab.
 If unavailable, use the [design example](../examples/bonus-06-cli-agent.md) instead;
 that is design review, not CLI execution.
 Do not install software or change account policy just to continue.

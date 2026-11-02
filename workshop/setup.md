@@ -5,6 +5,9 @@ Use **VS Code, GitHub Copilot and the Local harness** for the main steps.
 A harness is the environment that runs an agent.
 You need only this setup to start any of the four labs.
 
+For the optional terminal exercise, follow the separate
+[GitHub Copilot CLI setup](cli-setup.md). It is not required for the four primary labs.
+
 ## 1. Open your workshop repository
 
 **1.1** Use the private workshop repository assigned to you. Do not make the

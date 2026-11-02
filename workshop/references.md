@@ -32,7 +32,7 @@ We intentionally avoid multiple competing `AGENTS.md`/`CLAUDE.md` instruction hi
 | --- | --- |
 | [Create CLI custom agents](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/create-custom-agents-for-cli) | Interactive `/agent`, then **N**; Project vs User location; generated profile review; explicit tool selection; restart to load. Personal profiles with the same ID override project profiles. `strict-tools-list: true` prevents default tools being added to the listed groups. Direct selection follows repository instructions; delegated subagents need `include-custom-instructions: true` to opt in. |
 | [CLI command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference) | Consult the installed version's available commands and custom-agent settings rather than assuming editor commands apply to CLI. |
-| [CLI setup](https://docs.github.com/en/copilot/how-tos/copilot-cli/cli-getting-started) | Approved installation and sign-in prerequisites; availability is account/policy dependent. |
+| [CLI setup](https://docs.github.com/en/copilot/get-started/cli-quickstart) | WinGet, Homebrew or npm installation (npm needs Node.js 22+); interactive `/login` and folder trust. The [workshop CLI setup](cli-setup.md) keeps this optional; availability is account/policy dependent. |
 
 The requested `/create-agent` spelling was not established by the creation guide.
 The lab uses it only if the participant's installed CLI lists it, otherwise the
