@@ -57,7 +57,10 @@ ask the facilitator for a unique branch name instead.
 Run commands from the repository root. Keep work on this branch through the morning.
 Labs use `workshopbranch` for morning work and `workshopcreation` for Lab 4's local
 implementation. If you were assigned unique names, use those wherever these names appear.
-Commit checkpoints so you can return to a known state without discarding work.
+[Check in your reviewed files after each lab](work/README.md#check-in-after-each-lab)
+so you can return to a known state without discarding work.
+Check in means make a Git commit, not just save files in the editor.
+Push only when a lab asks you to publish to the approved workshop repository.
 Do not change the source repository's default branch or overwrite another developer's branch.
 The private source's workshop release may be on a published feature branch; use the
 facilitator's specified release commit when making a copy.

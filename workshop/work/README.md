@@ -4,6 +4,40 @@ Save your workshop notes in `workshop/work/` on your working branch.
 No extra folder is needed. Commit useful notes and results with your checkpoints,
 but leave out personal or sensitive information.
 
+## Check in after each lab
+
+Before moving on, save and review the lab's files, then make a **Git commit**
+on the branch named in that lab. A commit saves a local checkpoint.
+Saving with **Ctrl+S** does not check files in; **push** sends commits to GitHub
+and is needed only when the lab says so.
+
+**1.1** Save all intended files in VS Code. Complete the lab's checks and record
+actual results. If work is blocked or incomplete, say so in your notes; a commit
+does not make it a passing result.
+
+**1.2** Open **Source Control**. Inspect each changed and new file, including
+code, checks, instructions, agent profiles, frontend settings and work notes.
+Stage only the files for this lab. Leave unrelated work, secrets, personal settings
+and ignored local configuration unstaged. Do not use **Stage All** without reviewing
+every file.
+
+**1.3** Review **Staged Changes**. Enter the lab's suggested message, or
+`Save Lab N checkpoint` with the lab number, then select **Commit**.
+Do not select **Sync Changes** or push unless the lab asks for it.
+
+**1.4** In your terminal at the repository root, run:
+
+```text
+git log -1 --oneline
+git status --short
+```
+
+Expect your new commit message and no remaining intended lab files in Source Control.
+Unrelated pre-existing changes may remain; do not discard them.
+If the commit fails, report the error and fix it before moving on.
+
+## Files to keep
+
 | Artifact | Created in |
 | --- | --- |
 | `evidence.md` from the evidence template | Setup, updated throughout |

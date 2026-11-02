@@ -254,7 +254,9 @@ Use the commit message `Evaluate and refine QueuePlanner`.
 Do not stage unrelated application changes. The snapshots preserve both versions
 without creating unintended active agents.
 
-**7.3** Review the commit to confirm it contains only the intended material.
+**7.3** Follow the [check-in confirmation](../work/README.md#check-in-after-each-lab).
+Confirm the commit contains only the intended material and no intended Lab 5 files
+remain uncommitted before starting the capstone.
 
 **Stretch:** rerun E3/E4 in fresh Copilot chats without showing earlier results.
 Keep the inputs, model, tools and scoring unchanged; record whether the behavior repeats.
@@ -264,6 +266,7 @@ Keep the inputs, model, tools and scoring unchanged; record whether the behavior
 - `evaluation.md` records all eight runs or explicit timeouts, actual outputs/actions,
   before-and-after scores, denominator and one isolated change.
 - Your adopt/revise/retire decision names an owner, review trigger and rollback.
+- Your Lab 5 commit contains the reviewed evaluation, snapshots and profile decision.
 - If you could not run the agent, record that you completed only the evaluation design,
   not agent behavior measurement.
 

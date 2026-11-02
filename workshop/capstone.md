@@ -269,6 +269,8 @@ frontend flag, plan, handoff and demo. Commit with the message
 `Complete ticket resolution capstone`. Record the result hash from `git rev-parse HEAD`
 in your notes after committing. Save the updated notes in a follow-up evidence commit;
 do not try to put a commit's own hash inside that same commit.
+Follow the [check-in confirmation](work/README.md#check-in-after-each-lab) after
+the evidence commit so no intended capstone files remain uncommitted.
 A draft PR is optional where permitted. Do not merge or change repository policy.
 
 **6.4** Walk through `demo.md`. Show a real result, a boundary check and the human
@@ -276,6 +278,7 @@ decision. Explain the role's actual limits, not capabilities you did not observe
 
 **6.5** Stop your local API with **Ctrl+C**. Confirm exercise agent work has finished.
 Disable the exercise Learn server if used. Record any blocked cleanup.
+Commit any final demo or cleanup-note updates using the same check-in guide.
 Ask the billing owner to handle hosted sandbox retention/storage according to policy;
 do not delete other people's work. Keep reviewed commits and sanitized evidence.
 
@@ -310,6 +313,7 @@ earlier features. You ran the build/checks yourself and recorded actual output.
 The reviewed frontend calls the real endpoint and shows the expected queue change.
 Your handoff and demo name the real execution path, role limits, remaining gaps and
 rubric score. Any changed role has fresh E3/E4 evidence. Cleanup is recorded.
+Your commits include the reviewed implementation and final evidence, including cleanup notes.
 If the feature is incomplete, say so; a good plan alone is not a shipped feature.
 
 ## Next lab
