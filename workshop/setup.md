@@ -140,8 +140,11 @@ but **time limits are not monetary caps**. Do not provision cloud resources to p
 ## 08:00-08:30 kickoff checkpoint
 
 Use 10 minutes for outcomes/roles, 15 for baseline and access checks, 5 for your work record.
-Create a personal record from [the evidence template](templates/evidence.md) in
-`workshop/work/<pair-name>/evidence.md`. Record version, model, harness, commit,
+Follow [Your workshop evidence](work/README.md) to create
+`workshop/work/<pair-name>/` using a neutral pair alias. Copy
+[the evidence template](templates/evidence.md) to `evidence.md` inside that folder.
+The folder guide lists the artifacts you will save in each lab.
+Record version, model, harness, commit,
 enabled capabilities, fallback path and agreed owner/budget. Keep all data synthetic.
 Definition of ready: baseline passes, a working branch exists, and you know which execution
 and fallback paths are permitted. Continue to [Lab 1](labs/01-plan-to-agent.md).

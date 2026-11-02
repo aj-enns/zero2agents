@@ -75,3 +75,7 @@ Keep the reviewed commits and sanitized evidence.
 Choose one concrete follow-up: pilot a scoped role on a real team issue, expand the fixed
 evaluation set, or propose a governance change to its administrator. Do not automatically
 install tools or grant permissions as a "next step."
+
+---
+
+**Stuck?** [See a resolution plan, handoff and demo example](examples/06-capstone.md).
