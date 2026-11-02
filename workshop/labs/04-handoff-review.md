@@ -15,9 +15,9 @@ and record which one. Local work teaches handoff and review, but is not cloud ex
 
 ## Before you start
 
-Finish Labs 1-3 and the [governance checkpoint](../governance.md). Check your pair
+Finish Labs 1-3 and the [governance checkpoint](../governance.md). Check your workshop
 repository and GitHub agent access in [setup](../setup.md); use the local path if
-hosted access is unavailable. Keep your morning work on your branch and use your pair's
+hosted access is unavailable. Keep your morning work on your branch and use your
 [work folder](../work/README.md).
 
 **Agent limit:** allow one implementation attempt, limited to 25 minutes or two
@@ -43,12 +43,12 @@ human reviewer and agent limit. Identify any unfinished morning features as out 
 
 **1.5** Add your Lab 3 recommendation. It does not grant permission to use extra tools.
 
-**1.6** Ask your partner to review the issue without relying on your earlier chat.
-Add any context they need to start the task.
+**1.6** Ask Copilot in a fresh read-only chat to review the issue without your earlier
+chat. Add any missing context, then approve the task yourself.
 
 **1.7** Commit the morning work on `workshopbranch`.
 
-**1.8** If using a hosted agent, push that branch to the **approved pair/cohort repository**.
+**1.8** If using a hosted agent, push that branch to the **approved workshop repository**.
 The remote agent cannot see unsaved local files or your private chat. A local fallback
 does not require a push.
 
@@ -88,7 +88,8 @@ setup/build output. The setup file must be on the default branch for Actions; cl
 sandboxes ignore it.
 
 **2.7** Before approving any PR workflow, inspect its changes. Do not weaken protections
-or add a bypass; use an independent reviewer where required.
+or add a bypass. If another human's approval is required but unavailable, use local
+review and leave the PR unmerged.
 
 **2.8** Watch progress and logs within the agent limit. If the task cannot finish,
 request a handoff with completed work and gaps. Record the path and continue to Step 3.
@@ -127,19 +128,20 @@ git switch -c workshopcreation
 
 In a shared cohort repository, use the unique branch names from your facilitator.
 
-**2.15** Ask your partner to review the task as a new implementer.
+**2.15** Review the saved task yourself as if you had no earlier chat. Check that it
+includes the context Copilot identified in **1.6**.
 
 **2.16** If Copilot is available, start a **fresh local Agent chat** and ask it to
 implement the saved issue. Supply only the issue, repository files and instructions;
 do not bring the earlier planning conversation. Use the same scope, agent limit and
 implementation/check requirements.
 
-**2.17** If Copilot is unavailable, have a human implement from the packet and record
+**2.17** If Copilot is unavailable, implement from the packet yourself and record
 that agent execution was not demonstrated.
 
 **2.18** Commit the implementation result on `workshopcreation`.
 
-**2.19** If a PR is permitted, push the implementation branch to the approved pair
+**2.19** If a PR is permitted, push the implementation branch to the approved workshop
 repository.
 
 **2.20** Open a **human-authored draft PR**, or, if that is unavailable, review
@@ -153,9 +155,9 @@ remote execution, hosted credentials/firewall or hosted logs.
 actual check output and remaining gaps.
 
 **3.2** Give QueueReviewer the handoff and actual diff. If no reviewer agent is
-available, have a human review them and record that agent review was not run.
+available, review them yourself and record that agent review was not run.
 
-**3.3** Have a human check out the result branch. For a GitHub PR, use its checkout
+**3.3** Check out the result branch yourself. For a GitHub PR, use its checkout
 instructions or `gh pr checkout <PR-number>` in the assigned repository. Save or
 commit local work before switching. For the local path, stay on the implementation
 branch and record its result commit.
@@ -199,9 +201,10 @@ before rebuilding.
 **3.11** If creation passed review, use **New ticket** in the frontend. Verify the
 returned ID through the raw API as well as the dashboard.
 
-**3.12** Obtain the required independent human review. The initiating human's approval
-may not count under GitHub's Copilot PR rules. Copilot review is supplementary evidence,
-not a substitute for human approval.
+**3.12** Record your own acceptance decision after checking QueueReviewer's findings
+and the actual results. This completes the solo lab review, not any required PR approval.
+If GitHub's Copilot PR rules or repository rules require another human, leave the PR
+unmerged and record that approval as unavailable. Copilot review cannot replace it.
 
 ### Step 4: Save the result and your review decision
 
@@ -214,8 +217,7 @@ Mark unfinished work as incomplete.
 If you have a PR, push the update where permitted; if you cannot update it, record
 the limitation and ask the facilitator how to continue. A local review needs no push.
 
-**4.4** Leave the PR unmerged unless the facilitator explicitly authorizes a human
-merge in the pair repository. Do not enable Agent Merge, auto-merge or automatic approvals.
+**4.4** Leave the PR unmerged. Do not enable Agent Merge, auto-merge or automatic approvals.
 
 **4.5** Continue the capstone from the **reviewed creation branch** or the facilitator's
 creation checkpoint. No default-branch policy change is needed.
@@ -226,7 +228,7 @@ The issue makes sense without your chat, and your handoff record identifies the 
 path and starting/result commits. Only the requested feature was added.
 Tests cover ticket creation, invalid input, concurrency and the earlier features.
 You ran the build/checks yourself and recorded actual results and the human review decision.
-The handoff record contains enough context for the next person to continue.
+The handoff record contains enough context for a fresh agent session to continue.
 If the feature is unfinished, mark it incomplete and record which reviewed working
 version or fallback you will use for the capstone; do not report unfinished work as passed.
 **Stretch:** compare hosted and local handoff context gaps; do not launch a second hosted task.

@@ -19,8 +19,9 @@ A session is a task's workspace and conversation; it is not the same as a custom
 - Keep normal tool approvals. Do not enable Autopilot, blanket approval, cloud execution,
   automations, or Agent merge for this exercise.
 
-Labels vary by version and account. If neither interface is available, pair with someone
-who has access or skip this lab. Do not install software or change policy to continue.
+Labels vary by version and account. If neither interface is available, skip this lab
+and record that session management was not demonstrated. Do not install software or
+change policy to continue.
 See the [session-management references](../references.md#optional-session-management-lab).
 
 ## Steps
@@ -45,7 +46,7 @@ Check the folder path; another session may use a different checkout.
 > **Image placeholder 1:** session list in your chosen app.
 <!-- Capture one image per supported path: VS Code Agents window and Copilot app.
 Show the workshop repository, session list, and new-session control. Add arrows naming
-these three areas. Use a neutral pair alias; crop account details and unrelated repositories. -->
+these three areas. Use a neutral workshop label; crop account details and unrelated repositories. -->
 
 ### Step 2: Start a bounded task
 
@@ -142,8 +143,8 @@ stage a blocked state or label a finished response as running. -->
 ### Step 5: Review and save the handoff
 
 **5.1** Open each session's changes view and confirm there are no edits.
-If an agent edited files, stop and review the diff with your partner; do not discard
-unrelated work.
+If an agent edited files, stop and inspect the diff yourself. Ask Copilot for a
+read-only review and check its findings; do not discard unrelated work.
 
 **5.2** In your own terminal at the repository root, run:
 
@@ -170,7 +171,7 @@ missing controls.
 Stop or did not demonstrate it. Save the file; it should be your only new file
 from this exercise.
 
-**Expected result:** another person can tell what each agent did, what you checked,
+**Expected result:** a fresh agent session can tell what each agent did, what you checked,
 and what remains unverified.
 
 ### Step 6: Put finished sessions away

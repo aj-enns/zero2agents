@@ -14,7 +14,7 @@ do not add extra features.
 ## Before you start
 
 Complete [setup and preflight](../setup.md). Open the repository in VS Code, confirm
-the baseline build and checks pass, and create your pair's
+the baseline build and checks pass, and create your
 [work notes](../work/README.md) in `workshop/work/`.
 Use `workshopbranch`, created during setup; do not create another branch for this lab.
 
@@ -81,7 +81,8 @@ query values. Reject any plan that silently ignores an invalid status or expands
 
 ### Step 3: Have Copilot implement the plan
 
-**3.1** Ask your partner to review the saved plan before implementation.
+**3.1** Ask Copilot in a fresh read-only chat to review the saved plan against the
+requirements. Check its findings and approve the plan yourself before implementation.
 
 **3.2** Select **Agent** and attach the reviewed plan. Local **Start Implementation**
 submits immediately, so use it only after review.
@@ -95,7 +96,8 @@ do not approve unrestricted tools, network access or unexplained installs.
 
 ### Step 4: Check the result
 
-**4.1** Ask your partner to inspect the changed code with `git diff`.
+**4.1** Inspect the changed code with `git diff`. Give the diff and requirements to
+Copilot in a fresh read-only chat for review, then check its findings yourself.
 
 **4.2** From the repository root, build the solution:
 
@@ -126,7 +128,7 @@ and 3,4 respectively.
 
 **5.2** Commit the code, checks, frontend setting, plan and evidence on `workshopbranch`.
 
-**5.3** Swap driver and reviewer roles for the next lab.
+**5.3** Confirm the saved plan and evidence are ready for Lab 2.
 
 ## Completion checks
 

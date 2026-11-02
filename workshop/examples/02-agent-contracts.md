@@ -3,15 +3,15 @@
 [All examples](README.md) | [Lab 2](../labs/02-agent-design.md)
 
 These are reference designs for `agent-contracts.md`, not active agents.
-The neutral pair alias is **Pair Cedar**. The runtime/retry limits below bound agent
+The human owner is the **workshop developer**. The runtime/retry limits below bound agent
 work, not the participant's time to finish the exercise.
 The **10-minute / one-revision** budget is an illustrative choice, not a required
-Lab 2 answer. Agree suitable limits with your partner and keep them consistent
+Lab 2 answer. Choose suitable limits and keep them consistent
 between your job descriptions and active agent instructions.
 
 ## QueuePlanner
 
-**Name and owner:** QueuePlanner v1; Pair Cedar's reviewer owns acceptance.
+**Name and owner:** QueuePlanner v1; the workshop developer owns acceptance.
 
 **Where it runs:** VS Code, Local harness.
 
@@ -50,7 +50,7 @@ Observed results: **not tried yet**; record actual behavior after activating you
 
 ## QueueReviewer
 
-**Name and owner:** QueueReviewer v1; Pair Cedar's driver owns the final acceptance decision.
+**Name and owner:** QueueReviewer v1; the workshop developer owns the final acceptance decision.
 
 **Where it runs:** VS Code, Local harness.
 

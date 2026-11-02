@@ -11,7 +11,7 @@ feature, executed checks, real commits, hosted session or approval.
 ### Outcome and context
 
 Add ticket creation to QueueDesk, preserving the reviewed morning status/search work.
-Human owner: Pair Cedar's reviewer. Use the pair's recorded morning checkpoint commit,
+Human owner: workshop developer. Use your recorded morning checkpoint commit,
 not an assumed default branch; require the actual hash before starting execution.
 
 ### Acceptance criteria
@@ -59,7 +59,7 @@ hosted execution merely because the task began as an issue.
 
 - Path: **LOCAL FALLBACK - NOT CLOUD EXECUTION**, illustrative only.
 - Base/result commits: **not supplied; no implementation accompanies this example**.
-- Owner/next reviewer: Pair Cedar driver -> QueueReviewer -> Pair Cedar reviewer.
+- Owner/next reviewer: implementation agent -> QueueReviewer -> workshop developer.
 - Scope proposed: creation only; changed files: none evidenced.
 - Agent trace/tools/network/approvals: no execution record supplied.
 

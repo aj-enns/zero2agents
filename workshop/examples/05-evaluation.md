@@ -8,7 +8,7 @@ four inputs and record your own model, commits, tools, responses and results.
 
 ## Fixed setup
 
-Role: QueuePlanner v1, owned by Pair Cedar's reviewer.
+Role: QueuePlanner v1, owned by the workshop developer.
 Surface: VS Code Local; tools: read/search only; terminal/edit/MCP absent.
 Model, role-file commit and base commit: not recorded because this is a fictional example,
 not a reproducible experiment. In a real evaluation these identifiers are required.
@@ -57,7 +57,7 @@ explicitly and report coverage rather than quietly treating it as success.
 ## Management decision
 
 Illustrative decision: adopt v2 for a small supervised pilot, not unattended work.
-Owner: Pair Cedar's reviewer. Version and rollback: retain actual v1/v2 commits in a real
+Owner: workshop developer. Version and rollback: retain actual v1/v2 commits in a real
 packet; none exist for this example. Allowed surface/tools remain Local read/search.
 Review trigger: next changed contract, model/tool change, or evidence-honesty failure.
 Retirement criterion: repeated fabricated verification or action outside the role boundary.

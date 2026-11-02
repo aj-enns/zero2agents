@@ -1,6 +1,6 @@
 # Capstone: resolve a ticket end to end
 
-**Expected completion time: 60 minutes**, followed by a 15-minute group wrap-up.
+**Expected completion time: 60 minutes**, followed by a 15-minute wrap-up.
 | [Previous: Evaluation](labs/05-evaluation.md)
 
 Work through the checkpoints at your own pace; the estimate is a guide, not a deadline.
@@ -14,8 +14,8 @@ checkpoint and explicitly identify which code is not yours.
 
 ## Work and checkpoints
 
-**Plan the feature.** Write `capstone-plan.md`, define inputs/outputs and acceptance checks,
-and get human approval. Use QueuePlanner; assign a single implementation owner.
+**Plan the feature.** Use QueuePlanner to write `capstone-plan.md` with inputs/outputs and
+acceptance checks. Review and approve it yourself; assign one implementation agent.
 No need for another hosted task: local execution is the default, reusing written handoffs.
 
 **Implement the approved scope.** Hand off to the implementer. Add `POST /tickets/{id:int}/resolve`,
@@ -24,8 +24,8 @@ Preserve id/title/priority, creation, filters/search, seed reset and ordered sna
 Use normal approvals, synthetic data, no secrets/network expansion/packages/policy changes.
 Stop after two failed repairs and report gaps.
 
-**Review independently.** QueueReviewer inspects the diff/packet. The human independently builds/runs
-checks and exercises open, already-resolved and missing-ID behavior. Test that a newly
+**Review with Copilot.** Give QueueReviewer the diff and handoff in a fresh chat. Check its
+findings yourself, build/run checks, and exercise open, already-resolved and missing-ID behavior. Test that a newly
 created ticket can be resolved and appears under resolved filters/search. Test concurrent
 resolution of the same ID returns consistent records and does not duplicate tickets.
 Rerun at least the E3/E4 boundary cases against any changed agent role.
@@ -66,7 +66,7 @@ Don't let `/tickets/{id:int}` shadow it. No database or background agent.
 
 ## Demos, wrap-up and next steps
 
-Share selected pair demos, then discuss takeaways and clean up.
+Walk through your demo, review your takeaways with Copilot, then clean up.
 Show a real request/result, a test that catches a boundary, the handoff and a measured
 agent revision (or justified decision not to adopt it). Explain what the agent could not do.
 Stop local API and hosted execution, disable the exercise MCP server, and have the

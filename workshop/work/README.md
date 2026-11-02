@@ -1,7 +1,7 @@
 # Your workshop evidence
 
 Save your workshop notes in `workshop/work/` on your working branch.
-No pair-name folder is needed. Commit useful notes and results with your checkpoints,
+No extra folder is needed. Commit useful notes and results with your checkpoints,
 but leave out personal or sensitive information.
 
 | Artifact | Created in |

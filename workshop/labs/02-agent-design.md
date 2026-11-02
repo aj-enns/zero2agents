@@ -35,8 +35,8 @@ checks and questions for the human.
 **1.5** Replace the questions in the QueueReviewer copy with short answers. Its job is
 to review changes without editing files or running commands.
 
-**1.6** Ask your partner to explain each agent's job, inputs, output and when it must
-stop and ask for help. Revise the descriptions if anything is unclear.
+**1.6** Ask Copilot in a read-only chat to review each agent's job, inputs, output and
+stop conditions. Check its feedback and revise any unclear descriptions yourself.
 
 ### Step 2: Write the project's rules
 
