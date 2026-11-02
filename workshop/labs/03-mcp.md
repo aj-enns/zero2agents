@@ -105,5 +105,8 @@ injection attempt caused no unsafe action or fabricated test result. No API code
 
 ---
 
+**Stuck?** [See a worked research handoff](../examples/03-research.md).
+It illustrates the no-MCP path, not actual tool execution.
+
 **Next:** [Governance checkpoint](../governance.md), then
 [Lab 4: GitHub cloud/coding-agent handoff and PR review](04-handoff-review.md)

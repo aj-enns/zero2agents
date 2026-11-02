@@ -10,9 +10,22 @@ Use [QueueDesk's Lab 1 contract](../project.md), not an invented product spec.
 
 ## Work and checkpoints
 
-1. **Inspect and reproduce.** Run the baseline. Request `/tickets?status=open`;
-   it currently returns four tickets instead of IDs 1 and 2. Inspect endpoints and store.
-   Record base commit, the symptom, and the no-query behavior you must preserve.
+1. **Inspect and reproduce.** Run the build and checks from [setup](../setup.md#sdk-and-baseline).
+   Start the app using the setup command and leave that terminal running.
+   Open **http://127.0.0.1:5080/tickets?status=open** in your browser.
+   This sends a GET request to `/tickets` with the query parameter `status=open`;
+   use your app's port if it is different from `5080`.
+   Before implementing this lab, the response contains all four tickets, not just IDs 1 and 2.
+   To make the same request from a second PowerShell terminal, run:
+
+   ```powershell
+   Invoke-RestMethod "http://127.0.0.1:5080/tickets?status=open" | Format-Table
+   ```
+
+   Also open **http://127.0.0.1:5080/tickets** without the query; it should return all four.
+   Inspect `src/QueueDesk.Api/TicketEndpoints.cs` and `InMemoryTicketStore.cs`.
+   Record the starting commit (`git rev-parse HEAD`), the symptom, and the no-query
+   behavior you must preserve. Stop the app with Ctrl+C before rebuilding later.
 2. **Plan, do not implement.** In VS Code **Local**, select **Plan** (or `/plan`).
    Ask for status filtering, affected files, decisions, invalid/repeated query cases,
    and executable checks. State no packages, persistence, MCP, future features or policy edits.
@@ -61,5 +74,7 @@ If behind, keep the reviewed plan and failing feature checks; ask the facilitato
 status checkpoint, not the day's completed solution.
 
 ---
+
+**Stuck?** [See a worked status-filter plan](../examples/01-status-plan.md).
 
 **Next:** [Lab 2: Repository instructions and custom-agent design](02-agent-design.md)

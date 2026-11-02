@@ -63,4 +63,7 @@ record that only the evaluation design was completed, not agent behavior measure
 
 ---
 
+**Stuck?** [See a worked evaluation and management decision](../examples/05-evaluation.md).
+Its observations and scores are explicitly fictional, not evidence to reuse.
+
 **Next:** [Capstone: Resolve a ticket end to end](../capstone.md)

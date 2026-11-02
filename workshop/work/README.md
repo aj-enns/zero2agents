@@ -15,6 +15,8 @@ not personal information. Commit useful, sanitized artifacts with your checkpoin
 | `capstone-plan.md` and `demo.md` | Capstone and wrap-up |
 
 Templates are in [../templates](../templates/evidence.md).
+For optional completed reference artifacts, see [worked examples](../examples/README.md).
+Examples are separate from your evidence; never copy illustrative observations as actual results.
 Never commit credentials, raw sensitive chat logs, billing details, or data from external
 repositories. Prefer short excerpts and exact local command results over full transcripts.
 Agent role files belong in `.github/agents` only when you intentionally activate them.

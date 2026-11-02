@@ -125,4 +125,6 @@ marked incomplete, with a documented checkpoint/fallback for the capstone.
 
 ---
 
+**Stuck?** [See an agent-ready issue and honest review handoff](../examples/04-creation-handoff.md).
+
 **Next:** [Lab 5: Agent evaluation, iteration and management](05-evaluation.md)

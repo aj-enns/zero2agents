@@ -10,10 +10,18 @@ Read [the search contract](../project.md) and [surface reference](../references.
 
 ## Work and checkpoints
 
-1. **Define responsibilities.** Fill [agent contracts](../templates/agent-contract.md)
-   for QueuePlanner and QueueReviewer: purpose, inputs, outputs, tools, file/data boundaries,
-   escalation, human owner, time/retry budget, and handoff acceptance.
-   Write what a role must refuse, not just what it should do.
+1. **Write a job description for each agent.** Before creating the agents, decide what
+   each one should do and what it must leave to a human or another agent.
+   Create `workshop/work/<pair-name>/agent-contracts.md`. Copy the
+   [job-description template](../templates/agent-contract.md) into that file twice:
+   once for **QueuePlanner**, which proposes a plan without editing code, and once for
+   **QueueReviewer**, which reviews changes without editing code or running commands.
+   Answer the template questions in short sentences; bullets are fine.
+   For example, a planner's output might be "a list of files to change, checks to add,
+   and questions for the human before implementation."
+   You are writing Markdown notes here, **not configuring an agent yet**.
+   **Checkpoint:** your partner can explain each agent's job, what to give it,
+   what it should return, and when it must stop and ask for help.
 2. **Refine instructions.** Improve `.github/copilot-instructions.md` using
    concrete repository evidence: compatibility, validation, deterministic data and scope.
    Create `.github/instructions/tests.instructions.md` using the
@@ -24,7 +32,9 @@ Read [the search contract](../project.md) and [surface reference](../references.
    `.github/agents/planner.agent.md` and `.github/agents/reviewer.agent.md`.
    Use the [planner](../templates/planner.agent.template.md) and
    [reviewer](../templates/reviewer.agent.template.md) templates, replacing their unfinished
-   bodies with your contracts. Select **Local** and retain `target: vscode`.
+   bodies with instructions based on the job descriptions you wrote in step 1.
+   Keep the templates' YAML configuration at the top; do not replace it with your notes.
+   Select **Local** and retain `target: vscode`.
    Verify they appear in the picker, and inspect tool inventory/diagnostics.
 4. **Exercise collaboration.** QueuePlanner plans `q` title search with AND
    status composition. Review its plan, then use the `send: false` handoff to built-in
@@ -68,5 +78,8 @@ If behind, prioritize working role contracts and tool verification; record unfin
 and obtain the facilitator's search checkpoint before the afternoon.
 
 ---
+
+**Stuck?** See [completed job descriptions](../examples/02-agent-contracts.md) and
+[custom-agent and instruction examples](../examples/02-agent-files.md).
 
 **Next:** [Lab 3: Bounded MCP integration](03-mcp.md)
