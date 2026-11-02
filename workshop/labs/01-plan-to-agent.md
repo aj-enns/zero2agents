@@ -16,6 +16,7 @@ do not add extra features.
 Complete [setup and preflight](../setup.md). Open the repository in VS Code, confirm
 the baseline build and checks pass, and create your pair's
 [work folder](../work/README.md).
+Use `workshopbranch`, created during setup; do not create another branch for this lab.
 
 ## Steps
 
@@ -114,7 +115,7 @@ and 3,4 respectively.
 
 **5.1** Review the changes and recorded results before committing.
 
-**5.2** Commit the code, checks, frontend setting, plan and evidence on your working branch.
+**5.2** Commit the code, checks, frontend setting, plan and evidence on `workshopbranch`.
 
 **5.3** Swap driver and reviewer roles for the next lab.
 

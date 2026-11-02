@@ -46,7 +46,7 @@ human reviewer and agent limit. Identify any unfinished morning features as out 
 **1.6** Ask your partner to review the issue without relying on your earlier chat.
 Add any context they need to start the task.
 
-**1.7** Commit the morning work on your branch.
+**1.7** Commit the morning work on `workshopbranch`.
 
 **1.8** If using a hosted agent, push that branch to the **approved pair/cohort repository**.
 The remote agent cannot see unsaved local files or your private chat. A local fallback
@@ -119,12 +119,13 @@ before approving any PR workflow, including on the hosted alternative.
 **2.13** Label the artifacts **LOCAL FALLBACK - NOT CLOUD EXECUTION** and record the
 morning base commit.
 
-**2.14** From the morning branch, create the implementation branch. Replace
-`<pair-name>` with your alias before running:
+**2.14** From `workshopbranch`, create the implementation branch:
 
 ```text
-git switch -c workshop/<pair-name>-creation
+git switch -c workshopcreation
 ```
+
+In a shared cohort repository, use the unique branch names from your facilitator.
 
 **2.15** Ask your partner to review the task as a new implementer.
 
@@ -136,7 +137,7 @@ implementation/check requirements.
 **2.17** If Copilot is unavailable, have a human implement from the packet and record
 that agent execution was not demonstrated.
 
-**2.18** Commit the implementation result on the new branch.
+**2.18** Commit the implementation result on `workshopcreation`.
 
 **2.19** If a PR is permitted, push the implementation branch to the approved pair
 repository.

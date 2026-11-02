@@ -48,10 +48,15 @@ Clone the **assigned pair/cohort URL**, not an invented public fork:
 ```text
 git clone <your-assigned-private-repository-url>
 cd <your-checkout-folder>
-git switch -c workshop/<pair-name>
+git switch -c workshopbranch
 ```
 
+Use `workshopbranch` as written in your pair's repository. In a shared cohort repository,
+ask the facilitator for a unique branch name instead.
+
 Run commands from the repository root. Keep work on this branch through the morning.
+Labs use `workshopbranch` for morning work and `workshopcreation` for Lab 4's local
+implementation. If you were assigned unique names, use those wherever these names appear.
 Commit checkpoints so you can return to a known state without discarding work.
 Do not change the source repository's default branch or overwrite another pair's branch.
 The private source's workshop release may be on a published feature branch; use the
