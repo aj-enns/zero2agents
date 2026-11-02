@@ -81,3 +81,4 @@ install tools or grant permissions as a "next step."
 **Stuck?** [See a resolution plan, handoff and demo example](examples/06-capstone.md).
 
 **Optional next:** [Bonus Lab 6: Create a ticket-triage agent in Copilot CLI](labs/06-cli-agent.md).
+Or try [Bonus Lab 7: Manage agent sessions](labs/07-manage-agent-sessions.md).

@@ -12,6 +12,7 @@ not personal information. Commit useful, sanitized artifacts with your checkpoin
 | `governance.md` with control owners and decisions | Governance checkpoint |
 | `creation-issue.md` and `handoff.md` | Lab 4 |
 | `evaluation.md` from the evaluation template | Evaluation block |
+| `session-management.md` with session names, observed states, and handoff | Optional Bonus Lab 7 |
 | `capstone-plan.md` and `demo.md` | Capstone and wrap-up |
 | `cli-agent.md` and `triage-input.md` | Optional Bonus Lab 6 |
 

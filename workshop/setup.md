@@ -26,6 +26,9 @@ Changing the model does not change the harness or permissions. In this workshop,
 per-action approvals; do not enable blanket approval, Autopilot, or unattended delegation.
 Read [surface details and checked sources](references.md).
 
+For optional practice with session lists, parallel read-only tasks, and follow-ups, see
+[Bonus Lab 7: Manage agent sessions](labs/07-manage-agent-sessions.md) after the core workshop.
+
 ## Repository and access
 
 The source, **aj-enns/zero2agents**, is private. A URL alone does not grant access.
