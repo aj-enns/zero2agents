@@ -1,116 +1,99 @@
 # zero2agents
 
-A one-day, **08:00-16:00** workshop for developers already using GitHub Copilot.
-Design, build, evaluate, and manage **development agents** against a small C# service-desk API.
-No Azure subscription, database, API keys, or paid infrastructure is required for the local path.
-Copilot usage and optional GitHub-hosted execution remain subject to your account's allowances.
+A one-day workshop for developers who already use GitHub Copilot.
+Learn to plan, guide, connect and review **development agents** with QueueDesk,
+a small C# ticket app. No Azure subscription, database, API keys or extra packages
+are needed.
 
-**Start:** [Setup and preflight](workshop/setup.md) -> [Lab 1](workshop/labs/01-plan-to-agent.md)
--> [Lab 2](workshop/labs/02-agent-design.md) -> [Lab 3](workshop/labs/03-mcp.md)
--> [Governance checkpoint](workshop/governance.md) -> [Lab 4](workshop/labs/04-handoff-review.md)
--> [Evaluation](workshop/labs/05-evaluation.md) -> [Capstone](workshop/capstone.md).
+**Start here:** [Setup and preflight](workshop/setup.md).
+Then follow four guided labs:
 
-## What you will learn
-
-1. **[Plan before you build](workshop/labs/01-plan-to-agent.md).** Ask Copilot for a plan,
-   review it, then let it write code and check the results.
-2. **[Give agents clear jobs and rules](workshop/labs/02-agent-design.md).** Create planning
-   and reviewing agents, and teach them your project's standards and limits.
-3. **[Connect agents to outside tools safely](workshop/labs/03-mcp.md).** Use MCP to let
-   an agent read official documentation while controlling what it can access and share.
-4. **[Delegate work and review what comes back](workshop/labs/04-handoff-review.md).**
-   Give an agent a clear GitHub issue, then review its code, tests and pull request.
-
-You will also compare agent results, improve their instructions and put the whole workflow
-into practice in a final challenge. By the end, you will have a tested feature, project
-instructions, two custom-agent roles and a reviewed handoff.
-Work through the labs on your own. Use Copilot for review, then check its findings
-and make the final decision yourself.
-Before moving to the next lab, [check in your reviewed files](workshop/work/README.md#check-in-after-each-lab)
-with a Git commit. Saving files in the editor is not a commit.
-
-## Optional bonus labs
-
-**[Bonus Lab 6: Create a ticket-triage agent in Copilot CLI](workshop/labs/06-cli-agent.md)**
-uses the CLI's agent-creation flow to build an agent that recommends ticket priorities
-and next steps without changing tickets. Check whether your CLI offers `/create-agent`;
-the documented alternative is `/agent`, then **N**. Allow about 30 minutes after the
-core workshop. Lab 5 remains evaluation; the 08:00-16:00 agenda below is unchanged.
-
-**[Bonus Lab 7: Manage agent sessions](workshop/labs/07-manage-agent-sessions.md)**
-uses VS Code's Agents window or the GitHub Copilot app to track two read-only tasks,
-guide their work, and review the results. Allow 20-30 minutes after the core workshop.
-You can take either bonus lab on its own.
-
-## Prerequisites
-
-Complete these before the workshop; allow **20-30 minutes** for setup.
-
-| Requirement | What to install or check |
+| Lab | What you will do |
 | --- | --- |
-| Git | [Install Git](https://git-scm.com/downloads), then confirm `git --version` works. |
-| VS Code | [Install VS Code](https://code.visualstudio.com/download). Add the Microsoft-published **C#** and **GitHub Copilot** extensions; sign in to Copilot. C# Dev Kit is optional where approved/licensed. |
-| .NET SDK | Use **10.0.300 or a newer stable 10.0 SDK**. If missing, [download the .NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0), choose your OS/architecture, and install the **SDK**, not just the runtime. |
-| GitHub access | Use your own Copilot-enabled account with approved access to the private workshop repository. Confirm organization policies allow the editor agent features. |
-| Working knowledge | Be comfortable with basic C#, Git branches/commits, and reviewing a pull request. No agent-design experience is required. |
+| [1. Plan and build](workshop/labs/01-plan-to-agent.md) | Review a plan, let an agent add a small feature, and check its work. |
+| [2. Give agents instructions and roles](workshop/labs/02-agent-design.md) | Add clear project rules and create agents that plan and review. |
+| [3. Connect an agent to tools safely](workshop/labs/03-mcp.md) | Look up official docs, check the source, and handle unsafe text. |
+| [4. Delegate, review and improve](workshop/labs/04-handoff-review.md) | Give a fresh agent a complete task, manage its session, review its code, and improve one instruction. |
 
-Restart VS Code and your terminal after installation. From your checkout, verify:
+Each lab has copy-and-paste prompts, numbered steps and visible completion checks.
+**No work log, copied output, scoring sheet or separate handoff document is required.**
+Read answers in chat, inspect changes in Source Control, and run checks in the terminal.
+Save reviewed files with a [local Git commit](workshop/work/README.md#check-in-after-each-lab).
+You do not need to push for the main workshop.
 
-```text
-git --version
-dotnet --list-sdks
-dotnet --version
-```
+## One project, independent exercises
 
-`dotnet --version` should show **10.0.300 or a newer stable 10.0 SDK**.
-An existing 10.0.300 installation is sufficient; .NET 8/9 alone is not.
-Then follow [setup and preflight](workshop/setup.md) to create `workshopbranch`
-and run the baseline checks. MCP and GitHub-hosted agent access are optional paths
-with documented fallbacks; no Azure subscription, Node.js, database or credentials are needed.
+Lab 1 adds status filtering. Lab 2 uses a supplied practice plan, not Lab 1's code.
+Lab 3 uses public documentation, not earlier work. Lab 4 adds ticket creation;
+it does not require status filtering, search, custom agents or MCP.
+
+If a code change gets stuck, keep it and use the
+[fresh-start steps](workshop/setup.md#start-fresh-without-losing-work).
+Do not spend the day repairing an earlier exercise.
+Blocked tools are not a pass, but they do not have to block the next topic.
+
+## Before the day
+
+Allow 20-30 minutes for [setup](workshop/setup.md). You need Git, VS Code,
+the Microsoft-published C# and GitHub Copilot extensions, an approved Copilot account,
+and the .NET 10 SDK selected by `global.json`.
+Use an approved private workshop repository. No Node.js or npm is needed.
+
+The main path is **VS Code with the Local harness**. A harness is the environment
+that runs an agent. Keep normal tool approvals on. MCP has a browser-only alternative;
+GitHub-hosted execution is optional.
 
 ## Agenda
 
-Times are local workshop time. Breaks and lunch are included in the eight-hour day.
-
-| Time | Session |
+| Time | Activity |
 | --- | --- |
-| 08:00-08:30 | Welcome, goals and setup checks |
-| 08:30-09:30 | Lab 1: Plan before you build |
-| 09:30-09:45 | Break |
-| 09:45-10:45 | Lab 2: Give agents clear jobs and rules |
-| 10:45-11:30 | Lab 3: Connect agents to outside tools safely |
-| 11:30-12:00 | Check permissions, safety rules and usage limits |
+| 08:00-08:30 | Welcome and setup checks |
+| 08:30-09:45 | Lab 1: Plan and build |
+| 09:45-10:00 | Break |
+| 10:00-11:30 | Lab 2: Instructions and roles |
+| 11:30-12:00 | Discuss what worked; catch up or take a fresh start |
 | 12:00-12:45 | Lunch |
-| 12:45-14:00 | Lab 4: Delegate work and review what comes back |
-| 14:00-14:15 | Break |
-| 14:15-14:45 | Compare agent results and improve their instructions |
-| 14:45-15:45 | Final challenge: use the whole workflow |
-| 15:45-16:00 | Demos, wrap-up and next steps |
+| 12:45-13:45 | Lab 3: Tools and safety |
+| 13:45-14:00 | Break |
+| 14:00-15:45 | Lab 4: Delegate, review and improve |
+| 15:45-16:00 | Show a result and wrap up |
 
-## Starter
+## Run QueueDesk
 
-**QueueDesk** includes a responsive ticket workspace with light/dark themes, priority sorting,
-and expandable details from the live API. It lists four deterministic tickets and reports health.
-Filtering, search, creation, and resolution are intentionally unfinished participant work.
-See the [API contract and sample requests](workshop/project.md).
+From the repository root, build and then run the checks:
 
-From the repository root, with **.NET SDK 10.0.300 or a newer stable 10.0 SDK**
-(`global.json` selects the highest compatible installed feature band):
-
-```text
-dotnet build Zero2Agents.slnx
-dotnet run --project tests/QueueDesk.Checks --no-build
-dotnet run --project src/QueueDesk.Api --no-build -- --urls http://127.0.0.1:5080
+```powershell
+dotnet build .\Zero2Agents.slnx
 ```
 
-Open **http://127.0.0.1:5080/** for the frontend. Raw JSON remains at `/health` and `/tickets`.
-Starter filters, search and mutations are visibly disabled; enable the corresponding
-[workshop feature switch](workshop/project.md#frontend-and-feature-switches) only after
-implementing and checking its API. No Node.js, npm or separate frontend server is needed.
+Only if the build succeeds:
 
-The dependency-free checks start their own API on an ephemeral loopback port, print PASS/FAIL,
-and exit nonzero on failure. **`dotnet test` is not the test runner for this starter.**
-Keep evidence in [your workshop work folder](workshop/work/README.md).
-The primary editor path is **VS Code, Local harness, GitHub Copilot**; alternatives and access
-fallbacks are in setup. [Official references](workshop/references.md) were checked **2026-11-01**;
-CLI bonus-lab guidance was checked separately **2026-11-02**.
+```powershell
+dotnet run --project .\tests\QueueDesk.Checks --no-build
+```
+
+Start the app:
+
+```powershell
+dotnet run --project .\src\QueueDesk.Api --no-build -- --urls http://127.0.0.1:5080
+```
+
+Open **http://127.0.0.1:5080/**. The starter shows four tickets.
+Filtering, search, creation and resolution start disabled.
+Enable only an assigned feature after its API passes checks and human review.
+See the [API contract](workshop/project.md).
+Stop the app with **Ctrl+C** before rebuilding.
+
+`dotnet test` does not run this project's checks.
+The check runner starts its own API; you do not need a separate running app for it.
+
+## Optional practice and help
+
+- [Create a ticket-triage agent in Copilot CLI](workshop/labs/06-cli-agent.md).
+- [Manage two read-only agent sessions](workshop/labs/07-manage-agent-sessions.md).
+- [Short worked examples](workshop/examples/README.md).
+- [Safety reminders](workshop/governance.md).
+- [Editor differences and official sources](workshop/references.md).
+
+Optional exercises are outside the four-lab day. Copilot and optional hosted work
+remain subject to your account's permissions and usage limits.

@@ -1,6 +1,6 @@
-# Bonus Lab 6 example: QueueTriage
+# Optional CLI example: QueueTriage
 
-[All examples](README.md) | [Bonus Lab 6](../labs/06-cli-agent.md)
+[All examples](README.md) | [Optional CLI practice](../labs/06-cli-agent.md)
 
 This is an **inactive reference profile and illustrative response**, not a record of CLI
 creation, tool verification or agent execution. Create and review your own profile through
@@ -44,7 +44,7 @@ The human owns priorities, follow-up actions and acceptance.
 ```
 
 The one-attempt limit is an illustrative design choice, not a required budget.
-Agree your own runtime/retry boundary and put it in your profile and evidence notes.
+Put your runtime/retry boundary in the profile; no evidence notes are required.
 An explicit tools list and strict setting keep default tools from being added.
 Verify loaded capabilities rather than assuming that a written restriction alone is a sandbox.
 

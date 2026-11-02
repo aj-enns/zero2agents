@@ -14,6 +14,11 @@ Practice **verbal economy**: use the fewest words that keep the meaning and guid
 - Make completion checks observable. Link to shared setup rather than repeating it.
 - End each lab with a reviewed Git commit checkpoint and an observable completion check.
   Link to `workshop/work/README.md#check-in-after-each-lab`; distinguish committing from pushing.
+- Use four primary labs with ready-to-paste prompts, clear actions and expected results.
+  Do not require work logs, copied output, evidence forms or separate handoff documents.
+  For read-only exercises with no tracked changes, keep the existing Git checkpoint.
+- Keep each primary lab independent of earlier feature work, custom roles and notes.
+  Link to the shared fresh-start path instead of requiring repair of an earlier exercise.
 
 ## Code and feature scope
 
@@ -29,6 +34,8 @@ after its endpoint passes acceptance checks. No Node/npm build step is needed.
 
 Implement only the current lab or assigned issue, not future exercises.
 Lab 2 participants will refine these instructions and add scoped instructions and agent roles.
+Lab 1 implements status filtering; Lab 4 implements creation. Lab 2 uses a practice plan,
+not a search implementation. Search and resolution are optional future work.
 
 ## Build and checks
 

@@ -18,15 +18,17 @@ This page documents source-backed behavior, not universal entitlement or a prici
 | [GitHub repository instructions](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-repository-instructions) | Repository-wide plus matching path instructions combine. Support varies by feature; don't assume every GitHub chat surface uses path-specific rules. |
 | [GitHub custom-agent reference](https://docs.github.com/en/copilot/reference/custom-agents-configuration) | Cloud/CLI tool aliases and namespace references; VS Code handoffs are ignored on GitHub. Omitted tools means broad defaults; unknown tools can be ignored. Do not blindly reuse a Local profile. |
 
-We ship **inactive role templates**, not a finished solution. Participants author/activate roles
-in Lab 2 and verify discovery/tools. Repository guidance is a minimal bootstrap they refine.
+We ship complete **inactive starter role templates**, not a finished API solution.
+Participants author/activate roles in Lab 2 and verify discovery/tools.
+Lab 4 can use the reviewer template without completing Lab 2.
+Repository guidance is a bootstrap they refine.
 We intentionally avoid multiple competing `AGENTS.md`/`CLAUDE.md` instruction hierarchies.
 
 ## Copilot CLI bonus lab
 
 **Checked separately: 2026-11-02.** This does not re-date the other sources on this page.
 
-| Official source | What Bonus Lab 6 relies on |
+| Official source | What optional CLI practice relies on |
 | --- | --- |
 | [Create CLI custom agents](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/create-custom-agents-for-cli) | Interactive `/agent`, then **N**; Project vs User location; generated profile review; explicit tool selection; restart to load. Personal profiles with the same ID override project profiles. `strict-tools-list: true` prevents default tools being added to the listed groups. Direct selection follows repository instructions; delegated subagents need `include-custom-instructions: true` to opt in. |
 | [CLI command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference) | Consult the installed version's available commands and custom-agent settings rather than assuming editor commands apply to CLI. |
@@ -36,13 +38,14 @@ The requested `/create-agent` spelling was not established by the creation guide
 The lab uses it only if the participant's installed CLI lists it, otherwise the
 documented `/agent` creation flow applies. The authoring machine's CLI launcher could
 not start, so interactive creation and tool enforcement were **not locally verified**.
-Participants capture their own version, command, loaded tools and observed responses.
+Participants inspect their own version, available command, loaded tools and responses;
+they do not need to copy them into a log.
 The worked example is inactive and illustrative, not execution evidence.
 
 ## Optional session-management lab
 
 **Checked: 2026-11-02.** These sources support the
-[Bonus Lab 7](labs/07-manage-agent-sessions.md). The two apps have different controls;
+[optional session practice](labs/07-manage-agent-sessions.md). The two apps have different controls;
 the lab does not require session transfer between them.
 
 | Official source | What this lab relies on |
@@ -53,9 +56,8 @@ the lab does not require session transfer between them.
 | [GitHub Copilot app overview](https://docs.github.com/en/copilot/concepts/copilot-surfaces/github-copilot-app) | Repository-based session lists and parallel workspaces. Availability depends on account and organization policy. |
 | [VS Code agent controls](https://code.visualstudio.com/docs/agents/overview#stay-in-control) | Steer or stop requests; stopping does not undo completed actions. Worktrees are not security boundaries. |
 
-Image placeholders in the lab include capture notes in HTML comments. Add screenshots
-from the approved versions used for the cohort. Show real states, keep labels readable,
-and crop account details, unrelated repositories, and private conversations.
+The guided exercise uses actual session states. Learners do not need screenshots
+or a written session record. If controls differ, use the approved app's current help.
 
 ## MCP and trust
 
@@ -70,7 +72,8 @@ and crop account details, unrelated repositories, and private conversations.
 
 This workshop installs **no MCP server automatically** and adds no GitHub repository MCP
 settings. Examples are inert. Public read-only output is still untrusted; generic queries
-still transmit text. The no-MCP path provides honest provenance, not fake tool traces.
+still transmit text. The browser path teaches source checking, not MCP execution.
+Neither path requires a research log.
 
 ## Hosted agents, review, network and cost
 
@@ -101,7 +104,7 @@ claim every Copilot surface is technically incapable of merge or broader actions
 | [Minimal API parameter binding](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/parameter-binding?view=aspnetcore-10.0) | Query/body/service binding; framework binding is distinct from application validation. Test rejection behavior. |
 
 Title lengths, status/priority casing, duplicate-query rejection, seed counts, ID allocation,
-idempotency and rubric thresholds are **workshop design decisions** in [project.md](project.md),
+and idempotency are **workshop design decisions** in [project.md](project.md),
 not claims that the framework enforces them automatically.
 
 ## Private cohort distribution
@@ -110,6 +113,8 @@ not claims that the framework enforces them automatically.
 requires access to the template and offers default-branch or all-branch contents. Template
 branches have unrelated histories; do not copy all branches and expect to merge workshop
 checkpoints across them. Prefer the selected release on each developer's repository default branch.
+Setup saves a local `workshop-start` reference after checking this starter.
+The fresh-start path uses that reference in a separate worktree, preserving unfinished files.
 [Fork permissions and visibility](https://docs.github.com/en/pull-requests/reference/forks)
 depend on upstream visibility and private-fork policies. Private forks remain private and
 cannot be created in a GitHub Free organization. They are not independent visibility copies.
