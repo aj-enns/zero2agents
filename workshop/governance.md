@@ -57,3 +57,7 @@ choose Lab 4's local fallback. Do not grant new personal tokens, weaken protecti
 provision infrastructure to continue. Record one real control improvement and its owner.
 Definition of done: your go/no-go, control owners, one observed boundary failure or successful
 refusal, and the chosen afternoon path are recorded before lunch.
+
+---
+
+**Next:** [Lab 4: GitHub cloud/coding-agent handoff and PR review](labs/04-handoff-review.md)

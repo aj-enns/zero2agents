@@ -1,7 +1,9 @@
 # Capstone: resolve a ticket end to end
 
-**14:45-15:45 (60 minutes)** | [Previous: Evaluation](labs/05-evaluation.md)
-| **15:45-16:00 demos and wrap-up**
+**Expected completion time: 60 minutes**, followed by a 15-minute group wrap-up.
+| [Previous: Evaluation](labs/05-evaluation.md)
+
+Work through the checkpoints at your own pace; the estimate is a guide, not a deadline.
 
 You now own the whole workflow. Ship the **resolution contract in [project.md](project.md)**
 using the roles, instructions, tools, handoffs and evaluation lessons you developed.
@@ -9,19 +11,19 @@ Start from the reviewed Lab 4 creation branch (including morning features), not 
 default branch missing that work. If you fell behind, use the facilitator's creation
 checkpoint and explicitly identify which code is not yours.
 
-## Brief and timeboxes
+## Work and checkpoints
 
-**0-10 min:** write `capstone-plan.md`, define inputs/outputs and acceptance checks,
+**Plan the feature.** Write `capstone-plan.md`, define inputs/outputs and acceptance checks,
 and get human approval. Use QueuePlanner; assign a single implementation owner.
 No need for another hosted task: local execution is the default, reusing written handoffs.
 
-**10-35 min:** hand off to the implementer. Add `POST /tickets/{id:int}/resolve`,
+**Implement the approved scope.** Hand off to the implementer. Add `POST /tickets/{id:int}/resolve`,
 thread-safe store update, idempotent repeated resolution and existing 404 Problem Details.
 Preserve id/title/priority, creation, filters/search, seed reset and ordered snapshots.
 Use normal approvals, synthetic data, no secrets/network expansion/packages/policy changes.
 Stop after two failed repairs and report gaps.
 
-**35-50 min:** QueueReviewer inspects the diff/packet. The human independently builds/runs
+**Review independently.** QueueReviewer inspects the diff/packet. The human independently builds/runs
 checks and exercises open, already-resolved and missing-ID behavior. Test that a newly
 created ticket can be resolved and appears under resolved filters/search. Test concurrent
 resolution of the same ID returns consistent records and does not duplicate tickets.
@@ -32,7 +34,7 @@ After the endpoint passes, enable `resolve` in
 then expand and resolve a ticket. Verify the raw response and its movement between queues;
 the UI demonstration supplements, not replaces, the executable acceptance checks.
 
-**50-60 min:** commit the result, complete the criterion-to-check handoff and score the rubric.
+**Save your checkpoint.** Commit the result, complete the criterion-to-check handoff and score the rubric.
 Prepare `demo.md`: feature request, role/tool boundaries, one real evidence item, one rejected
 unsafe action or limitation, and the review decision. A draft PR is optional where permitted;
 no merge or policy change is required.
@@ -61,9 +63,9 @@ capabilities honestly and do not claim those platform outcomes.
 On seed expect 4/2/2; after creating then resolving one ticket expect 5/2/3.
 Don't let `/tickets/{id:int}` shadow it. No database or background agent.
 
-## 15:45-16:00 demos, wrap-up and next steps
+## Demos, wrap-up and next steps
 
-Use 10 minutes for selected two-minute pair demos, 5 for takeaways and cleanup.
+Share selected pair demos, then discuss takeaways and clean up.
 Show a real request/result, a test that catches a boundary, the handoff and a measured
 agent revision (or justified decision not to adopt it). Explain what the agent could not do.
 Stop local API and hosted execution, disable the exercise MCP server, and have the

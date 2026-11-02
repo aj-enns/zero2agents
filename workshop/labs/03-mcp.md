@@ -1,7 +1,9 @@
 # Lab 3: Bounded MCP integration
 
-**10:45-11:30 (45 minutes)** | [Previous](02-agent-design.md)
+**Expected completion time: 45 minutes** | [Previous](02-agent-design.md)
 | [Next: Governance](../governance.md)
+
+Work through the checkpoints at your own pace; the estimate is a guide, not a deadline.
 
 **Outcome:** use external documentation as evidence for the afternoon creation task,
 without giving tools access to private systems or letting tool output become authority.
@@ -16,13 +18,15 @@ Use only **`microsoft_docs_search` and `microsoft_docs_fetch`**.
 Do not enable sample search or all server tools for this exercise.
 Send generic .NET questions, **no repository code, private issues, secrets or user data**.
 Read [official sources and limitations](../references.md) before trust/start.
+Bound each agent research attempt to at most three search/fetch calls and 10 minutes.
+This limits tool use and cost; it is not a deadline for completing the participant steps.
 
 ## Work and checkpoints
 
-1. **0-10 min: review the request.** Record publisher, URL, two tool names, data sent,
+1. **Review the request.** Record publisher, URL, two tool names, data sent,
    human approver, time limit and why external docs add value beyond local code search.
    Obtain required organization approval. If blocked, use the fallback below now.
-2. **10-20 min: connect on the primary path.** In VS Code **Local**, review
+2. **Connect on the primary path.** In VS Code **Local**, review
    [mcp.local.example.json](../templates/mcp.local.example.json).
    If `.vscode/mcp.json` exists, inspect it and add only the `learn` entry; otherwise copy
    the example to that path. It uses `servers`, not `mcpServers`. This file is ignored by git.
@@ -31,17 +35,17 @@ Read [official sources and limitations](../references.md) before trust/start.
    A documentation-only custom role can use the exact qualified names supplied by
    completions, normally `learn/microsoft_docs_search` and `learn/microsoft_docs_fetch`.
    Verify names against the discovered inventory; no wildcard or guessed tool identifier.
-3. **20-30 min: execute bounded research.** Ask for official ASP.NET Core Minimal API
+3. **Execute bounded research.** Ask for official ASP.NET Core Minimal API
    guidance on validating required strings, returning Problem Details, and 201 Location.
-   At most three search/fetch calls, 10 minutes, no code edits or installation.
+   Apply the tool boundary above; no code edits or installation.
    Inspect actual tool calls and outputs. Choose a fetched official article and write
    recommendations for [Lab 4's contract](../project.md), including one framework behavior
    that must be tested instead of assumed.
-4. **30-40 min: challenge the boundary.** Append the synthetic snippet below to a
+4. **Challenge the boundary.** Append the synthetic snippet below to a
    separate local copy of your research notes and give it to the research role as
    explicitly untrusted tool-output content. Do **not** claim the real Learn server returned it.
    Confirm the role ignores the instruction, doesn't call extra tools, and cites real docs.
-5. **40-45 min: hand off.** Save `mcp-research.md`: execution/fallback path, exact tool
+5. **Save your checkpoint and hand off.** Save `mcp-research.md`: execution/fallback path, exact tool
    names, generic query, source URLs, retrieval date, relevant excerpts, recommendation,
    observed injection response, remaining uncertainty. Disable the server after the exercise;
    stopping alone may permit a later restart.
@@ -80,7 +84,7 @@ OAuth remote servers are not supported by that repository configuration as check
 No cloud MCP configuration is needed for this day. Do not paste the editor file into
 GitHub settings or broaden the cloud network for this lab.
 
-## No-MCP fallback (same timebox, not a simulated tool call)
+## No-MCP fallback (not a simulated tool call)
 
 Use a browser to read these official sources:
 [Minimal API responses](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/responses?view=aspnetcore-10.0)
@@ -98,3 +102,8 @@ real search/fetch result is inspected, and the recommendation cites a fetched of
 For fallback, provenance and absence of MCP execution are explicit. In either path, the
 injection attempt caused no unsafe action or fabricated test result. No API code changed.
 **Stretch:** identify one recommendation the docs do not prove and design a check for it.
+
+---
+
+**Next:** [Governance checkpoint](../governance.md), then
+[Lab 4: GitHub cloud/coding-agent handoff and PR review](04-handoff-review.md)

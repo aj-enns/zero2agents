@@ -1,18 +1,25 @@
 # Lab 4: GitHub cloud/coding-agent handoff and PR review
 
-**12:45-14:00 (75 minutes)** | [Governance](../governance.md)
-| **14:00-14:15 break** | [Next: Evaluation](05-evaluation.md)
+**Expected completion time: 75 minutes** | [Governance](../governance.md)
+| [Next: Evaluation](05-evaluation.md)
+
+Work through the checkpoints at your own pace; the estimate is a guide, not a deadline.
 
 **Outcome:** hand off a creation feature without hidden chat context, then accept or reject
 it using independently verified evidence. Prefer the **GitHub issue-assignment,
 GitHub Actions-based agent path** when permitted. A cloud sandbox is a separately labeled
 alternative; a local fallback exercises the same handoff/review, not the same execution.
 
-## 0-20 minutes: prepare an agent-ready issue
+**Agent execution boundary:** allow one implementation attempt, bounded to 25 minutes or
+two unsuccessful repairs, then request a handoff with gaps. This controls autonomous
+execution and cost, not participant pace. The platform's Actions-session maximum is
+59 minutes, not permission to extend the approved agent budget.
+
+## Prepare an agent-ready issue
 
 Use the [agent-ready issue template](../../.github/ISSUE_TEMPLATE/agent-ready.md).
 Fill the [creation contract](../project.md), non-goals, paths, build/check commands, allowed
-tools, human owner, 25-minute implementation bound and two-repair stop condition.
+tools, human owner and the agent execution boundary above.
 Include the public Lab 3 research recommendation, not an unrestricted tool grant.
 Save the issue body as `workshop/work/<pair-name>/creation-issue.md`.
 
@@ -26,7 +33,7 @@ Create the issue in the assigned repo. The source repository does not need works
 participant issues. If GitHub issue creation is unavailable, the saved Markdown body is
 the fallback task packet.
 
-## 20-45 minutes: run exactly one bounded implementation
+## Run exactly one bounded implementation
 
 **Primary GitHub Actions-based path:**
 
@@ -40,9 +47,8 @@ the fallback task packet.
 3. Confirm the actual execution environment in the session. The checked docs describe
    issue-assignment sessions as GitHub Actions-based. Inspect setup/build output.
    The setup file is ignored by cloud sandboxes and must be on the default branch for Actions.
-4. Inspect progress/session logs. Stop at 25 minutes or two unsuccessful repairs; ask for a
-   handoff with gaps instead of repeatedly launching tasks. The platform's Actions-session
-   maximum is 59 minutes, **not** the workshop budget.
+4. Inspect progress/session logs. Enforce the agent execution boundary above; ask for a
+   handoff with gaps instead of repeatedly launching tasks.
 
 **If issue assignment is absent but hosted execution is approved:** from the repository's
 Agents tab start a task with the exact issue text and explicit repository/base branch.
@@ -65,14 +71,14 @@ Save the base commit and create `workshop/<pair-name>-creation` from the morning
 Start a **fresh local Agent chat**, supplying only the saved issue, repository files and
 instructions; do not bring the planning conversation along. Your partner reviews that
 packet as though they were a new implementer.
-Use the same scope, 25-minute budget, two-repair stop, implementation/check requirements.
+Use the same scope, agent execution boundary and implementation/check requirements.
 Commit the result. If permitted, open a **human-authored draft PR** in the pair repo;
 otherwise review `git diff <base-commit>..HEAD` and supplied evidence locally.
 This preserves context transfer, bounded implementation and review outcomes; it does not
 demonstrate remote execution, hosted credentials/firewall or hosted session logs.
 With no Copilot access, a human implements from the packet; record that additional limitation.
 
-## 45-65 minutes: independent evidence-based review
+## Independent evidence-based review
 
 Supply [the handoff template](../templates/handoff.md) and actual diff to QueueReviewer,
 then **a human** reviews and reruns build/checks on the result branch.
@@ -103,7 +109,7 @@ Required approval from the initiating human may not count under GitHub's Copilot
 use an independent reviewer, and do not weaken protections or add a bypass.
 Copilot code review is optional supplementary evidence, not a substitute for human approval.
 
-## 65-75 minutes: close the handoff
+## Save your checkpoint and close the handoff
 
 Send one specific repair request if needed, rerun affected checks and record residual gaps.
 Do not enable Agent Merge, auto-merge or automatic workflow approval.
@@ -116,3 +122,7 @@ scoped implementation, all creation and regression criteria covered, independent
 checks, reviewer verdict, and a completed handoff packet. Incomplete implementation must be
 marked incomplete, with a documented checkpoint/fallback for the capstone.
 **Stretch:** compare hosted and local handoff context gaps; do not launch a second hosted task.
+
+---
+
+**Next:** [Lab 5: Agent evaluation, iteration and management](05-evaluation.md)
