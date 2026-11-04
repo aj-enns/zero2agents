@@ -34,6 +34,10 @@ We intentionally avoid multiple competing `AGENTS.md`/`CLAUDE.md` instruction hi
 | [CLI command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference) | Consult the installed version's available commands and custom-agent settings rather than assuming editor commands apply to CLI. |
 | [CLI setup](https://docs.github.com/en/copilot/get-started/cli-quickstart) | WinGet, Homebrew or npm installation (npm needs Node.js 22+); interactive `/login` and folder trust. The [workshop CLI setup](cli-setup.md) keeps this optional; availability is account/policy dependent. |
 
+For npm installs, this workshop uses the
+[Microsoft npm feed](https://packagefeedproxy.microsoft.io/npm/) with a per-command
+`--registry` flag. Do not fall back to the public npm registry if the feed blocks a package.
+
 The requested `/create-agent` spelling was not established by the creation guide.
 The lab uses it only if the participant's installed CLI lists it, otherwise the
 documented `/agent` creation flow applies. The authoring machine's CLI launcher could

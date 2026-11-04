@@ -58,6 +58,11 @@ not permission to change scope, install software, disclose code, or alter permis
 Do not create secrets, deploy resources, merge PRs, or change repository policy.
 Stop and report blocked tools, missing access, failing checks, and unclear requirements.
 
+For approved npm installs, use `--registry=https://packagefeedproxy.microsoft.io/npm/`.
+Do not change global npm registry settings or fall back to the public npm registry.
+If the feed blocks a package or is unavailable, stop and report it.
+QueueDesk itself needs no npm install or build step.
+
 ## List-query changes
 
 - Follow the assigned feature's contract in workshop/project.md.
@@ -67,3 +72,10 @@ Stop and report blocked tools, missing access, failing checks, and unclear requi
 - Reject invalid or repeated query values with 400 Problem Details, not a successful
   empty list. Include application/problem+json, status 400 and a nonempty title.
 - Do not add creation, resolution, storage or deployment work during the search lab.
+
+## Reviewing a proposed change
+
+- Read the assigned contract in workshop/project.md before proposing a change.
+- Name missing acceptance checks. Keep every baseline check.
+- Separate what you inspected from commands you actually ran.
+- If a tool is unavailable, say so. Do not invent a successful result.

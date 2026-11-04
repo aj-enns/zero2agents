@@ -41,11 +41,16 @@ brew install --cask copilot-cli
 ### Alternative: npm
 
 Use this only if Node.js **22 or later** and npm are already installed and approved:
+Use the [Microsoft npm feed](https://packagefeedproxy.microsoft.io/npm/) for this install.
 
 ```sh
 node --version
-npm install -g @github/copilot
+npm install -g @github/copilot --registry=https://packagefeedproxy.microsoft.io/npm/
 ```
+
+The registry flag applies only to this command; it does not change your npm settings.
+If the feed blocks the package or is unavailable, stop and ask the facilitator.
+Do not switch to the public npm registry.
 
 Node.js and npm are not required for QueueDesk or the other installation methods.
 For other options, use the [official CLI setup guide](https://docs.github.com/en/copilot/get-started/cli-quickstart).
