@@ -78,6 +78,9 @@ without repeating every project rule.
 **2.3.1** Create `.github/agents` if needed. Create `planner.agent.md` inside it.
 If you already have a profile with that name, inspect it rather than overwriting
 personal work. Ask the facilitator about conflicting profiles.
+For a profile from an earlier version of this lab, remove the requirement for a
+starting commit or SHA and any instruction to read `workshop/work/agent-contracts.md`.
+Use the definition below as the reference; this exercise needs neither.
 
 **2.3.2** Paste:
 
@@ -103,6 +106,8 @@ Do not implement future exercises. Keep the answer focused on the assigned task.
 **2.3.3** Save the file. Open a new **Local** chat and choose **QueuePlanner**
 from the agent picker. Check that its tools are read/search only.
 Keep terminal, edits, web and MCP tools unavailable.
+If it still asks for a starting commit or SHA, check that you saved the updated
+profile and selected it in a new chat. Do not provide a SHA to bypass an old rule.
 
 **2.3.4** Paste:
 
@@ -115,7 +120,9 @@ If it does not exist, do not require it or add it.
 Include a valid search with no matching tickets.
 ```
 
-**2.3.5** Compare the answer with the search contract.
+**2.3.5** Open [workshop/project.md: Feature contracts](../project.md#feature-contracts).
+Find the **Title search** row, which lists the required search behavior.
+Compare the planner's answer with those rules.
 Expect trimmed, case-insensitive substring matching, rejection of invalid input,
 and 200 with an empty array for a valid no-match search.
 The role must not change files or claim it ran checks.
