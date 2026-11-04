@@ -189,7 +189,9 @@ restricted tools.
 
 ### 2.5: Check the instruction files and save
 
-**2.5.1** Open a new built-in chat with only read/search tools.
+**2.5.1** In VS Code, open a fresh Local chat and select **Ask** mode,
+not **QueueReviewer**. Confirm that only read/search tools are available.
+This checks instruction discovery without a custom role.
 Attach `tests/QueueDesk.Checks/Program.cs` and
 `.github/instructions/tests.instructions.md` using **Add Context** or drag them
 from Explorer. Paste:
