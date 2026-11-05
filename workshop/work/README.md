@@ -9,6 +9,45 @@ Save useful project files: code, checks, instructions and agent profiles.
 Optional personal notes are fine, but are not completion requirements.
 Never commit secrets, personal settings or sensitive chat history.
 
+## Check website features
+
+Open `src/QueueDesk.Api/wwwroot/workshop.json`.
+Use the [feature table](../project.md#frontend-and-feature-switches) to match each
+flag to its endpoint and browser check.
+Enable a flag only when that endpoint exists, its acceptance checks pass and you
+have reviewed and accepted the code. A passing baseline alone is not enough.
+Keep accepted features enabled; leave missing, failing or unverified features disabled.
+Do not implement extra endpoints just to enable controls.
+
+Labs 2 and 3 add no API endpoints, so normally no flags change.
+After the four primary labs, filtering and creation can be enabled.
+Search and resolution need their optional implementations first.
+A fresh-start checkout may have fewer completed features.
+
+If you change a flag, stop the app and save the file. From the repository root, run:
+
+```powershell
+dotnet build .\Zero2Agents.slnx
+```
+
+Only if the build succeeds, run:
+
+```powershell
+dotnet run --project .\tests\QueueDesk.Checks --no-build
+```
+
+Only if all checks pass, start the app:
+
+```powershell
+dotnet run --project .\src\QueueDesk.Api --no-build -- --urls http://127.0.0.1:5080
+```
+
+Reload **http://127.0.0.1:5080/** and try each newly enabled feature using the
+feature table. Expect real API results, not just an enabled button.
+If a feature fails, disable its flag and report the failure.
+Stop the app before the lab's Git checkpoint. Include any reviewed flag changes.
+If no flags need changing, keep the existing configuration.
+
 ## Check in after each lab
 
 A **Git commit** saves a local checkpoint. **Push** sends commits to GitHub.

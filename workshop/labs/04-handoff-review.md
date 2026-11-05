@@ -201,6 +201,9 @@ real check results, not agent confidence.
 open `src/QueueDesk.Api/wwwroot/workshop.json`.
 Change only `"create": false` to `"create": true`.
 Keep other flags as they are; do not enable missing features.
+Use [Check website features](../work/README.md#check-website-features) if another
+accepted endpoint still has its flag disabled. Labs 2 and 3 add no endpoints;
+search and resolution stay disabled unless separately implemented and accepted.
 
 **4.5.2** Save, build again, and start a fresh app:
 
@@ -284,8 +287,11 @@ Two small tasks are practice, not proof of broad reliability.
 
 **4.6.6** Keep the change only if it helps without weakening the earlier behavior.
 Otherwise remove only the instruction you just added.
+Follow [Check website features](../work/README.md#check-website-features)
+to confirm the flags still match accepted endpoints.
 Review the role diff and [commit the accepted profile](../work/README.md#check-in-after-each-lab)
-with `Clarify reviewer verification limits`. If nothing changed, keep the existing
+with `Clarify reviewer verification limits`. Include any reviewed flag changes.
+If nothing changed, keep the existing
 checkpoint; no empty commit, snapshot files or written evaluation is needed.
 
 **Expected result:** you can judge a role change from repeatable tasks rather than
@@ -299,6 +305,7 @@ assuming a longer instruction is better.
   acceptance checks cover validation, rejected state changes and concurrency.
 - You compared the same two prompts and kept or rejected one instruction change.
 - Your reviewed files are in local commits. Blocked work is not presented as passed.
+- Website flags match accepted endpoints. Missing optional features remain disabled.
 - Stop the local app and any remaining exercise work. Keep the Learn exercise
   connection disabled if you used it. No report or final evidence file is required.
 
