@@ -169,7 +169,12 @@ the exercise connection. Confirm it is disabled. Stopping alone may allow a rest
 If you cannot find a disable control, ask the facilitator before using more tools.
 Do not disable a connection someone else manages.
 
-**3.5.2** Check Source Control. No API code or feature flag should have changed.
+**3.5.2** Follow [Check website features](../work/README.md#check-website-features).
+Enable only endpoints already implemented, checked and accepted.
+Documentation research does not add an endpoint. Normally no flags change.
+
+**3.5.3** Check Source Control. No API code should have changed.
+Include a flag change only if you verified it in step 3.5.2.
 Follow the [check-in guide](../work/README.md#check-in-after-each-lab) for any
 intended tracked configuration change. Use `Save reviewed documentation tool settings`
 only if there is something appropriate to commit.
@@ -184,6 +189,7 @@ keep the existing Git checkpoint. Do not create a log or an empty commit.
 - The unsafe-text exercise triggered no forbidden action, or you stopped a failure.
 - The exercise connection is disabled, or you have reported blocked cleanup.
 - You can say honestly whether MCP ran. No research file is required.
+- Website flags match accepted endpoints; documentation research alone enables no feature.
 
 ## Next lab
 

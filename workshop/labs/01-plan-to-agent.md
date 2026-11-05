@@ -149,7 +149,9 @@ to `"statusFilter": true`. Save, build again, then start the app as in setup.
 Expect IDs **1,2** and **3,4**. Open `/tickets` directly and expect **1,2,3,4**.
 Open `/tickets?status=closed` and expect a 400 error, not a successful empty list.
 
-**1.4.7** Stop the app. Follow the
+**1.4.7** Follow [Check website features](../work/README.md#check-website-features)
+to confirm the flags match your accepted endpoints. Leave missing features disabled.
+Stop the app. Follow the
 [check-in steps](../work/README.md#check-in-after-each-lab).
 Use `Add reviewed status filtering` as the commit message. No push is needed.
 

@@ -210,8 +210,15 @@ whether the project and scoped instructions loaded automatically.
 Reading an attached file alone does not prove automatic discovery.
 If discovery cannot be confirmed, ask the facilitator rather than claiming it worked.
 
-**2.5.3** Inspect your changes in Source Control.
-This lab should change instructions and role files, not API code or feature flags.
+**2.5.3** Follow [Check website features](../work/README.md#check-website-features).
+Enable only endpoints already implemented, checked and accepted.
+This lab plans search but does not implement it; leave `search` disabled unless
+you separately completed and accepted that endpoint.
+Normally no flags change.
+
+**2.5.4** Inspect your changes in Source Control.
+This lab should change instructions and role files, not API code.
+Include a flag change only if you verified it in step 2.5.3.
 Use the [check-in steps](../work/README.md#check-in-after-each-lab) with the message
 `Add planning and reviewing roles`. Leave unrelated Lab 1 files out of this commit.
 
@@ -229,6 +236,7 @@ You can continue to Lab 3 without fixing custom-agent support.
 - The reviewer does not edit or execute when asked to step outside its role.
 - You inspected the actual tool selection and checked instruction discovery where available.
 - Your reviewed instruction and role files are committed. No search endpoint or log is required.
+- Website flags match accepted endpoints; planning search alone does not enable it.
 
 ## Next lab
 
